@@ -1,0 +1,285 @@
+@use '../abstracts/variables' as *;
+
+
+/* 
+    header-1-start
+*/
+.ot-header-1 {
+    &-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+    }
+
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--ot-clr-pr-1);
+        padding: 5px 0;
+
+        @media #{$lg,$md} {
+            justify-content: center;
+        }
+
+        @media #{$xs} {
+            display: none;
+        }
+
+        @media #{$sm} {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &-social {
+        display: flex;
+        align-items: center;
+
+
+
+        .link-elm {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            color: #fff;
+            line-height: 1.4;
+            padding: 0  22px;
+
+            &:not(:last-child) {
+                border-right: 1px solid rgb(255 255 255 / 32%);
+            }
+
+        }
+    }
+    
+    &-contact {
+        display: flex;
+        align-items: center;
+
+        @media #{$lg,$md,$xs} {
+            display: none;
+        }
+
+        .link-elm {
+            font-size: 14px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0  22px;
+
+            &:not(:first-child) {
+                border-left: 1px solid rgb(255 255 255 / 32%);
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    }
+    
+    &-bottom {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        padding: 0 24px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+        /* blur sits on its own layer, so the nav dropdowns are no longer
+           descendants of a backdrop-filtered box (paint ghosting) */
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: rgba(3, 15, 43, 0.18);
+            backdrop-filter: blur(4px);
+        }
+    }
+
+    &-action-link {
+        margin-left: auto;
+    }
+    
+}
+
+
+.lt-main-navigation {
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        justify-content: center;
+
+        li {
+            
+            a {
+                position: relative;
+                z-index: 1;
+                font-family: var(--ot-font-1);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.5;
+                text-decoration: none;
+                color: #fff;
+                padding: 20px 0px;
+                display: inline-flex;
+                align-items: center;
+                transition: var(--ot-cube-1);
+            }
+
+            &:is(.dropdown) {
+                > a {
+                    padding-right: 10px;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 6px;
+                        height: 6px;
+                        position: absolute;
+                        right: 0px;
+                        top: 54%;
+                        transform: translateY(-50%);
+                        transition: .4s var(--ot-cube-1);
+                        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+                        background-color: var(--ot-clr-sd-1);
+                    }
+                }
+            }
+    
+            &:hover {
+                > a {
+                    opacity: 1;
+                    color: var(--ot-clr-sd-1);
+                }
+                > .dropdown-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: scaleY(1);
+                }
+            }
+    
+            .dropdown-menu {
+                left: 0;
+                top: 100%;
+                z-index: 100;
+                padding: 0px 0px;
+                height: auto;
+                min-width: 200px;
+                display: block;
+                position: absolute;
+                text-align: left;
+                opacity: 0;
+                visibility: hidden;
+                transform: scaleY(0);
+                transform-origin: top;
+                border-radius: 0;
+                box-shadow: 0px 0px 5px rgb(0 0 0 / 5%);
+                background: var(--ot-clr-h-1);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background-color: #001D61;
+                transition: var(--ot-cube-1);
+
+                li {
+                    display: block;
+                    margin: 0;
+                    transition: var(--ot-cube-1);
+
+                    a {
+                        width: 100%;
+                        display: block;
+                        padding: 9px 20px;
+                        padding-left: 30px;
+                        font-size: 16px;
+                        opacity: 1;
+
+                        &::after {
+                            top: 0;
+                            height: 100%;
+                        }
+                    }
+
+
+                    &:is(.dropdown) {
+                        > a {
+                            padding-right: 13px;
+                            &::before {
+                                right: 20px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: var(--ot-clr-sd-1);
+                        > a {
+                            color: var(--ot-clr-h-1);
+                        }
+                    }
+   
+    
+                    .dropdown-menu {
+                        top: 0;
+                        left: 100%;
+                    }
+    
+                }
+            }
+            
+    
+
+        }
+        
+    }
+}
+
+/* 
+    header-1-end
+*/
+
+/* 
+    sticky-header-css-start
+*/
+
+
+.wa_sticky_header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 400ms ease-in-out;
+    z-index: 8;
+  
+  
+    &:is(.wa_sticky) {
+        transform: translateY(-190%);
+  
+        &:is(.wa_sticky_show) {
+            transform: translateY(0%);
+        }
+    }
+  
+    &:is(.ag-header-1-area) {
+        top: 12px;
+        
+        &:is(.wa_sticky_show) {
+            animation: none;
+        }
+    }  
+
+  
+}
+  
+  
+/* 
+    sticky-header-css-end
+*/

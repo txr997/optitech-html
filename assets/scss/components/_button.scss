@@ -1,0 +1,84 @@
+/* 
+    button-start
+*/
+.ot-search-btn-1 {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    font-family: var(--ot-font-1);
+    color: rgb(255 255 255 / 60%);
+    gap: 6px;
+    font-size: 16px;
+    padding: 0;
+
+    i {
+        color: #fff;
+    }
+}
+
+.ot-cart-btn-1 {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgb(255 255 255 / 32%);
+    background: transparent;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+
+    .cart-count {
+        width: 18px;
+        height: 18px;
+        background: var(--ot-clr-pr-1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--ot-font-1);
+        font-size: 12px;
+        font-weight: 400;
+        position: absolute;
+        right: -1px;
+        top: -1px;
+    }
+}
+
+
+.ot-pr-btn-1 {
+    font-family: var(--ot-font-2);
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    display: inline-flex;
+    gap: 16px;
+    padding: 8px 8px 8px 26px;
+    align-items: center;
+    border: 3px solid #407BFF;
+    background: var(--ot-clr-gd-1);
+    box-shadow: 0px 0px 0.224852px 0.224852px rgba(0, 0, 0, 0.07), 0px 0px 0.224852px 0.674556px rgba(0, 0, 0, 0.05), 0px 2.69822px 2.92308px -1.34911px rgba(0, 0, 0, 0.25), 0px 0.899408px 3.59763px 0.899408px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(72.29% 266.57% at 14.71% 21.14%, rgba(78, 133, 255, 0.3) 0%, rgba(78, 133, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #FFFFFF;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        border-radius: 6px;
+        color: var(--ot-clr-pr-1);
+        font-size: 24px;
+    }
+}
+
+
+/* 
+    button-end
+*/
