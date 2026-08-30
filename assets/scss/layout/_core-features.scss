@@ -1,0 +1,123 @@
+@use '../abstracts/variables' as *;
+
+/* 
+    core-features-1-start
+*/
+.ot-core-features-1 {
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-card {
+        min-height: 312px;
+        border-radius: 14px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: end;
+        background-color: var(--ot-clr-h-1);
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 210px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(3, 15, 43, 0) 0%, #0A3391 100%);
+            z-index: -1;
+        }
+
+        .bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 80%;
+        }
+
+        .content-wrap {
+            padding: 36px;
+            
+            @media #{$xl,$lg,$md,$xs} {
+                padding: 36px 20px;
+            }
+        }
+
+                
+        .title {
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: -1%;
+        }
+
+        .br-line {
+            width: 100%;
+            height: 1px;
+            background: #fff;
+            opacity: 32%;
+            margin-bottom: 12px;
+        }
+
+        .disc {
+            font-size: 16px;
+            color: #fff;
+        }
+
+
+        &:is(.has-v2) {
+            background-color: var(--ot-clr-pr-1);
+
+            &::after {
+                display: none;
+            }
+            .bg-img {
+                right: 30px;
+                top: 30px;
+                width: auto;
+                left: unset;
+
+                img {
+                    width: auto;
+                    height: auto !important;
+                    object-fit: unset;
+                }
+            }
+        }
+
+        &:is(.has-v3) {
+            background-color: #41434A;
+            .bg-img {
+                mix-blend-mode: luminosity;
+            }
+
+            &::after {
+                mix-blend-mode: luminosity;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/* 
+    core-features-1-end
+*/

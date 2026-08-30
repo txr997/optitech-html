@@ -93,8 +93,10 @@
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 
-        /* blur sits on its own layer, so the nav dropdowns are no longer
-           descendants of a backdrop-filtered box (paint ghosting) */
+        @media #{$lg,$md,$xs} {
+            padding: 10px 24px;
+        }
+
         &::before {
             content: "";
             position: absolute;
@@ -107,6 +109,33 @@
 
     &-action-link {
         margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .ot-pr-btn-1 {
+            padding: 9px 23px;
+        }
+
+        .ot-search-btn-1 {
+            @media #{$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+        .ot-cart-btn-1 {
+            @media #{$xl,$lg,$md,$xs} {
+                display: none;
+            }
+        }
+
+        .ot-pr-btn-1 {
+            @media #{$xs} {
+                display: none;
+            }
+            @media #{$sm} {
+                display: inline-flex;
+            }
+        }
     }
     
 }

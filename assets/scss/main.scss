@@ -17,6 +17,16 @@
     layout
 */
 @use './layout/header';
+@use './layout/hero';
+@use './layout/core-features';
+@use './layout/about';
+@use './layout/services';
+@use './layout/industry';
+@use './layout/price';
+@use './layout/choose';
+@use './layout/project';
+@use './layout/cta';
+@use './layout/process';
 /* 
     pages
 */

@@ -22,60 +22,53 @@
     margin-bottom: 0;
 }
 
-.lt-subtitle-1 {
-    font-family: var(--lt-font-1);
+.ot-subtitle-1 {
+    font-family: var(--ot-font-1);
     font-size: 15px;
     font-weight: 500;
-    line-height: 1.5;
-    color: var(--lt-clr-pr-1);
-    border: 1px solid rgb(10 31 67 / 12%);
+    line-height: normal;
+    color: var(--ot-clr-pr-1);
     display: inline-flex;
-    border-radius: 100px;
-    gap: 6px;
     align-items: center;
-    padding-right: 16px;
-    margin-bottom: 16px;
-    
-    .icon {
-        width: 40px;
-        background: var(--lt-clr-pr-1);
-        border-radius: 100px;
-        text-align: center;
-        padding: 3px 0;
-    }
-}
-
-.lt-subtitle-2 {
-    font-family: var(--lt-font-1);
-    display: inline-flex;
-    background-color: #FAC12E;
-    font-size: 15px;
-    font-weight: 500;
+    gap: 8px;
+    padding: 3px 11px;
+    border: 1px solid rgb(13 38 101 / 12%);
     border-radius: 4px;
-    color: var(--lt-clr-sd-1);
-    padding: 4px 10px;
     margin-bottom: 12px;
 
+    /* the two dots that bracket the label */
+    &::before,
+    &::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: currentColor;
+    }
+
+    /* on dark sections the frame goes white */
     &:is(.has-v2) {
-        background-color: #fff;
+        border-color: rgb(255 255 255 / 12%);
     }
 }
 
-.lt-sec-title-1 {
-    font-family: var(--lt-font-1);
-    font-weight: 700;
-    line-height: 1.0769;
-    font-size: 52px;
-    color: var(--lt-clr-h-1);
-    letter-spacing: -2%;
+
+.ot-sec-title-1 {
+    font-family: var(--ot-font-2);
+    font-weight: 500;
+    color: var(--ot-clr-h-1);
+    font-size: 48px;
+    line-height: 1.083;
     margin-bottom: 0;
+    letter-spacing: -2%;
+
 
     @media #{$xl} {
-        font-size: 48px;
+        font-size: 44px;
     }
 
     @media #{$lg} {
-        font-size: 42px;
+        font-size: 40px;
     }
 
     @media #{$md} {
@@ -83,18 +76,13 @@
     }
 
     @media #{$xs} {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     @media #{$sm} {
-        font-size: 34px;
-    }
-
-    &:is(.has-v2) {
-        line-height: 1;
+        font-size: 32px;
     }
 }
-
 
 
 

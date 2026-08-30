@@ -1,0 +1,196 @@
+@use '../abstracts/variables' as *;
+
+/* 
+    services-1-start
+*/
+.ot-services-1 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #011850;
+
+        /* the photo sits behind everything, desaturated into the navy */
+        .left-bg-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            width: 28.75%;
+            height: 100%;
+            mix-blend-mode: luminosity;
+            mask-size: 100% 100%;
+
+            @media #{$xxl,$xl} {
+                width: 26%;
+            }
+
+            @media #{$lg,$md,$xs} {
+                display: none;
+            }
+        }
+
+        .bg-dot-shape-1 {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            width: 100%;
+            height: 76px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .bg-dot-shape-2 {
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 76px;
+            z-index: 1;
+            pointer-events: none;
+        }
+    }
+
+    &-title-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 61px;
+
+        /* cleared to the right of the background photo */
+        padding-left: 26.1%;
+
+        @media #{$lg,$md,$xs} {
+            padding-left: 0;
+        }
+
+        @media #{$md,$xs} {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .btn-elm {
+            flex: 0 0 auto;
+        }
+    }
+
+    &-title {
+        max-width: 725px;
+        color: #fff;
+    }
+
+    /* the slider keeps running past the container on the right */
+    &-slider {
+        position: relative;
+
+        @media #{$over,$xxxl} {
+            margin-right: -410px;
+            margin-left: 40px;
+        }
+
+        .swiper-slide {
+            max-width: 420px;
+        }
+    }
+
+    &-card {
+        position: relative;
+        z-index: 1;
+        border-radius: 20px;
+        background-color: rgb(255 255 255 / 8%);
+        transition: var(--ot-cube-1);
+        border-bottom: 4px solid transparent;
+        .img-wrap {
+            position: relative;
+            z-index: 1;
+            margin-right: 28px;
+        }
+
+        .img-elm {
+            height: 354px;
+            mask-size: 100% 100%;
+        }
+
+        .icon {
+            position: absolute;
+            left: 22px;
+            bottom: -15px;
+            width: 84px;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: var(--ot-clr-pr-1);
+            transition: var(--ot-cube-1);
+
+            img {
+                width: 48px;
+                height: 48px;
+                transition: var(--ot-cube-1);
+            }
+
+            @media #{$xs} {
+                left: 16px;
+                width: 68px;
+                height: 68px;
+
+                img {
+                    width: 38px;
+                    height: 38px;
+                }
+            }
+        }
+
+        .content-wrap {
+            padding: 38px 36px;
+            padding-top: 50px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                padding: 38px 20px;
+                padding-top: 50px;
+            }
+        }
+
+        .title {
+            font-size: 22px;
+            line-height: 1.2727;
+            color: #fff;
+            margin-bottom: 16px;
+
+            @media #{$xs} {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+        }
+
+        .disc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #fff;
+            opacity: 72%;
+        }
+
+        &:hover {
+            border-bottom: 4px solid rgb(255 255 255 / 32%);
+            background-color: var(--ot-clr-pr-1);
+
+            .icon {
+                border-bottom: 3px solid #fff;
+                background-color: #030F2B;
+
+                img {
+                    /* solved filter chain: black → #135CFD */
+                    filter: brightness(0) saturate(100%) invert(47%) sepia(42%) saturate(2059%) hue-rotate(202deg) brightness(78%) contrast(177%);
+                }
+            }
+        }
+    }
+}
+
+/* 
+    services-1-end
+*/

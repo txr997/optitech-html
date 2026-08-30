@@ -1,0 +1,222 @@
+@use '../abstracts/variables' as *;
+
+/*
+    process-1-start
+*/
+.ot-process-1 {
+    &-area {
+        position: relative;
+
+        @media #{$xl,$lg,$md,$xs} {
+            padding-top: 130px;
+        }
+
+
+        .bg-shape-1,
+        .bg-shape-2 {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+            mix-blend-mode: luminosity;
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+
+        .bg-shape-1 {
+            right: 0;
+            top: -180px;
+        }
+
+        .bg-shape-2 {
+            left: 0;
+            bottom: 0;
+        }
+    }
+
+    &-title-wrap {
+        max-width: 768px;
+        margin: 0 auto 47px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @media #{$md,$xs} {
+            margin-bottom: 40px;
+        }
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+        @media #{$lg,$md} {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-card {
+        padding: 8px;
+        border-radius: 12px;
+        background-color: #fff;
+
+        .content-wrap {
+            padding: 12px 12px 20px;
+        }
+
+        .step-elm {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+
+            .icon {
+                width: 36px;
+                height: 36px;
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: var(--ot-clr-pr-1);
+
+                img {
+                    width: 18px;
+                }
+            }
+
+            .text {
+                font-family: var(--ot-font-2);
+                font-size: 15px;
+                line-height: 1.333;
+                letter-spacing: 0.085em;
+                color: rgb(65 67 74 / 60%);
+
+                .number {
+                    font-weight: 700;
+                    color: #011850;
+                }
+            }
+        }
+
+        /* hairline that fades out towards both ends */
+        .br-line {
+            width: 100%;
+            height: 1px;
+            margin-bottom: 18px;
+            opacity: 60%;
+            background: linear-gradient(90deg, rgba(10, 51, 145, 0) 0%, rgba(10, 51, 145, 1) 50%, rgba(10, 51, 145, 0) 100%);
+        }
+
+        .title {
+            font-size: 20px;
+            line-height: 1.4;
+            color: var(--ot-clr-h-1);
+            margin-bottom: 10px;
+        }
+
+        .disc {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ot-clr-p-1);
+            margin-bottom: 0;
+        }
+
+        .img-elm {
+            aspect-ratio: 319 / 161;
+            border-radius: 12px;
+        }
+
+        &:is(.has-v2) {
+            background-color: #011850;
+
+            .step-elm .text {
+                color: rgb(255 255 255 / 60%);
+
+                .number {
+                    color: #fff;
+                }
+            }
+
+            .br-line {
+                background: linear-gradient(90deg, rgba(10, 51, 145, 0) 0%, #fff 50%, rgba(10, 51, 145, 0) 100%);
+            }
+
+            .title {
+                color: #fff;
+            }
+
+            .disc {
+                color: #fff;
+                opacity: 80%;
+            }
+        }
+    }
+
+    &-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 40px;
+        font-family: var(--ot-font-1);
+        font-size: 18px;
+        line-height: 1.555;
+        color: var(--ot-clr-h-1);
+        text-align: center;
+
+        @media #{$xs} {
+            font-size: 16px;
+        }
+
+        .quote-link {
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            color: var(--ot-clr-pr-1);
+        }
+
+        /* the row is only tucked up under the pinned cards */
+        @media (min-width: 1400px) {
+            margin-top: -12vh;
+        }
+    }
+}
+
+
+/* the pinned scroll only runs where the row is four columns wide */
+.ot-process-1-wrap {
+    &-height {
+        height: 300vh;
+        position: relative;
+
+        @media #{$xl,$lg,$md,$xs} {
+            height: auto;
+        }
+    }
+    &-pin {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        @media #{$xl,$lg,$md,$xs} {
+            position: static;
+            display: block;
+            height: auto;
+        }
+    }
+}
+/*
+    process-1-end
+*/
