@@ -26,6 +26,23 @@
 
 
 
+/* the two passes SplitText makes for the line reveal: the mask clips,
+   the inner line is what actually moves */
+.wa-split-mask {
+    display: block;
+    overflow: hidden;
+
+    /* room for descenders, taken straight back out of the layout */
+    padding-bottom: 0.15em;
+    margin-bottom: -0.15em;
+}
+
+.wa-split-line {
+    display: block;
+    will-change: transform;
+}
+
+
 /* 
     elements-end
 */

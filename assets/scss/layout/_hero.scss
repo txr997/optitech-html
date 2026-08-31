@@ -44,6 +44,11 @@
 
             &-content {
                 max-width: 610px;
+
+                .btn-elm {
+                    position: relative;
+                    z-index: 1;
+                }
             }
 
             .bg-img {
@@ -294,10 +299,16 @@
                 width: 32px;
                 height: 32px;
                 border-radius: 50%;
-                border: 1px solid #757077;
+                border: 1px solid #d6d6d6;
+                position: relative;
+                z-index: 1;
 
                 &:not(:first-child) {
                     margin-left: -8px;
+                }
+
+                img {
+                    transform: scale(1.05);
                 }
             }
         }

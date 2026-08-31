@@ -126,9 +126,29 @@
         line-height: 1.555;
         color: #fff;
 
-        /* gradient fill with the reverse gradient on the ring */
-        background: linear-gradient(180deg, #703BF9 0%, #AE8EFF 100%) padding-box,
-            linear-gradient(180deg, #AE8EFF 0%, #703BF9 100%) border-box;
+        /* three layers: the hover fill waits at the bottom edge, then the
+           base fill, then the reverse gradient that paints the ring */
+        background-image: linear-gradient(180deg, #AE8EFF 0%, #5B25E0 100%),
+            linear-gradient(180deg, #703BF9 0%, #AE8EFF 100%),
+            linear-gradient(180deg, #AE8EFF 0%, #703BF9 100%);
+        background-origin: padding-box, padding-box, border-box;
+        background-clip: padding-box, padding-box, border-box;
+        background-repeat: no-repeat;
+        background-position: bottom center, center, center;
+        background-size: 100% 0%, 100% 100%, 100% 100%;
+        box-shadow: 0 0 0 0 rgb(112 59 249 / 45%);
+
+        transition: background-size .6s cubic-bezier(0.16, 1, 0.3, 1),
+            box-shadow .6s cubic-bezier(0.16, 1, 0.3, 1),
+            letter-spacing .6s cubic-bezier(0.16, 1, 0.3, 1);
+
+        /* the fill floods up and a soft ring pushes out of the edge */
+        &:hover {
+            background-size: 100% 100%, 100% 100%, 100% 100%;
+            box-shadow: 0 0 0 14px rgb(112 59 249 / 0%);
+            letter-spacing: 0.03em;
+            color: #fff;
+        }
 
         @media #{$lg} {
             width: 160px;

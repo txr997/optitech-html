@@ -1,0 +1,358 @@
+@use '../abstracts/variables' as *;
+
+/*
+    testimonial-1-start
+*/
+.ot-testimonial-1 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 128px 0 127px;
+        background-color: #F4F6FF;
+
+        @media #{$lg,$md} {
+            padding: 100px 0;
+        }
+
+        @media #{$xs} {
+            padding: 80px 0;
+        }
+
+        .bg-dot-shape {
+            position: absolute;
+            left: 0;
+            top: 323px;
+            width: 100%;
+            z-index: -1;
+            pointer-events: none;
+
+            img {
+                width: 100%;
+            }
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+    }
+
+    &-title-wrap {
+        max-width: 874px;
+        margin: 0 auto 52px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        @media #{$md,$xs} {
+            margin-bottom: 40px;
+        }
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+
+        @media #{$lg,$md,$xs} {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    /* the white quote card hangs inside the bottom of the photo */
+    &-feature {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 36px;
+
+        .bg-img {
+            aspect-ratio: 684 / 514;
+            border-radius: 20px;
+        }
+
+        .content-card {
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            padding: 32px;
+            border-radius: 16px;
+            background-color: #fff;
+
+            @media #{$xl,$lg,$md} {
+                padding: 24px;
+            }
+
+            /* on a phone the card drops below the photo and only laps it */
+            @media #{$xs} {
+                position: relative;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                margin: -60px 16px 0;
+                padding: 20px;
+            }
+        }
+    }
+
+    /* shared by the feature card and the sliding list */
+    &-item {
+        .star-elm {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1;
+            color: #FF9D00;
+        }
+
+        .disc {
+            font-family: var(--ot-font-1);
+            font-size: 20px;
+            line-height: 1.4;
+            color: var(--ot-clr-h-1);
+            margin-bottom: 24px;
+
+            @media #{$xl,$lg,$md} {
+                font-size: 18px;
+            }
+
+            @media #{$xs} {
+                font-size: 16px;
+            }
+        }
+
+        .author-elm {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+            @media #{$xs} {
+                gap: 12px;
+            }
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+
+            @media #{$xs} {
+                gap: 10px;
+            }
+        }
+
+        .author-img {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            border-radius: 6px;
+
+            @media #{$xs} {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .name {
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.555;
+            color: var(--ot-clr-h-1);
+            margin-bottom: 4px;
+
+            @media #{$xs} {
+                font-size: 16px;
+                margin-bottom: 2px;
+            }
+        }
+
+        .designation {
+            font-family: var(--ot-font-1);
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ot-clr-h-1);
+            opacity: 64%;
+            margin-bottom: 0;
+
+            @media #{$xs} {
+                font-size: 14px;
+            }
+        }
+
+        .quote-icon {
+            flex-shrink: 0;
+            font-size: 56px;
+            line-height: 1;
+            color: var(--ot-clr-h-1);
+            opacity: 32%;
+
+            @media #{$xs} {
+                font-size: 40px;
+            }
+        }
+    }
+
+    &-results {
+        .title {
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-style: italic;
+            font-size: 36px;
+            line-height: 1.111;
+            color: var(--ot-clr-h-1);
+            text-align: center;
+            margin-bottom: 24px;
+
+            span {
+                color: rgb(65 67 74 / 32%);
+            }
+
+            @media #{$xs} {
+                font-size: 26px;
+            }
+        }
+
+        .counter-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            padding: 40px 39px;
+            border-radius: 20px;
+            background-color: #E3E7F9;
+
+            @media #{$xl,$lg,$md} {
+                gap: 24px;
+                padding: 32px 24px;
+            }
+
+            /* three across even on a phone, with the labels wrapping */
+            @media #{$xs} {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                padding: 24px 16px;
+            }
+        }
+
+        .single-counter {
+            text-align: center;
+        }
+
+        .number {
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-size: 56px;
+            line-height: 1.071;
+            color: #011850;
+            margin-bottom: 14px;
+
+            span {
+                color: var(--ot-clr-pr-1);
+            }
+
+            @media #{$xl,$lg,$md} {
+                font-size: 44px;
+            }
+
+            @media #{$xs} {
+                font-size: 30px;
+                margin-bottom: 6px;
+            }
+        }
+
+        .text {
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            line-height: 1.555;
+            letter-spacing: 0.08em;
+            color: var(--ot-clr-p-1);
+            margin-bottom: 0;
+            white-space: nowrap;
+
+            @media #{$xl,$lg,$md} {
+                font-size: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 13px;
+                letter-spacing: 0;
+                white-space: normal;
+            }
+        }
+    }
+
+    /* the column scrolls itself, fading out top and bottom */
+    &-right {
+        position: relative;
+        z-index: 1;
+        height: 796px;
+        overflow: hidden;
+        padding: 64px;
+        border: 1px solid rgb(3 15 43 / 16%);
+        background-color: #F4F6FF;
+        border-radius: 20px;
+        
+
+        @media #{$xl,$lg,$md} {
+            padding: 40px;
+        }
+
+        @media #{$xs} {
+            height: 560px;
+            padding: 24px 20px;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        &::before {
+            top: 0;
+            height: 125px;
+            background: linear-gradient(180deg, #F4F6FF 0%, rgba(244, 246, 255, 0) 100%);
+
+            @media #{$xs} {
+                height: 60px;
+            }
+        }
+
+        &::after {
+            bottom: 0;
+            height: 282px;
+            background: linear-gradient(180deg, rgba(244, 246, 255, 0) 0%, #F4F6FF 100%);
+
+            @media #{$xs} {
+                height: 120px;
+            }
+        }
+
+        .slide-item {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #CDD0DD;
+
+            @media #{$xs} {
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
+/*
+    testimonial-1-end
+*/

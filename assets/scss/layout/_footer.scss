@@ -1,0 +1,313 @@
+@use '../abstracts/variables' as *;
+
+/*
+    footer-1-start
+*/
+.ot-footer-1 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding-top: 120px;
+        background-color: #030F2B;
+
+        @media #{$lg,$md} {
+            padding-top: 80px;
+        }
+
+        @media #{$xs} {
+            padding-top: 60px;
+        }
+
+        .bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+    }
+
+    &-top {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 104px;
+
+        @media #{$md,$xs} {
+            justify-content: flex-start;
+            padding-bottom: 40px;
+        }
+
+        /* the oversized wordmark bleeds off behind the copy */
+        .watermark {
+            position: absolute;
+            left: 0;
+            top: 25%;
+            transform: translateY(-50%);
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-size: clamp(50px, 18vw, 260px);
+            line-height: 1;
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.2) 55%, rgba(255, 255, 255, 0) 78%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+
+            /* the wordmark writes itself in from the left when it scrolls up */
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 2s cubic-bezier(0.22, 1, 0.36, 1);
+            letter-spacing: -2%;
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+
+        &:is(.active) .watermark {
+            clip-path: inset(0 0 0 0);
+        }
+
+        .cta-elm {
+            max-width: 510px;
+            position: relative;
+            
+            .title {
+                font-family: var(--ot-font-2);
+                font-weight: 500;
+                font-size: 40px;
+                line-height: 1.09;
+                color: #fff;
+                margin-bottom: 36px;
+
+                @media #{$lg,$md} {
+                    font-size: 38px;
+                }
+
+                @media #{$xs} {
+                    font-size: 28px;
+                    margin-bottom: 28px;
+                }
+            }
+        }
+    }
+
+    &-widget-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        padding-bottom: 100px;
+        flex-wrap: wrap;
+
+    }
+
+    &-widget {
+        .widget-title {
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.55;
+            color: var(--ot-clr-sd-1);
+            margin-bottom: 22px;
+        }
+
+        .disc {
+            font-family: var(--ot-font-1);
+            font-size: 17px;
+            line-height: 1.647;
+            color: rgb(255 255 255 / 80%);
+            max-width: 434px;
+            margin-bottom: 36px;
+
+            @media #{$xs} {
+                font-size: 16px;
+            }
+        }
+
+        .social-elm {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            a {
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 16px;
+                color: #fff;
+                background-color: rgb(255 255 255 / 8%);
+                transition: var(--ot-cube-1);
+
+                &:hover,
+                &:is(.active) {
+                    background-color: var(--ot-clr-pr-1);
+                }
+            }
+        }
+
+        .link-list {
+            li:not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            a {
+                font-family: var(--ot-font-1);
+                font-size: 17px;
+                line-height: 1.41;
+                color: rgb(255 255 255 / 80%);
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    color: var(--ot-clr-sd-1);
+                    transform: translateX(3px);
+                }
+            }
+        }
+
+        .service-list {
+            li {
+                position: relative;
+                padding-left: 14px;
+                transition: var(--ot-cube-1);
+
+                &:not(:last-child) {
+                    margin-bottom: 13px;
+                }
+
+                /* the small dot in front of every service */
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 11px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    transition: var(--ot-cube-1);
+                }
+
+                &:hover {
+                    transform: translateX(3px);
+    
+                    &::before {
+                        width: 12px;
+                        border-radius: 100px;
+                        background-color: var(--ot-clr-sd-1);
+                    }
+                    a {
+                        color: var(--ot-clr-sd-1);
+                    }
+                }
+            }
+            a {
+                font-family: var(--ot-font-1);
+                font-size: 17px;
+                line-height: 1.41;
+                color: rgb(255 255 255 / 80%);
+                transition: var(--ot-cube-1);
+            }
+
+
+        }
+
+        .info-item {
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            .label {
+                font-family: var(--ot-font-1);
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 1.5;
+                color: var(--ot-clr-pr-1);
+                margin-bottom: 4px;
+            }
+
+            .text {
+                font-family: var(--ot-font-1);
+                font-size: 17px;
+                line-height: 1.35;
+                color: rgb(255 255 255 / 80%);
+                margin-bottom: 0;
+
+                a {
+                    color: inherit;
+                    transition: var(--ot-cube-1);
+
+                    &:hover {
+                        color: var(--ot-clr-sd-1);
+                    }
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        border-top: 1px solid rgb(255 255 255 / 10%);
+        background-color: rgb(255 255 255 / 4%);
+
+        .bottom-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding: 16px 0;
+
+            @media #{$md,$xs} {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        .copyright {
+            font-family: var(--ot-font-1);
+            font-size: 16px;
+            line-height: 1.75;
+            color: rgb(255 255 255 / 80%);
+            margin-bottom: 0;
+
+            span {
+                color: var(--ot-clr-sd-1);
+            }
+        }
+
+        .bottom-link {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            li {
+                &:not(:last-child) {
+                    padding-right: 16px;
+                    margin-right: 16px;
+                    border-right: 1px solid rgb(255 255 255 / 20%);
+                }
+            }
+
+            a {
+                font-family: var(--ot-font-1);
+                font-size: 16px;
+                line-height: 1.75;
+                color: rgb(255 255 255 / 80%);
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    color: var(--ot-clr-sd-1);
+                }
+            }
+        }
+    }
+}
+
+/*
+    footer-1-end
+*/

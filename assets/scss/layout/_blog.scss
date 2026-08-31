@@ -1,0 +1,206 @@
+@use '../abstracts/variables' as *;
+
+/*
+    blog-1-start
+*/
+.ot-blog-1 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 128px 0;
+        border-radius: 32px 32px 0 0;
+        background: linear-gradient(180deg, #E0E6FF 0%, #F4F6FF 100%);
+        max-width: 1868px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        @media #{$lg,$md} {
+            padding: 100px 0;
+        }
+
+        @media #{$xs} {
+            padding: 80px 0;
+        }
+    }
+
+    &-title-wrap {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 45px;
+
+        @media #{$md,$xs} {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &-title {
+        max-width: 752px;
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-card {
+        padding: 12px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #F4F6FF 0%, #FFFFFF 100%);
+        transition: box-shadow .5s cubic-bezier(0.16, 1, 0.3, 1);
+
+        /* the photo eases in, the headline picks up the brand blue and the
+           card settles onto a soft shadow */
+        &:hover {
+            box-shadow: 0 18px 40px -18px rgb(10 51 145 / 30%);
+
+            .img-elm img {
+                transform: scale(1.06);
+            }
+
+            .title a {
+                color: var(--ot-clr-pr-1);
+            }
+        }
+
+        .img-wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        .img-elm {
+            aspect-ratio: 411 / 367;
+            border-radius: 10px;
+
+            img {
+                transition: transform .7s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+
+        /* the badge laps the bottom of the photo */
+        .tag-elm {
+            position: absolute;
+            left: 0;
+            bottom: -19px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 4px 4px 4px 26px;
+            border-radius: 0 100px 100px 16px;
+            background-color: var(--ot-clr-pr-1);
+
+            @media #{$xl,$lg,$md} {
+                gap: 10px;
+                padding-left: 18px;
+            }
+
+            .cat {
+                font-family: var(--ot-font-1);
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 1.866;
+                color: #fff;
+                white-space: nowrap;
+            }
+
+            .date {
+                padding: 2px 15px;
+                border-radius: 50px;
+                background-color: #fff;
+                font-family: var(--ot-font-1);
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 1.866;
+                color: var(--ot-clr-h-1);
+                white-space: nowrap;
+
+                @media #{$xl,$lg,$md} {
+                    padding: 8px 12px;
+                }
+            }
+        }
+
+        .content-wrap {
+            padding: 43px 16px 16px;
+
+            @media #{$xl,$lg,$md} {
+                padding: 43px 8px 8px;
+            }
+        }
+
+        .title {
+            font-family: var(--ot-font-2);
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.2727;
+            color: var(--ot-clr-h-1);
+            margin-bottom: 20px;
+
+            a {
+                transition: color .4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            @media #{$xl,$lg,$md} {
+                font-size: 20px;
+            }
+        }
+
+        .br-line {
+            width: 100%;
+            height: 1px;
+            margin-bottom: 16px;
+            opacity: 12%;
+            background-color: var(--ot-clr-h-1);
+        }
+
+        .meta-elm {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .single-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--ot-font-1);
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ot-clr-p-1);
+
+            i {
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            @media #{$xl,$lg,$md} {
+                font-size: 15px;
+
+                i {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+/*
+    blog-1-end
+*/

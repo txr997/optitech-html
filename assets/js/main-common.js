@@ -8,6 +8,32 @@
 (function ($) {
 "use strict";
 
+// 	lenis-smooth-scroll-activation
+const lenis = new Lenis({
+	duration: .8,
+    easing: (t) => 1 - Math.pow(1 - t, 3),
+	direction: 'vertical', 
+	wheelMultiplier: 0.85,
+	smoothWheel: true,
+	smoothTouch: false,
+});
+function raf(time) {
+	lenis.raf(time);
+	requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+$('a[href^="#"]').on('click', function (e) {
+	e.preventDefault(); 
+
+	const target = $(this.getAttribute('href')); 
+
+	if (target.length) {
+        lenis.scrollTo(target[0], {
+            duration: 1.15,
+            easing: (t) => 1 - Math.pow(1 - t, 3),
+        });
+	}
+});
 
 
 CustomEase.create("ease1", "0.16,1,0.3,1");

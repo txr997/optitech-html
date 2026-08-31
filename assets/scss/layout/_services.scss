@@ -160,6 +160,12 @@
             line-height: 1.2727;
             color: #fff;
             margin-bottom: 16px;
+            transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1);
+
+            /* the heading nudges over when it is pointed at */
+            &:hover {
+                transform: translateX(3px);
+            }
 
             @media #{$xs} {
                 font-size: 20px;

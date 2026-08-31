@@ -48,6 +48,18 @@
             color: #fff;
             line-height: 1.4;
             padding: 0  22px;
+            transition: var(--ot-cube-1);
+
+            i {
+                transition: var(--ot-cube-1);
+            }
+
+            &:hover {
+                color: var(--ot-clr-sd-1);
+                i {
+                    transform: rotate(45deg);
+                }
+            }
 
             &:not(:last-child) {
                 border-right: 1px solid rgb(255 255 255 / 32%);
@@ -80,6 +92,11 @@
                 display: flex;
                 align-items: center;
                 gap: 8px;
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    color: var(--ot-clr-sd-1);
+                }
             }
         }
     }
@@ -178,7 +195,7 @@
                         right: 0px;
                         top: 54%;
                         transform: translateY(-50%);
-                        transition: .4s var(--ot-cube-1);
+                        transition: .4s cubic-bezier(0.16, 1, 0.3, 1);
                         clip-path: polygon(100% 0, 0% 100%, 100% 100%);
                         background-color: var(--ot-clr-sd-1);
                     }
