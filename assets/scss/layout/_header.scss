@@ -292,6 +292,109 @@
 */
 
 /* 
+    header-2-start
+*/
+.ot-header-2 {
+    &-area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+    }
+
+    &-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+
+        @media #{$lg,$md,$xs} {
+            padding: 15px 0;
+        }
+    }
+
+    &-menu {
+        position: relative;
+        z-index: 1;
+        padding: 0 110px;
+
+        @media #{$xl} {
+            padding: 0 43px;
+        }
+
+        .bg-shape {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+
+        .lt-main-navigation {
+            .navbar-nav {
+                li {
+                    a {
+                        color: var(--ot-clr-h-1);
+
+                        &::before {
+                            background-color: var(--ot-clr-pr-1);
+                        }
+                    }
+
+                    .dropdown-menu {
+                        background-color: #F4F6FF;
+
+                        li {
+                            &:hover {
+                                background: var(--ot-clr-pr-1);
+
+                                > a {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-action-link {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .ot-offcanvas-btn-1 {
+            @media #{$over,$xxxl,$xxl,$xl} {
+                display: none;
+            }
+        }
+
+        .ot-pr-btn-2 {
+            padding: 10px 20px;
+
+            &::after {
+                display: none;
+            }
+
+            @media #{$xs} {
+                display: none;
+            }
+
+            @media #{$sm} {
+                display: inline-flex;
+            }
+        }
+    }
+}
+
+/* 
+    header-2-end
+*/
+
+/* 
     sticky-header-css-start
 */
 

@@ -334,3 +334,433 @@
 /* 
     hero-1-end
 */
+
+/* 
+    hero-2-start
+*/
+.ot-hero-2 {
+    &-area {
+        mask-size: 100% 100%;
+        padding-top: 60px;
+    }
+
+    &-bg {
+        &-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+    
+            &::after {
+                content: "";
+                position: absolute;
+                width: 868px;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                background: linear-gradient(270deg, rgba(3, 15, 43, 0) 0%, rgba(3, 15, 43, 0.81) 51.09%, #030F2B 100%);
+    
+            }
+        }
+        &-text {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            width: 9%;
+            mix-blend-mode: lighten;
+            z-index: -2;
+        }
+
+
+        &-line {
+            width: 28%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        &-line2 {
+            text-align: right;
+            width: 20%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        &-shape {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -3;
+            width: 43%;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+
+
+        &-glow-1 {
+            text-align: center;
+            width: 40%;
+            position: absolute;
+            right: 7%;
+            top: 5%;
+            z-index: -1;
+        }
+        
+        &-glow-2 {
+            width: 40%;
+            text-align: right;
+            position: absolute;
+            right: -230px;
+            bottom: -230px;
+            z-index: 2;
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin-right: -200px;
+        margin-right: -145px;
+
+    }
+
+    &-content {
+        width: 100%;
+        margin-bottom: 276px;
+
+        .btn-elm {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    &-title {
+        &-1 {
+            font-size: 72px;
+            color: #fff;
+            margin-bottom: 13px;
+        }
+
+        &-2 {
+            font-size: 100px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 12px;
+
+            .cd-headline {
+                position: relative;
+                z-index: 1;
+                background: linear-gradient(180deg, #135CFD 0%, #0B3797 100%);
+                border: 1px solid rgba(255, 255, 255, 0.6);
+                padding: 8px 18px;
+
+                .box-shape {
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    background-color: #fff;
+                    z-index: 1;
+    
+                    &:is(.has-1) {
+                        top: -10px;
+                        left: -10px;
+                        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+                    }
+    
+                    &:is(.has-2) {
+                        top: -10px;
+                        right: -10px;
+                        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+                    }
+    
+                    &:is(.has-3) {
+                        bottom: -10px;
+                        left: -10px;
+                        clip-path: polygon(0 0, 100% 100%, 100% 0);
+
+                    }
+                }
+
+                .signature-pen {
+                    position: absolute;
+                    bottom: 0;
+                    left: 100%;
+                    width: 39px;
+                    height: auto;
+
+                    img {
+                        margin-bottom: -51px;
+                    }
+                }
+                
+            }
+
+            .cd-words-wrapper {
+                font-weight: 500;
+
+
+                &::after {
+                    display: none;
+                }
+
+            }
+
+
+        }
+
+        &-3 {
+            font-size: 60px;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 20px;
+
+        }
+
+
+        
+    }
+
+    &-disc {
+        color: #fff;
+        max-width: 600px;
+        margin-bottom: 32px;
+        opacity: 80%;
+    }
+
+    &-right {
+        flex: 0 0 auto;
+    }
+    &-popup {
+        display: flex;
+        align-items: start;
+        position: absolute;
+        bottom: 28%;
+        right: 0%;
+
+        &-text {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(9px);
+            border-radius: 12px;
+            color: #fff;
+            padding: 9px 16px;
+            max-width: 182px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        &-line {
+            margin-top: 25px;
+            margin-right: -9px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    
+    &-marquee {
+        position: absolute;
+        bottom: 0.8%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 850px;
+        z-index: 1;
+
+        &-elm {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            margin-right: 70px;
+
+            .single-logo {
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+
+    &-social {
+        position: absolute;
+        right: 8px;
+        bottom: 148px;
+        width: 189px;
+        height: 198px;
+        z-index: 3;
+        /* the whole cluster keeps the hover, so the pointer can travel from the button to an icon */
+
+        &-link {
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 18px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(9px);
+            opacity: 0;
+            pointer-events: none;
+            /* tucked inside the book a call circle, released on hover */
+            transform: translate(var(--tx), var(--ty)) scale(0.2);
+            transition: transform .5s cubic-bezier(.34, 1.4, .64, 1), opacity .4s ease, background var(--ot-cube-1), border-color var(--ot-cube-1);
+
+            &:is(.has-1) {
+                left: 132px;
+                top: 0;
+                --tx: -33px;
+                --ty: 99px;
+                transition-delay: .2s;
+                background: var(--ot-clr-gd-1);
+                border-color: transparent;
+            }
+
+            &:is(.has-2) {
+                left: 48px;
+                top: 7px;
+                --tx: 51px;
+                --ty: 92px;
+                transition-delay: .15s;
+            }
+
+            &:is(.has-3) {
+                left: 0;
+                top: 68px;
+                --tx: 99px;
+                --ty: 31px;
+                transition-delay: .1s;
+            }
+
+            &:is(.has-4) {
+                left: 8px;
+                top: 142px;
+                --tx: 91px;
+                --ty: -43px;
+                transition-delay: .05s;
+            }
+
+            &:hover {
+                color: #fff;
+                background: var(--ot-clr-gd-1);
+                border-color: transparent;
+            }
+        }
+
+        &-btn {
+            position: absolute;
+            left: 65px;
+            top: 65px;
+            width: 124px;
+            height: 124px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(9px);
+            pointer-events: auto;
+            transition: var(--ot-cube-1);
+
+            .text {
+                width: 75px;
+                font-size: 20px;
+                line-height: 27px;
+                font-weight: 500;
+                color: #fff;
+            }
+
+            .icon {
+                position: absolute;
+                left: 67px;
+                top: 61px;
+                width: 28px;
+                height: 28px;
+                line-height: 0;
+                transition: var(--ot-cube-1);
+            }
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.16);
+
+                .icon {
+                    transform: translate(3px, -3px);
+                }
+            }
+        }
+
+        /* hovering the button pops the icons out one by one */
+        &:hover {
+            .ot-hero-2-social-link {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translate(0, 0) scale(1);
+
+                &:is(.has-1) {
+                    transition-delay: .05s;
+                }
+
+                &:is(.has-2) {
+                    transition-delay: .13s;
+                }
+
+                &:is(.has-3) {
+                    transition-delay: .21s;
+                }
+
+                &:is(.has-4) {
+                    transition-delay: .29s;
+                }
+            }
+        }
+
+        @media #{$xxl} {
+            bottom: 130px;
+        }
+
+        @media #{$xl} {
+            bottom: 120px;
+            transform: scale(0.9);
+            transform-origin: right bottom;
+        }
+
+        @media #{$lg} {
+            right: 20px;
+            bottom: 110px;
+            transform: scale(0.85);
+            transform-origin: right bottom;
+        }
+
+        @media #{$md} {
+            right: 20px;
+            bottom: 100px;
+            transform: scale(0.8);
+            transform-origin: right bottom;
+        }
+
+        @media #{$xs} {
+            right: 12px;
+            bottom: 80px;
+            transform: scale(0.65);
+            transform-origin: right bottom;
+        }
+    }
+    
+
+}
+
+
+/* 
+    hero-2-end
+*/
