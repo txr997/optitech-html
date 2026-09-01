@@ -2380,7 +2380,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .ot-hero-1-slider-item-title {
   color: #fff;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 64px;
   line-height: 1.062;
   margin-bottom: 20px;
@@ -2498,6 +2498,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   justify-content: space-between;
   mask-size: 100% 100%;
   padding: 0 15px;
+  color: #fde700;
 }
 @media (max-width: 767px) {
   .ot-hero-1-video {
@@ -2778,7 +2779,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   z-index: -1;
   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(60deg, rgba(0, 76, 244, 0) 70%, #406CFF 100%) border-box;
   border: 2px solid transparent;
-  animation: wa-rotated 10s linear infinite;
+  animation: wa-rotated 4s linear infinite;
 }
 @media (max-width: 767px) {
   .ot-about-1-service-item .icon {
@@ -2798,8 +2799,8 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-size: 16px;
   line-height: 1.75;
 }
-.ot-about-1-service-item:nth-child(2) .icon {
-  animation-delay: 4s;
+.ot-about-1-service-item:nth-child(2) .icon::after {
+  animation-delay: 2s;
 }
 .ot-about-1-img {
   display: grid;
@@ -3499,6 +3500,21 @@ input:focus::placeholder, textarea:focus::placeholder {
     grid-template-columns: 1fr;
   }
 }
+.ot-price-1-wrap {
+  /* the middle plan carries the featured wash on its own … */
+}
+.ot-price-1-wrap .ot-price-1-card:nth-child(2) .card-bg:is(.has-hover) {
+  opacity: 1;
+}
+.ot-price-1-wrap {
+  /* … and hands it over to whichever card the pointer is on */
+}
+.ot-price-1-wrap:hover .ot-price-1-card:nth-child(2) .card-bg:is(.has-hover) {
+  opacity: 0;
+}
+.ot-price-1-wrap:hover .ot-price-1-card:hover .card-bg:is(.has-hover) {
+  opacity: 1;
+}
 .ot-price-1-card {
   position: relative;
   z-index: 1;
@@ -4103,6 +4119,15 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .ot-project-1-area .bg-shape img {
   width: 100%;
+}
+.ot-project-1-area .bg-dot-shape-1 {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 73px;
+  z-index: 1;
+  pointer-events: none;
 }
 .ot-project-1-title-wrap {
   max-width: 1231px;

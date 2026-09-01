@@ -80,6 +80,22 @@
         @media #{$xs} {
             grid-template-columns: 1fr;
         }
+
+        /* the middle plan carries the featured wash on its own … */
+        .ot-price-1-card:nth-child(2) .card-bg:is(.has-hover) {
+            opacity: 1;
+        }
+
+        /* … and hands it over to whichever card the pointer is on */
+        &:hover {
+            .ot-price-1-card:nth-child(2) .card-bg:is(.has-hover) {
+                opacity: 0;
+            }
+
+            .ot-price-1-card:hover .card-bg:is(.has-hover) {
+                opacity: 1;
+            }
+        }
     }
 
     &-card {

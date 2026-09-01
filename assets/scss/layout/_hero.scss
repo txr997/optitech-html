@@ -107,7 +107,7 @@
 
             &-title {
                 color: #fff;
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 64px;
                 line-height: 1.062;
                 margin-bottom: 20px;
@@ -229,7 +229,8 @@
         justify-content: space-between;
         mask-size: 100% 100%;
         padding: 0 15px;
-
+        color: #fde700;
+        
         @media #{$xs} {
             display: none;
         }

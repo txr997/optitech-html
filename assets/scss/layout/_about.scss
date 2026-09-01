@@ -90,7 +90,7 @@
                     z-index: -1;
                     background: linear-gradient(#fff, #fff) padding-box, linear-gradient(60deg, #004cf400 70%, #406CFF 100%) border-box;
                     border: 2px solid transparent;
-                    animation: wa-rotated 10s linear infinite;
+                    animation: wa-rotated 4s linear infinite;
                 }
 
                 @media #{$xs} {
@@ -116,7 +116,9 @@
             
             &:nth-child(2) {
                 .icon {
-                    animation-delay: 4s;
+                    &::after {
+                        animation-delay: 2s;
+                    }
                 }
             }
         }
