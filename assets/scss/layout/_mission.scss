@@ -1,0 +1,396 @@
+@use '../abstracts/variables' as *;
+
+/*
+    mission-2-start
+*/
+.ot-mission-2 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding-top: 453px;
+        background-color: #F1F5FE;
+
+        @media #{$xxl} {
+            padding-top: 400px;
+        }
+
+        @media #{$xl} {
+            padding-top: 350px;
+        }
+
+        @media #{$lg} {
+            padding-top: 300px;
+        }
+
+        @media #{$md} {
+            padding-top: 260px;
+        }
+
+        @media #{$xs} {
+            padding-top: 190px;
+        }
+    }
+
+    /* full bleed footage, rounded off at the bottom, with the teal flare sitting in the corner */
+    &-video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 692px;
+        overflow: hidden;
+        border-radius: 40px;
+
+        .video-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .glow {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 401px;
+            pointer-events: none;
+        }
+
+        @media #{$xxl} {
+            height: 620px;
+
+            .glow {
+                top: 390px;
+            }
+        }
+
+        @media #{$xl} {
+            height: 540px;
+
+            .glow {
+                top: 330px;
+            }
+        }
+
+        @media #{$lg} {
+            height: 460px;
+
+            .glow {
+                left: -120px;
+                top: 270px;
+                width: 320px;
+            }
+        }
+
+        @media #{$md} {
+            height: 400px;
+
+            .glow {
+                left: -120px;
+                top: 230px;
+                width: 300px;
+            }
+        }
+
+        @media #{$xs} {
+            height: 300px;
+
+            .glow {
+                left: -90px;
+                top: 160px;
+                width: 240px;
+            }
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        gap: 16px;
+
+        @media #{$lg,$md,$xs} {
+            flex-wrap: wrap;
+        }
+    }
+
+    /* counters riding on the blue art board */
+    &-stat {
+        flex: 0 0 524px;
+        padding: 16px;
+        border-radius: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @media #{$xxl} {
+            flex-basis: 480px;
+        }
+
+        @media #{$xl} {
+            flex-basis: 430px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            flex: 0 0 100%;
+        }
+
+        @media #{$xs} {
+            padding: 12px;
+            border-radius: 16px;
+        }
+
+        .client-card {
+            position: relative;
+            z-index: 1;
+            height: 174px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #011850;
+
+            /* the photo dissolves into the card before the copy starts */
+            .thumb {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 61%;
+                height: 100%;
+                mask-image: linear-gradient(90deg, #000 62%, transparent 100%);
+            }
+
+            .content {
+                position: absolute;
+                left: 47%;
+                top: 26%;
+                width: 47%;
+            }
+
+            .top {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                margin-bottom: 5px;
+                flex-wrap: wrap;
+            }
+
+            .count {
+                font-size: 44px;
+                line-height: 52px;
+            }
+
+            @media #{$xs} {
+                height: 150px;
+            }
+        }
+
+        .author-list {
+            display: flex;
+            align-items: center;
+
+            &-single {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid #011850;
+                
+                &:not(:first-child) {
+                    margin-left: -9px;
+                }
+
+                @media #{$xl,$xs} {
+                    width: 32px;
+                    height: 32px;
+                }
+
+            }
+
+
+
+        }
+
+        .counter-wrap {
+            display: flex;
+            gap: 8px;
+        }
+
+        .counter-card {
+            flex: 1 1 0;
+            height: 174px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 12px;
+            background-size: 100% 100%;
+
+            .count {
+                margin-bottom: 5px;
+            }
+
+            @media #{$xs} {
+                height: 140px;
+            }
+        }
+
+        .count {
+            font-family: var(--ot-font-2);
+            font-size: 56px;
+            line-height: 64px;
+            color: #fff;
+            margin-bottom: 0;
+
+            .plus {
+                color: var(--ot-clr-sd-1);
+            }
+
+            @media #{$xl,$xs} {
+                font-size: 40px;
+                line-height: 48px;
+            }
+        }
+
+        .label {
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            color: #fff;
+            margin-bottom: 0;
+
+            @media #{$xl,$xs} {
+                font-size: 15px;
+            }
+        }
+    }
+
+    /* the mint statement panel */
+    &-card {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        flex: 1 1 auto;
+        padding: 48px;
+        border-radius: 24px;
+        background-color: #91EFD2;
+
+        @media #{$xl} {
+            padding: 40px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            flex: 0 0 100%;
+        }
+
+        @media #{$xs} {
+            padding: 28px 20px;
+            border-radius: 16px;
+        }
+
+        .arrow-shape {
+            position: absolute;
+            right: 48px;
+            bottom: 57px;
+            width: 80px;
+            pointer-events: none;
+
+            @media #{$xl} {
+                right: 32px;
+                bottom: 40px;
+                width: 64px;
+            }
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+
+        /* the rounded chips sit edge to edge — their curves do the spacing */
+        .tag-list {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 74px;
+
+            @media #{$xl,$lg} {
+                margin-bottom: 48px;
+            }
+
+            @media #{$md,$xs} {
+                margin-bottom: 32px;
+            }
+        }
+
+        .tag-group {
+            display: flex;
+            align-items: center;
+
+            &:is(.has-v2) {
+                .icon,
+                .tag {
+                    border: 1px solid var(--ot-clr-h-1);
+                    background-color: transparent;
+                    color: var(--ot-clr-h-1);
+                }
+            }
+        }
+
+        .icon {
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--ot-clr-h-1);
+            color: #fff;
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            height: 40px;
+            padding: 0 22px;
+            border-radius: 120px;
+            background-color: var(--ot-clr-h-1);
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            color: #fff;
+
+            @media #{$xs} {
+                padding: 0 16px;
+                font-size: 16px;
+            }
+        }
+
+        .title {
+            margin-bottom: 24px;
+        }
+
+        .br-line {
+            width: 100%;
+            max-width: 597px;
+            height: 1px;
+            margin-bottom: 16px;
+            background-color: rgb(3 15 43 / 16%);
+        }
+
+        .disc {
+            max-width: 597px;
+            color: var(--ot-clr-h-1);
+
+            @media #{$xs} {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+/*
+    mission-2-end
+*/

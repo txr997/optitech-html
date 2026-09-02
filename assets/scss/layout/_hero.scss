@@ -342,6 +342,10 @@
     &-area {
         mask-size: 100% 100%;
         padding-top: 60px;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            padding-top: 170px;
+        }
     }
 
     &-bg {
@@ -400,6 +404,10 @@
             display: flex;
             align-items: center;
             justify-content: end;
+
+            @media #{$xs} {
+                display: none;
+            }
         }
 
 
@@ -426,14 +434,26 @@
         display: flex;
         align-items: end;
         justify-content: space-between;
-        margin-right: -200px;
-        margin-right: -145px;
+
+        @media #{$over,$xxxl} {
+            margin-right: -145px;
+        }
+
+        @media #{$xs} {
+            flex-wrap: wrap;
+            gap: 50px;
+        }
 
     }
 
     &-content {
         width: 100%;
         margin-bottom: 276px;
+
+        
+        @media #{$xs} {
+            margin-bottom: 0px;
+        }
 
         .btn-elm {
             display: flex;
@@ -447,6 +467,30 @@
             font-size: 72px;
             color: #fff;
             margin-bottom: 13px;
+
+            @media #{$xxl} {
+                font-size: 62px;
+            }
+
+            @media #{$xl} {
+                font-size: 50px;
+            }
+
+            @media #{$lg} {
+                font-size: 45px;
+            }
+
+            @media #{$md} {
+                font-size: 40px;
+            }
+
+            @media #{$xs} {
+                font-size: 30px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+            }
         }
 
         &-2 {
@@ -454,6 +498,30 @@
             color: #fff;
             font-weight: 600;
             margin-bottom: 12px;
+
+            @media #{$xxl} {
+                font-size: 62px;
+            }
+
+            @media #{$xl} {
+                font-size: 50px;
+            }
+
+            @media #{$lg} {
+                font-size: 45px;
+            }
+
+            @media #{$md} {
+                font-size: 40px;
+            }
+
+            @media #{$xs} {
+                font-size: 30px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+            }
 
             .cd-headline {
                 position: relative;
@@ -522,6 +590,29 @@
             font-style: italic;
             margin-bottom: 20px;
 
+            @media #{$xxl} {
+                font-size: 62px;
+            }
+
+            @media #{$xl} {
+                font-size: 50px;
+            }
+
+            @media #{$lg} {
+                font-size: 45px;
+            }
+
+            @media #{$md} {
+                font-size: 40px;
+            }
+
+            @media #{$xs} {
+                font-size: 30px;
+            }
+
+            @media #{$sm} {
+                font-size: 35px;
+            }
         }
 
 
@@ -537,6 +628,10 @@
 
     &-right {
         flex: 0 0 auto;
+
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            flex: auto;
+        }
     }
     &-popup {
         display: flex;
@@ -544,6 +639,9 @@
         position: absolute;
         bottom: 28%;
         right: 0%;
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            display: none;
+        }
 
         &-text {
             background: rgba(255, 255, 255, 0.08);
@@ -573,6 +671,10 @@
         max-width: 850px;
         z-index: 1;
 
+        @media #{$xs} {
+            display: none;
+        }
+
         &-elm {
             display: flex;
             align-items: center;
@@ -590,7 +692,7 @@
     &-social {
         position: absolute;
         right: 8px;
-        bottom: 148px;
+        bottom: 70px;
         width: 189px;
         height: 198px;
         z-index: 3;
@@ -606,9 +708,8 @@
             border-radius: 50%;
             font-size: 18px;
             color: #fff;
-            background: rgba(255, 255, 255, 0.10);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(9px);
+            background: rgba(3, 7, 35, 0.16);
+            box-shadow: inset 0px 0px 17px #FFFFFF;
             opacity: 0;
             pointer-events: none;
             /* tucked inside the book a call circle, released on hover */
@@ -621,8 +722,6 @@
                 --tx: -33px;
                 --ty: 99px;
                 transition-delay: .2s;
-                background: var(--ot-clr-gd-1);
-                border-color: transparent;
             }
 
             &:is(.has-2) {
@@ -665,16 +764,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.10);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(9px);
+            background: rgba(3, 7, 35, 0.12);
+            box-shadow: inset 0px 0px 23px #FFFFFF;
+            backdrop-filter: blur(3.5px);
             pointer-events: auto;
             transition: var(--ot-cube-1);
 
             .text {
-                width: 75px;
+                width: 65px;
                 font-size: 20px;
                 line-height: 27px;
                 font-weight: 500;
@@ -689,6 +787,7 @@
                 height: 28px;
                 line-height: 0;
                 transition: var(--ot-cube-1);
+                transform: scaleX(-1);
             }
 
             &:hover {

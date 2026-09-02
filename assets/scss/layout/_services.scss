@@ -200,3 +200,405 @@
 /* 
     services-1-end
 */
+
+/*
+    services-2-start
+*/
+.ot-services-2 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #030F2B;
+        border-radius: 40px;
+
+        .bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            mix-blend-mode: overlay;
+        }
+
+        .bg-shape-1,
+        .bg-shape-2 {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+
+        .bg-shape-1 {
+            left: 0;
+            top: 0;
+            width: 534px;
+
+            @media #{$xxl,$xl,$lg} {
+                width: 400px;
+            }
+        }
+
+        .bg-shape-2 {
+            right: 0;
+            bottom: 0;
+            width: 567px;
+
+            @media #{$xxl,$xl,$lg} {
+                width: 420px;
+            }
+        }
+    }
+
+    &-title-wrap {
+        text-align: center;
+        margin-bottom: 60px;
+
+        @media #{$md,$xs} {
+            margin-bottom: 40px;
+        }
+    }
+
+    &-title {
+        max-width: 812px;
+        margin: 0 auto;
+        color: #fff;
+    }
+
+    &-list {
+        border-bottom: 1px solid rgb(255 255 255 / 24%);
+    }
+
+    /* every row lights up on hover: blue icon plate, copy at full strength, floating photo */
+    &-item {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        min-height: 120px;
+        border-top: 1px solid rgb(255 255 255 / 24%);
+
+        /* the small blue tick pinned to the top-left corner — it grows into the icon plate */
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background-color: var(--ot-clr-pr-1);
+            transition: width .45s cubic-bezier(0.16, 1, 0.3, 1), height .45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* rides on top of the plate, collapsed to nothing until the row is hovered */
+        .icon {
+            position: relative;
+            z-index: 1;
+            flex: 0 0 auto;
+            width: 0;
+            height: 119px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 60px;
+            line-height: 1;
+            opacity: 0;
+            transition: width .45s cubic-bezier(0.16, 1, 0.3, 1), opacity .3s ease .15s;
+        }
+
+        .title {
+            flex: 0 0 471px;
+            padding-left: 34px;
+            font-family: var(--ot-font-2);
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 36px;
+            color: #fff;
+            opacity: 60%;
+            margin-bottom: 0;
+            transition: flex-basis .45s cubic-bezier(0.16, 1, 0.3, 1), padding-left .45s cubic-bezier(0.16, 1, 0.3, 1), opacity var(--ot-cube-1);
+        }
+
+        .disc {
+            flex: 0 1 531px;
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            color: #fff;
+            opacity: 40%;
+            margin-bottom: 0;
+            transition: opacity var(--ot-cube-1);
+        }
+
+        .read-btn {
+            flex: 0 0 auto;
+            margin-left: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            min-width: 80px;
+            height: 48px;
+            padding: 12px 22px;
+            border-radius: 60px;
+            border: 1px solid rgb(255 255 255 / 12%);
+            font-family: var(--ot-font-2);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            color: #fff;
+            transition: background-color var(--ot-cube-1), border-color var(--ot-cube-1);
+
+            .text {
+                max-width: 0;
+                opacity: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: max-width .4s cubic-bezier(0.16, 1, 0.3, 1), opacity .25s ease;
+            }
+        }
+
+        /* the masked photo floats out of the row, top and bottom, tipped off the vertical */
+        .hover-img {
+            position: absolute;
+            right: 180px;
+            top: -137px;
+            width: 352px;
+            height: 448px;
+            padding: 5px;
+            background-color: rgb(255 255 255 / 24%);
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: rotate(12.46deg) scale(.96) translateY(24px);
+            transition: opacity .5s cubic-bezier(0.16, 1, 0.3, 1), transform .5s cubic-bezier(0.16, 1, 0.3, 1), visibility .5s;
+            pointer-events: none;
+
+            .img-inner {
+                width: 100%;
+                height: 100%;
+                mask-size: 100% 100%;
+                mask-repeat: no-repeat;
+                mask-position: center;
+            }
+        }
+
+        &:hover {
+            z-index: 2;
+
+            &::before {
+                width: 119px;
+                height: 119px;
+            }
+
+            .icon {
+                width: 119px;
+                opacity: 1;
+            }
+
+            .title {
+                flex-basis: 493px;
+                padding-left: 24px;
+                opacity: 100%;
+            }
+
+            .disc {
+                opacity: 100%;
+            }
+
+            .read-btn {
+                background-color: var(--ot-clr-pr-1);
+                border-color: transparent;
+
+                .text {
+                    max-width: 140px;
+                    opacity: 1;
+                }
+            }
+
+            .hover-img {
+                opacity: 1;
+                visibility: visible;
+                transform: rotate(12.46deg);
+            }
+        }
+
+        @media #{$xxl} {
+            .icon {
+                height: 100px;
+                font-size: 50px;
+            }
+
+            .title {
+                flex-basis: 420px;
+                font-size: 28px;
+            }
+
+            .disc {
+                flex-basis: 470px;
+                font-size: 16px;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .icon {
+                    width: 100px;
+                }
+
+                .title {
+                    flex-basis: 440px;
+                }
+            }
+
+            .hover-img {
+                right: 70px;
+                top: -121px;
+                width: 326px;
+                height: 415px;
+            }
+        }
+
+        @media #{$xl} {
+            min-height: 104px;
+
+            .icon {
+                height: 90px;
+                font-size: 44px;
+            }
+
+            .title {
+                flex-basis: 350px;
+                padding-left: 24px;
+                font-size: 26px;
+                line-height: 32px;
+            }
+
+            .disc {
+                flex-basis: 400px;
+                font-size: 16px;
+            }
+
+            &:hover {
+                &::before {
+                    width: 90px;
+                    height: 90px;
+                }
+
+                .icon {
+                    width: 90px;
+                }
+
+                .title {
+                    flex-basis: 366px;
+                    padding-left: 20px;
+                }
+            }
+
+            .hover-img {
+                right: 50px;
+                top: -100px;
+                width: 280px;
+                height: 357px;
+            }
+        }
+
+        /* no room for the copy column or the photo from here down */
+        @media #{$lg} {
+            min-height: 96px;
+
+            .icon {
+                height: 82px;
+                font-size: 38px;
+            }
+
+            .title {
+                flex: 1 1 auto;
+                padding-left: 24px;
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            .disc,
+            .hover-img {
+                display: none;
+            }
+
+            &:hover {
+                &::before {
+                    width: 82px;
+                    height: 82px;
+                }
+
+                .icon {
+                    width: 82px;
+                }
+
+                .title {
+                    flex: 1 1 auto;
+                    padding-left: 20px;
+                }
+            }
+        }
+
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 12px;
+            min-height: 0;
+            padding: 28px 0;
+
+            .icon,
+            .hover-img {
+                display: none;
+            }
+
+            /* the tick stays a tick — there is no plate to grow into */
+            &:hover::before {
+                width: 14px;
+                height: 14px;
+            }
+
+            .title,
+            &:hover .title {
+                flex: 0 0 100%;
+                padding-left: 0;
+                font-size: 24px;
+                line-height: 32px;
+                opacity: 100%;
+            }
+
+            .disc {
+                flex: 0 0 100%;
+                font-size: 16px;
+                opacity: 60%;
+            }
+
+            .read-btn {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &-btn-wrap {
+        text-align: center;
+        margin-top: 52px;
+
+        @media #{$md,$xs} {
+            margin-top: 40px;
+        }
+    }
+}
+
+/*
+    services-2-end
+*/

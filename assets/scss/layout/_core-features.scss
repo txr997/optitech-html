@@ -130,3 +130,232 @@
 /* 
     core-features-1-end
 */
+
+/* 
+    core-features-2-start
+*/
+.ot-core-features-2 {
+    &-area {
+        background-color: #F1F5FE;
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1.59fr 1fr 1fr;
+        gap: 24px;
+
+        @media #{$xl,$lg,$md} {
+            grid-template-columns: 1fr 1fr;
+
+            .ot-core-features-2-media {
+                grid-column: span 2;
+            }
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+
+            .ot-core-features-2-media {
+                grid-column: span 1;
+            }
+        }
+    }
+
+    /* photo + play button + the open circle that closes the shape */
+    &-media {
+        display: flex;
+        align-items: center;
+        margin-right: 16px;
+
+        .thumb {
+            flex: 1 1 auto;
+            height: 348px;
+            border-radius: 174px 0 0 174px;
+
+            @media #{$lg,$md} {
+                height: 300px;
+                border-radius: 150px 0 0 150px;
+            }
+
+            @media #{$xs} {
+                height: 240px;
+                border-radius: 120px 0 0 120px;
+            }
+        }
+
+        .playbtn {
+            flex: 0 0 auto;
+            width: 104px;
+            height: 104px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--ot-clr-h-1);
+            transition: var(--ot-cube-1);
+
+            svg {
+                margin-left: 4px;
+            }
+
+            &:hover {
+                background-color: var(--ot-clr-pr-1);
+            }
+
+            @media #{$xs} {
+                width: 76px;
+                height: 76px;
+
+                svg {
+                    width: 18px;
+                    height: 21px;
+                }
+            }
+        }
+
+        .circle-shape {
+            flex: 0 0 180px;
+            height: 348px;
+            border: 1px solid rgb(13 38 101 / 12%);
+            border-radius: 0 174px 174px 0;
+
+            @media #{$lg,$md} {
+                flex-basis: 155px;
+                height: 300px;
+                border-radius: 0 150px 150px 0;
+            }
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+    }
+
+    &-card {
+        display: flex;
+        gap: 24px;
+        min-height: 348px;
+        padding: 40px 40px 33px 38px;
+        border-radius: 16px;
+        background-color: #DCE7FB;
+
+        @media #{$xl,$lg,$md,$xs} {
+            padding: 32px 28px;
+            gap: 20px;
+        }
+
+        @media #{$xs} {
+            flex-wrap: wrap;
+        }
+
+        .icon {
+            flex: 0 0 80px;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(7px);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            padding-top: 8px;
+        }
+
+        .title {
+            font-family: var(--ot-font-2);
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.166;
+            color: var(--ot-clr-h-1);
+            margin-bottom: 20px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 22px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .disc {
+            margin-bottom: 12px;
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 16px;
+            }
+        }
+
+        /* icon-only pill that unfolds into the green read more on hover */
+        .read-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            height: 48px;
+            margin-top: 12px;
+            padding: 12px 22px;
+            border-radius: 60px;
+            border: 1px solid rgb(3 15 43 / 12%);
+            background-color: transparent;
+            font-family: var(--ot-font-2);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--ot-clr-h-1);
+            transition: background-color var(--ot-cube-1), border-color var(--ot-cube-1), color var(--ot-cube-1);
+
+            svg {
+                flex: 0 0 auto;
+            }
+
+            .text {
+                max-width: 0;
+                opacity: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: max-width .4s cubic-bezier(0.16, 1, 0.3, 1), opacity .25s ease;
+            }
+
+            &:hover {
+                background-color: #52B92F;
+                border-color: transparent;
+                color: #fff;
+
+                .text {
+                    max-width: 140px;
+                    opacity: 1;
+                }
+            }
+        }
+
+        /* the green one carries the full read more pill */
+        &:is(.has-v2) {
+            background-color: #D8F9CD;
+
+            .read-btn {
+                margin-top: 20px;
+                border-color: transparent;
+                background-color: #3DB54A;
+                color: #fff;
+
+                .text {
+                    max-width: none;
+                    opacity: 1;
+                }
+
+                &:hover {
+                    background-color: #2F9C3B;
+                }
+            }
+        }
+    }
+}
+
+/* 
+    core-features-2-end
+*/

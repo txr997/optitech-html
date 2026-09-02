@@ -11,6 +11,15 @@
     }
 }
 
+@media (min-width: 1800px) {
+    .container{
+        &.ot-container-2 {
+            max-width: 1720px;
+        }
+
+    }
+}
+
 /* 
     custom-container-end
 */

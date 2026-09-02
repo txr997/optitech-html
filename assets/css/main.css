@@ -1116,6 +1116,11 @@ input:focus::placeholder, textarea:focus::placeholder {
     max-width: 1424px;
   }
 }
+@media (min-width: 1800px) {
+  .container.ot-container-2 {
+    max-width: 1720px;
+  }
+}
 /* 
     custom-container-end
 */
@@ -1166,6 +1171,15 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .ot-subtitle-1:is(.has-v2) {
   border-color: rgba(255, 255, 255, 0.12);
+}
+.ot-subtitle-1 {
+  /* solid mint chip, used on the deep navy bands */
+}
+.ot-subtitle-1:is(.has-v3) {
+  padding: 3px 10px;
+  border-color: transparent;
+  background-color: var(--ot-clr-sd-1);
+  color: var(--ot-clr-h-1);
 }
 
 .ot-sec-title-1 {
@@ -3953,6 +3967,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   mask-size: 100% 100%;
   padding-top: 60px;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-2-area {
+    padding-top: 170px;
+  }
+}
 .ot-hero-2-bg-img {
   position: absolute;
   inset: 0;
@@ -4003,6 +4022,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   align-items: center;
   justify-content: end;
 }
+@media (max-width: 767px) {
+  .ot-hero-2-bg-shape {
+    display: none;
+  }
+}
 .ot-hero-2-bg-glow-1 {
   text-align: center;
   width: 40%;
@@ -4023,12 +4047,26 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  margin-right: -200px;
-  margin-right: -145px;
+}
+@media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .ot-hero-2-wrap {
+    margin-right: -145px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-hero-2-wrap {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
 }
 .ot-hero-2-content {
   width: 100%;
   margin-bottom: 276px;
+}
+@media (max-width: 767px) {
+  .ot-hero-2-content {
+    margin-bottom: 0px;
+  }
 }
 .ot-hero-2-content .btn-elm {
   display: flex;
@@ -4040,11 +4078,71 @@ input:focus::placeholder, textarea:focus::placeholder {
   color: #fff;
   margin-bottom: 13px;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-hero-2-title-1 {
+    font-size: 62px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-2-title-1 {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-2-title-1 {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-hero-2-title-1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-hero-2-title-1 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ot-hero-2-title-1 {
+    font-size: 35px;
+  }
+}
 .ot-hero-2-title-2 {
   font-size: 100px;
   color: #fff;
   font-weight: 600;
   margin-bottom: 12px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-hero-2-title-2 {
+    font-size: 62px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-2-title-2 {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-2-title-2 {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-hero-2-title-2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-hero-2-title-2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ot-hero-2-title-2 {
+    font-size: 35px;
+  }
 }
 .ot-hero-2-title-2 .cd-headline {
   position: relative;
@@ -4097,6 +4195,36 @@ input:focus::placeholder, textarea:focus::placeholder {
   font-style: italic;
   margin-bottom: 20px;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-hero-2-title-3 {
+    font-size: 62px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-2-title-3 {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-2-title-3 {
+    font-size: 45px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-hero-2-title-3 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-hero-2-title-3 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ot-hero-2-title-3 {
+    font-size: 35px;
+  }
+}
 .ot-hero-2-disc {
   color: #fff;
   max-width: 600px;
@@ -4106,12 +4234,22 @@ input:focus::placeholder, textarea:focus::placeholder {
 .ot-hero-2-right {
   flex: 0 0 auto;
 }
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-2-right {
+    flex: auto;
+  }
+}
 .ot-hero-2-popup {
   display: flex;
   align-items: start;
   position: absolute;
   bottom: 28%;
   right: 0%;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-2-popup {
+    display: none;
+  }
 }
 .ot-hero-2-popup-text {
   background: rgba(255, 255, 255, 0.08);
@@ -4138,6 +4276,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   max-width: 850px;
   z-index: 1;
 }
+@media (max-width: 767px) {
+  .ot-hero-2-marquee {
+    display: none;
+  }
+}
 .ot-hero-2-marquee-elm {
   display: flex;
   align-items: center;
@@ -4150,7 +4293,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 .ot-hero-2-social {
   position: absolute;
   right: 8px;
-  bottom: 148px;
+  bottom: 70px;
   width: 189px;
   height: 198px;
   z-index: 3;
@@ -4166,9 +4309,8 @@ input:focus::placeholder, textarea:focus::placeholder {
   border-radius: 50%;
   font-size: 18px;
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(9px);
+  background: rgba(3, 7, 35, 0.16);
+  box-shadow: inset 0px 0px 17px #FFFFFF;
   opacity: 0;
   pointer-events: none;
   /* tucked inside the book a call circle, released on hover */
@@ -4181,8 +4323,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   --tx: -33px;
   --ty: 99px;
   transition-delay: 0.2s;
-  background: var(--ot-clr-gd-1);
-  border-color: transparent;
 }
 .ot-hero-2-social-link:is(.has-2) {
   left: 48px;
@@ -4219,16 +4359,15 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(9px);
+  background: rgba(3, 7, 35, 0.12);
+  box-shadow: inset 0px 0px 23px #FFFFFF;
+  backdrop-filter: blur(3.5px);
   pointer-events: auto;
   transition: var(--ot-cube-1);
 }
 .ot-hero-2-social-btn .text {
-  width: 75px;
+  width: 65px;
   font-size: 20px;
   line-height: 27px;
   font-weight: 500;
@@ -4242,6 +4381,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   height: 28px;
   line-height: 0;
   transition: var(--ot-cube-1);
+  transform: scaleX(-1);
 }
 .ot-hero-2-social-btn:hover {
   background: rgba(255, 255, 255, 0.16);
@@ -4420,6 +4560,225 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /* 
     core-features-1-end
+*/
+/* 
+    core-features-2-start
+*/
+.ot-core-features-2-area {
+  background-color: #F1F5FE;
+}
+.ot-core-features-2-wrap {
+  display: grid;
+  grid-template-columns: 1.59fr 1fr 1fr;
+  gap: 24px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-core-features-2-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+  .ot-core-features-2-wrap .ot-core-features-2-media {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 767px) {
+  .ot-core-features-2-wrap {
+    grid-template-columns: 1fr;
+  }
+  .ot-core-features-2-wrap .ot-core-features-2-media {
+    grid-column: span 1;
+  }
+}
+.ot-core-features-2 {
+  /* photo + play button + the open circle that closes the shape */
+}
+.ot-core-features-2-media {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+.ot-core-features-2-media .thumb {
+  flex: 1 1 auto;
+  height: 348px;
+  border-radius: 174px 0 0 174px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-core-features-2-media .thumb {
+    height: 300px;
+    border-radius: 150px 0 0 150px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-core-features-2-media .thumb {
+    height: 240px;
+    border-radius: 120px 0 0 120px;
+  }
+}
+.ot-core-features-2-media .playbtn {
+  flex: 0 0 auto;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ot-clr-h-1);
+  transition: var(--ot-cube-1);
+}
+.ot-core-features-2-media .playbtn svg {
+  margin-left: 4px;
+}
+.ot-core-features-2-media .playbtn:hover {
+  background-color: var(--ot-clr-pr-1);
+}
+@media (max-width: 767px) {
+  .ot-core-features-2-media .playbtn {
+    width: 76px;
+    height: 76px;
+  }
+  .ot-core-features-2-media .playbtn svg {
+    width: 18px;
+    height: 21px;
+  }
+}
+.ot-core-features-2-media .circle-shape {
+  flex: 0 0 180px;
+  height: 348px;
+  border: 1px solid rgba(13, 38, 101, 0.12);
+  border-radius: 0 174px 174px 0;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-core-features-2-media .circle-shape {
+    flex-basis: 155px;
+    height: 300px;
+    border-radius: 0 150px 150px 0;
+  }
+}
+@media (max-width: 767px) {
+  .ot-core-features-2-media .circle-shape {
+    display: none;
+  }
+}
+.ot-core-features-2-card {
+  display: flex;
+  gap: 24px;
+  min-height: 348px;
+  padding: 40px 40px 33px 38px;
+  border-radius: 16px;
+  background-color: #DCE7FB;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-core-features-2-card {
+    padding: 32px 28px;
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-core-features-2-card {
+    flex-wrap: wrap;
+  }
+}
+.ot-core-features-2-card .icon {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(7px);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ot-core-features-2-card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-top: 8px;
+}
+.ot-core-features-2-card .title {
+  font-family: var(--ot-font-2);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.166;
+  color: var(--ot-clr-h-1);
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-core-features-2-card .title {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+}
+.ot-core-features-2-card .disc {
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-core-features-2-card .disc {
+    font-size: 16px;
+  }
+}
+.ot-core-features-2-card {
+  /* icon-only pill that unfolds into the green read more on hover */
+}
+.ot-core-features-2-card .read-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 48px;
+  margin-top: 12px;
+  padding: 12px 22px;
+  border-radius: 60px;
+  border: 1px solid rgba(3, 15, 43, 0.12);
+  background-color: transparent;
+  font-family: var(--ot-font-2);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ot-clr-h-1);
+  transition: background-color var(--ot-cube-1), border-color var(--ot-cube-1), color var(--ot-cube-1);
+}
+.ot-core-features-2-card .read-btn svg {
+  flex: 0 0 auto;
+}
+.ot-core-features-2-card .read-btn .text {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+.ot-core-features-2-card .read-btn:hover {
+  background-color: #52B92F;
+  border-color: transparent;
+  color: #fff;
+}
+.ot-core-features-2-card .read-btn:hover .text {
+  max-width: 140px;
+  opacity: 1;
+}
+.ot-core-features-2-card {
+  /* the green one carries the full read more pill */
+}
+.ot-core-features-2-card:is(.has-v2) {
+  background-color: #D8F9CD;
+}
+.ot-core-features-2-card:is(.has-v2) .read-btn {
+  margin-top: 20px;
+  border-color: transparent;
+  background-color: #3DB54A;
+  color: #fff;
+}
+.ot-core-features-2-card:is(.has-v2) .read-btn .text {
+  max-width: none;
+  opacity: 1;
+}
+.ot-core-features-2-card:is(.has-v2) .read-btn:hover {
+  background-color: #2F9C3B;
+}
+
+/* 
+    core-features-2-end
 */
 /* 
     about-1-start
@@ -4705,6 +5064,333 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     about-1-end
 */
+/*
+    about-2-start
+*/
+.ot-about-2-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #F1F5FE;
+}
+.ot-about-2-area .bg-shape {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 534px;
+  z-index: -1;
+  pointer-events: none;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-area .bg-shape {
+    width: 360px;
+  }
+}
+.ot-about-2-wrap {
+  position: relative;
+  min-height: 730px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-wrap {
+    min-height: 0;
+  }
+}
+.ot-about-2-content {
+  position: relative;
+  z-index: 2;
+  max-width: 864px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-content {
+    max-width: 100%;
+  }
+}
+.ot-about-2-title {
+  max-width: 755px;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-title {
+    margin-bottom: 32px;
+  }
+}
+.ot-about-2 {
+  /* the photo card and the tick list share one row */
+}
+.ot-about-2-exp-wrap {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-about-2-exp-wrap {
+    gap: 24px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-exp-wrap {
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+}
+.ot-about-2 {
+  /* photo with the frosted experience plate dropped in the corner */
+}
+.ot-about-2-exp-card {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 408px;
+  height: 238px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-about-2-exp-card {
+    flex-basis: 340px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-about-2-exp-card {
+    flex: 0 0 100%;
+    height: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-about-2-exp-card {
+    flex: 0 0 100%;
+    height: 240px;
+  }
+}
+.ot-about-2-exp-card .thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+.ot-about-2-exp-card .exp-content {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.ot-about-2-exp-card .icon {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: var(--ot-clr-pr-1);
+  color: #fff;
+  font-size: 36px;
+  line-height: 1;
+}
+.ot-about-2-exp-card .text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 64px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(22px);
+}
+.ot-about-2-exp-card .count {
+  font-family: var(--ot-font-2);
+  font-size: 40px;
+  line-height: 44px;
+  color: #fff;
+  margin-bottom: 0;
+}
+.ot-about-2-exp-card .count .plus {
+  color: var(--ot-clr-sd-1);
+}
+.ot-about-2-exp-card .label {
+  font-family: var(--ot-font-1);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 0;
+}
+.ot-about-2-feature-list {
+  flex: 1 1 auto;
+}
+.ot-about-2-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--ot-clr-h-1);
+}
+.ot-about-2-feature-list li:not(:last-child) {
+  margin-bottom: 12px;
+}
+.ot-about-2-feature-list li .flaticon {
+  flex: 0 0 20px;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--ot-clr-pr-1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-about-2-feature-list li {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-about-2-feature-list li {
+    font-size: 16px;
+  }
+  .ot-about-2-feature-list li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+.ot-about-2 {
+  /* copy and button on the left, the little keyword cloud on the right */
+}
+.ot-about-2-bottom-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-bottom-wrap {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+.ot-about-2-bottom-wrap .disc-elm {
+  flex: 0 0 554px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-about-2-bottom-wrap .disc-elm {
+    flex-basis: 460px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-bottom-wrap .disc-elm {
+    flex: 0 0 100%;
+  }
+}
+.ot-about-2-bottom-wrap .disc {
+  margin-bottom: 32px;
+}
+@media (max-width: 767px) {
+  .ot-about-2-bottom-wrap .disc {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+.ot-about-2-tag-list {
+  flex: 0 0 auto;
+  margin-bottom: -21px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-tag-list {
+    margin-bottom: 0;
+  }
+}
+.ot-about-2-tag-list .tag-row {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+.ot-about-2-tag-list .tag-row:not(:last-child) {
+  margin-bottom: 1px;
+}
+.ot-about-2-tag-list .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 20px;
+  border-radius: 70px;
+  background-color: rgba(1, 24, 80, 0.12);
+  font-family: var(--ot-font-1);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #011850;
+}
+.ot-about-2-tag-list .tag:is(.has-v1) {
+  background-color: #9BEED5;
+}
+.ot-about-2-tag-list .tag:is(.has-v2) {
+  background-color: #CBD4FF;
+}
+.ot-about-2 {
+  /* hand drawn arrow pointing from the copy up to the photo */
+}
+.ot-about-2-arrow-shape {
+  position: absolute;
+  left: 52%;
+  top: 68%;
+  width: 87px;
+  opacity: 12%;
+  pointer-events: none;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-arrow-shape {
+    display: none;
+  }
+}
+.ot-about-2-media {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 638px;
+  z-index: 1;
+}
+.ot-about-2-media img {
+  width: 100%;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-about-2-media {
+    width: 560px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-about-2-media {
+    width: 470px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-media {
+    position: relative;
+    width: 100%;
+    max-width: 638px;
+    margin: 48px auto 0;
+  }
+}
+.ot-about-2-media .dot-shape {
+  position: absolute;
+  right: -260px;
+  top: -76px;
+  width: 730px;
+  z-index: -1;
+  pointer-events: none;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-about-2-media .dot-shape {
+    right: -180px;
+    width: 640px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-about-2-media .dot-shape {
+    right: -80px;
+    top: -40px;
+    width: 520px;
+  }
+}
+
+/*
+    about-2-end
+*/
 /* 
     services-1-start
 */
@@ -4891,6 +5577,756 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /* 
     services-1-end
+*/
+/*
+    services-2-start
+*/
+.ot-services-2-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #030F2B;
+  border-radius: 40px;
+}
+.ot-services-2-area .bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  mix-blend-mode: overlay;
+}
+.ot-services-2-area .bg-shape-1,
+.ot-services-2-area .bg-shape-2 {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-services-2-area .bg-shape-1,
+  .ot-services-2-area .bg-shape-2 {
+    display: none;
+  }
+}
+.ot-services-2-area .bg-shape-1 {
+  left: 0;
+  top: 0;
+  width: 534px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-services-2-area .bg-shape-1 {
+    width: 400px;
+  }
+}
+.ot-services-2-area .bg-shape-2 {
+  right: 0;
+  bottom: 0;
+  width: 567px;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-services-2-area .bg-shape-2 {
+    width: 420px;
+  }
+}
+.ot-services-2-title-wrap {
+  text-align: center;
+  margin-bottom: 60px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-services-2-title-wrap {
+    margin-bottom: 40px;
+  }
+}
+.ot-services-2-title {
+  max-width: 812px;
+  margin: 0 auto;
+  color: #fff;
+}
+.ot-services-2-list {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+.ot-services-2 {
+  /* every row lights up on hover: blue icon plate, copy at full strength, floating photo */
+}
+.ot-services-2-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  min-height: 120px;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  /* the small blue tick pinned to the top-left corner — it grows into the icon plate */
+}
+.ot-services-2-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background-color: var(--ot-clr-pr-1);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1), height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-services-2-item {
+  /* rides on top of the plate, collapsed to nothing until the row is hovered */
+}
+.ot-services-2-item .icon {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  width: 0;
+  height: 119px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 60px;
+  line-height: 1;
+  opacity: 0;
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease 0.15s;
+}
+.ot-services-2-item .title {
+  flex: 0 0 471px;
+  padding-left: 34px;
+  font-family: var(--ot-font-2);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #fff;
+  opacity: 60%;
+  margin-bottom: 0;
+  transition: flex-basis 0.45s cubic-bezier(0.16, 1, 0.3, 1), padding-left 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity var(--ot-cube-1);
+}
+.ot-services-2-item .disc {
+  flex: 0 1 531px;
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #fff;
+  opacity: 40%;
+  margin-bottom: 0;
+  transition: opacity var(--ot-cube-1);
+}
+.ot-services-2-item .read-btn {
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 80px;
+  height: 48px;
+  padding: 12px 22px;
+  border-radius: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--ot-font-2);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  transition: background-color var(--ot-cube-1), border-color var(--ot-cube-1);
+}
+.ot-services-2-item .read-btn .text {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+.ot-services-2-item {
+  /* the masked photo floats out of the row, top and bottom, tipped off the vertical */
+}
+.ot-services-2-item .hover-img {
+  position: absolute;
+  right: 180px;
+  top: -137px;
+  width: 352px;
+  height: 448px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.24);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: rotate(12.46deg) scale(0.96) translateY(24px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+  pointer-events: none;
+}
+.ot-services-2-item .hover-img .img-inner {
+  width: 100%;
+  height: 100%;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.ot-services-2-item:hover {
+  z-index: 2;
+}
+.ot-services-2-item:hover::before {
+  width: 119px;
+  height: 119px;
+}
+.ot-services-2-item:hover .icon {
+  width: 119px;
+  opacity: 1;
+}
+.ot-services-2-item:hover .title {
+  flex-basis: 493px;
+  padding-left: 24px;
+  opacity: 100%;
+}
+.ot-services-2-item:hover .disc {
+  opacity: 100%;
+}
+.ot-services-2-item:hover .read-btn {
+  background-color: var(--ot-clr-pr-1);
+  border-color: transparent;
+}
+.ot-services-2-item:hover .read-btn .text {
+  max-width: 140px;
+  opacity: 1;
+}
+.ot-services-2-item:hover .hover-img {
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(12.46deg);
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-services-2-item .icon {
+    height: 100px;
+    font-size: 50px;
+  }
+  .ot-services-2-item .title {
+    flex-basis: 420px;
+    font-size: 28px;
+  }
+  .ot-services-2-item .disc {
+    flex-basis: 470px;
+    font-size: 16px;
+  }
+  .ot-services-2-item:hover::before {
+    width: 100px;
+    height: 100px;
+  }
+  .ot-services-2-item:hover .icon {
+    width: 100px;
+  }
+  .ot-services-2-item:hover .title {
+    flex-basis: 440px;
+  }
+  .ot-services-2-item .hover-img {
+    right: 70px;
+    top: -121px;
+    width: 326px;
+    height: 415px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-services-2-item {
+    min-height: 104px;
+  }
+  .ot-services-2-item .icon {
+    height: 90px;
+    font-size: 44px;
+  }
+  .ot-services-2-item .title {
+    flex-basis: 350px;
+    padding-left: 24px;
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .ot-services-2-item .disc {
+    flex-basis: 400px;
+    font-size: 16px;
+  }
+  .ot-services-2-item:hover::before {
+    width: 90px;
+    height: 90px;
+  }
+  .ot-services-2-item:hover .icon {
+    width: 90px;
+  }
+  .ot-services-2-item:hover .title {
+    flex-basis: 366px;
+    padding-left: 20px;
+  }
+  .ot-services-2-item .hover-img {
+    right: 50px;
+    top: -100px;
+    width: 280px;
+    height: 357px;
+  }
+}
+.ot-services-2-item {
+  /* no room for the copy column or the photo from here down */
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-services-2-item {
+    min-height: 96px;
+  }
+  .ot-services-2-item .icon {
+    height: 82px;
+    font-size: 38px;
+  }
+  .ot-services-2-item .title {
+    flex: 1 1 auto;
+    padding-left: 24px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .ot-services-2-item .disc,
+  .ot-services-2-item .hover-img {
+    display: none;
+  }
+  .ot-services-2-item:hover::before {
+    width: 82px;
+    height: 82px;
+  }
+  .ot-services-2-item:hover .icon {
+    width: 82px;
+  }
+  .ot-services-2-item:hover .title {
+    flex: 1 1 auto;
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-services-2-item {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 0;
+    padding: 28px 0;
+  }
+  .ot-services-2-item .icon,
+  .ot-services-2-item .hover-img {
+    display: none;
+  }
+  .ot-services-2-item {
+    /* the tick stays a tick — there is no plate to grow into */
+  }
+  .ot-services-2-item:hover::before {
+    width: 14px;
+    height: 14px;
+  }
+  .ot-services-2-item .title, .ot-services-2-item:hover .title {
+    flex: 0 0 100%;
+    padding-left: 0;
+    font-size: 24px;
+    line-height: 32px;
+    opacity: 100%;
+  }
+  .ot-services-2-item .disc {
+    flex: 0 0 100%;
+    font-size: 16px;
+    opacity: 60%;
+  }
+  .ot-services-2-item .read-btn {
+    margin-left: 0;
+  }
+}
+.ot-services-2-btn-wrap {
+  text-align: center;
+  margin-top: 52px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-services-2-btn-wrap {
+    margin-top: 40px;
+  }
+}
+
+/*
+    services-2-end
+*/
+/*
+    mission-2-start
+*/
+.ot-mission-2-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 453px;
+  background-color: #F1F5FE;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-mission-2-area {
+    padding-top: 400px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-mission-2-area {
+    padding-top: 350px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-mission-2-area {
+    padding-top: 300px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-mission-2-area {
+    padding-top: 260px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-mission-2-area {
+    padding-top: 190px;
+  }
+}
+.ot-mission-2 {
+  /* full bleed footage, rounded off at the bottom, with the teal flare sitting in the corner */
+}
+.ot-mission-2-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 692px;
+  overflow: hidden;
+  border-radius: 40px;
+}
+.ot-mission-2-video .video-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ot-mission-2-video .glow {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 401px;
+  pointer-events: none;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-mission-2-video {
+    height: 620px;
+  }
+  .ot-mission-2-video .glow {
+    top: 390px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-mission-2-video {
+    height: 540px;
+  }
+  .ot-mission-2-video .glow {
+    top: 330px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-mission-2-video {
+    height: 460px;
+  }
+  .ot-mission-2-video .glow {
+    left: -120px;
+    top: 270px;
+    width: 320px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-mission-2-video {
+    height: 400px;
+  }
+  .ot-mission-2-video .glow {
+    left: -120px;
+    top: 230px;
+    width: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-mission-2-video {
+    height: 300px;
+  }
+  .ot-mission-2-video .glow {
+    left: -90px;
+    top: 160px;
+    width: 240px;
+  }
+}
+.ot-mission-2-wrap {
+  display: flex;
+  gap: 16px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-mission-2-wrap {
+    flex-wrap: wrap;
+  }
+}
+.ot-mission-2 {
+  /* counters riding on the blue art board */
+}
+.ot-mission-2-stat {
+  flex: 0 0 524px;
+  padding: 16px;
+  border-radius: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-mission-2-stat {
+    flex-basis: 480px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-mission-2-stat {
+    flex-basis: 430px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-mission-2-stat {
+    flex: 0 0 100%;
+  }
+}
+@media (max-width: 767px) {
+  .ot-mission-2-stat {
+    padding: 12px;
+    border-radius: 16px;
+  }
+}
+.ot-mission-2-stat .client-card {
+  position: relative;
+  z-index: 1;
+  height: 174px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #011850;
+  /* the photo dissolves into the card before the copy starts */
+}
+.ot-mission-2-stat .client-card .thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 61%;
+  height: 100%;
+  mask-image: linear-gradient(90deg, #000 62%, transparent 100%);
+}
+.ot-mission-2-stat .client-card .content {
+  position: absolute;
+  left: 47%;
+  top: 26%;
+  width: 47%;
+}
+.ot-mission-2-stat .client-card .top {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+.ot-mission-2-stat .client-card .count {
+  font-size: 44px;
+  line-height: 52px;
+}
+@media (max-width: 767px) {
+  .ot-mission-2-stat .client-card {
+    height: 150px;
+  }
+}
+.ot-mission-2-stat .author-list {
+  display: flex;
+  align-items: center;
+}
+.ot-mission-2-stat .author-list-single {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #011850;
+}
+.ot-mission-2-stat .author-list-single:not(:first-child) {
+  margin-left: -9px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), (max-width: 767px) {
+  .ot-mission-2-stat .author-list-single {
+    width: 32px;
+    height: 32px;
+  }
+}
+.ot-mission-2-stat .counter-wrap {
+  display: flex;
+  gap: 8px;
+}
+.ot-mission-2-stat .counter-card {
+  flex: 1 1 0;
+  height: 174px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 12px;
+  background-size: 100% 100%;
+}
+.ot-mission-2-stat .counter-card .count {
+  margin-bottom: 5px;
+}
+@media (max-width: 767px) {
+  .ot-mission-2-stat .counter-card {
+    height: 140px;
+  }
+}
+.ot-mission-2-stat .count {
+  font-family: var(--ot-font-2);
+  font-size: 56px;
+  line-height: 64px;
+  color: #fff;
+  margin-bottom: 0;
+}
+.ot-mission-2-stat .count .plus {
+  color: var(--ot-clr-sd-1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), (max-width: 767px) {
+  .ot-mission-2-stat .count {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+.ot-mission-2-stat .label {
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #fff;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), (max-width: 767px) {
+  .ot-mission-2-stat .label {
+    font-size: 15px;
+  }
+}
+.ot-mission-2 {
+  /* the mint statement panel */
+}
+.ot-mission-2-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  flex: 1 1 auto;
+  padding: 48px;
+  border-radius: 24px;
+  background-color: #91EFD2;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-mission-2-card {
+    padding: 40px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-mission-2-card {
+    flex: 0 0 100%;
+  }
+}
+@media (max-width: 767px) {
+  .ot-mission-2-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+}
+.ot-mission-2-card .arrow-shape {
+  position: absolute;
+  right: 48px;
+  bottom: 57px;
+  width: 80px;
+  pointer-events: none;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-mission-2-card .arrow-shape {
+    right: 32px;
+    bottom: 40px;
+    width: 64px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-mission-2-card .arrow-shape {
+    display: none;
+  }
+}
+.ot-mission-2-card {
+  /* the rounded chips sit edge to edge — their curves do the spacing */
+}
+.ot-mission-2-card .tag-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 74px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-mission-2-card .tag-list {
+    margin-bottom: 48px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-mission-2-card .tag-list {
+    margin-bottom: 32px;
+  }
+}
+.ot-mission-2-card .tag-group {
+  display: flex;
+  align-items: center;
+}
+.ot-mission-2-card .tag-group:is(.has-v2) .icon,
+.ot-mission-2-card .tag-group:is(.has-v2) .tag {
+  border: 1px solid var(--ot-clr-h-1);
+  background-color: transparent;
+  color: var(--ot-clr-h-1);
+}
+.ot-mission-2-card .icon {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--ot-clr-h-1);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+}
+.ot-mission-2-card .tag {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 22px;
+  border-radius: 120px;
+  background-color: var(--ot-clr-h-1);
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .ot-mission-2-card .tag {
+    padding: 0 16px;
+    font-size: 16px;
+  }
+}
+.ot-mission-2-card .title {
+  margin-bottom: 24px;
+}
+.ot-mission-2-card .br-line {
+  width: 100%;
+  max-width: 597px;
+  height: 1px;
+  margin-bottom: 16px;
+  background-color: rgba(3, 15, 43, 0.16);
+}
+.ot-mission-2-card .disc {
+  max-width: 597px;
+  color: var(--ot-clr-h-1);
+}
+@media (max-width: 767px) {
+  .ot-mission-2-card .disc {
+    font-size: 16px;
+  }
+}
+
+/*
+    mission-2-end
 */
 /* 
     industry-1-start

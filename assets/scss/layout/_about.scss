@@ -319,3 +319,338 @@
 /* 
     about-1-end
 */
+
+/*
+    about-2-start
+*/
+.ot-about-2 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #F1F5FE;
+
+        .bg-shape {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 534px;
+            z-index: -1;
+            pointer-events: none;
+
+            @media #{$lg,$md,$xs} {
+                width: 360px;
+            }
+        }
+    }
+
+    &-wrap {
+        position: relative;
+        min-height: 730px;
+
+        @media #{$lg,$md,$xs} {
+            min-height: 0;
+        }
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+        max-width: 864px;
+
+        @media #{$lg,$md,$xs} {
+            max-width: 100%;
+        }
+    }
+
+    &-title {
+        max-width: 755px;
+        margin-bottom: 40px;
+
+        @media #{$md,$xs} {
+            margin-bottom: 32px;
+        }
+    }
+
+    /* the photo card and the tick list share one row */
+    &-exp-wrap {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 40px;
+
+        @media #{$xl} {
+            gap: 24px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+    }
+
+    /* photo with the frosted experience plate dropped in the corner */
+    &-exp-card {
+        position: relative;
+        z-index: 1;
+        flex: 0 0 408px;
+        height: 238px;
+
+        @media #{$xl} {
+            flex-basis: 340px;
+        }
+
+        @media #{$lg,$md} {
+            flex: 0 0 100%;
+            height: 300px;
+        }
+
+        @media #{$xs} {
+            flex: 0 0 100%;
+            height: 240px;
+        }
+
+        .thumb {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        .exp-content {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            flex: 0 0 64px;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background-color: var(--ot-clr-pr-1);
+            color: #fff;
+            font-size: 36px;
+            line-height: 1;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 64px;
+            padding: 10px 18px;
+            border-radius: 10px;
+            background-color: rgb(255 255 255 / 12%);
+            backdrop-filter: blur(22px);
+        }
+
+        .count {
+            font-family: var(--ot-font-2);
+            font-size: 40px;
+            line-height: 44px;
+            color: #fff;
+            margin-bottom: 0;
+
+            .plus {
+                color: var(--ot-clr-sd-1);
+            }
+        }
+
+        .label {
+            font-family: var(--ot-font-1);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #fff;
+            margin-bottom: 0;
+        }
+    }
+
+    &-feature-list {
+        flex: 1 1 auto;
+
+        li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            line-height: 28px;
+            color: var(--ot-clr-h-1);
+
+            &:not(:last-child) {
+                margin-bottom: 12px;
+            }
+
+            .flaticon {
+                flex: 0 0 20px;
+                font-size: 20px;
+                line-height: 28px;
+                color: var(--ot-clr-pr-1);
+            }
+        }
+
+        @media #{$xl} {
+            li {
+                font-size: 16px;
+            }
+        }
+
+        @media #{$xs} {
+            li {
+                font-size: 16px;
+
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    /* copy and button on the left, the little keyword cloud on the right */
+    &-bottom-wrap {
+        display: flex;
+        align-items: flex-end;
+        gap: 24px;
+
+        @media #{$lg,$md,$xs} {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 32px;
+        }
+
+        .disc-elm {
+            flex: 0 0 554px;
+
+            @media #{$xl} {
+                flex-basis: 460px;
+            }
+
+            @media #{$lg,$md,$xs} {
+                flex: 0 0 100%;
+            }
+        }
+
+        .disc {
+            margin-bottom: 32px;
+
+            @media #{$xs} {
+                font-size: 16px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    &-tag-list {
+        flex: 0 0 auto;
+        margin-bottom: -21px;
+
+        @media #{$lg,$md,$xs} {
+            margin-bottom: 0;
+        }
+
+        .tag-row {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+
+            &:not(:last-child) {
+                margin-bottom: 1px;
+            }
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            padding: 0 20px;
+            border-radius: 70px;
+            background-color: rgb(1 24 80 / 12%);
+            font-family: var(--ot-font-1);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+            color: #011850;
+
+            &:is(.has-v1) {
+                background-color: #9BEED5;
+            }
+
+            &:is(.has-v2) {
+                background-color: #CBD4FF;
+            }
+        }
+    }
+
+    /* hand drawn arrow pointing from the copy up to the photo */
+    &-arrow-shape {
+        position: absolute;
+        left: 52%;
+        top: 68%;
+        width: 87px;
+        opacity: 12%;
+        pointer-events: none;
+
+        @media #{$xl,$lg,$md,$xs} {
+            display: none;
+        }
+    }
+
+    &-media {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 638px;
+        z-index: 1;
+
+        img {
+            width: 100%;
+        }
+
+        @media #{$xxl} {
+            width: 560px;
+        }
+
+        @media #{$xl} {
+            width: 470px;
+        }
+
+        @media #{$lg,$md,$xs} {
+            position: relative;
+            width: 100%;
+            max-width: 638px;
+            margin: 48px auto 0;
+        }
+
+        .dot-shape {
+            position: absolute;
+            right: -260px;
+            top: -76px;
+            width: 730px;
+            z-index: -1;
+            pointer-events: none;
+
+            @media #{$xxl} {
+                right: -180px;
+                width: 640px;
+            }
+
+            @media #{$xl,$lg,$md,$xs} {
+                right: -80px;
+                top: -40px;
+                width: 520px;
+            }
+        }
+    }
+}
+
+/*
+    about-2-end
+*/

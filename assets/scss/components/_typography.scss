@@ -50,6 +50,14 @@
     &:is(.has-v2) {
         border-color: rgb(255 255 255 / 12%);
     }
+
+    /* solid mint chip, used on the deep navy bands */
+    &:is(.has-v3) {
+        padding: 3px 10px;
+        border-color: transparent;
+        background-color: var(--ot-clr-sd-1);
+        color: var(--ot-clr-h-1);
+    }
 }
 
 
