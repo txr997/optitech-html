@@ -6328,6 +6328,358 @@ input:focus::placeholder, textarea:focus::placeholder {
 /*
     mission-2-end
 */
+/*
+    team-2-start
+*/
+.ot-team-2-box {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.ot-team-2-box .bg-shape-1,
+.ot-team-2-box .bg-shape-2 {
+  position: absolute;
+  bottom: 0;
+  width: 329px;
+  z-index: -1;
+  pointer-events: none;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-team-2-box .bg-shape-1,
+  .ot-team-2-box .bg-shape-2 {
+    width: 240px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-team-2-box .bg-shape-1,
+  .ot-team-2-box .bg-shape-2 {
+    display: none;
+  }
+}
+.ot-team-2-box .bg-shape-1 {
+  left: 0;
+}
+.ot-team-2-box .bg-shape-2 {
+  right: 0;
+}
+.ot-team-2-title-wrap {
+  text-align: center;
+  margin-bottom: 52px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-team-2-title-wrap {
+    margin-bottom: 40px;
+  }
+}
+.ot-team-2-title {
+  max-width: 725px;
+  margin-left: auto;
+  margin-right: auto;
+  /* the tail of the headline picks up the brand blue */
+}
+.ot-team-2-title span {
+  color: var(--ot-clr-pr-1);
+}
+.ot-team-2-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-team-2-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-team-2-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .ot-team-2-list {
+    grid-template-columns: 1fr;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.ot-team-2-item {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 335/468;
+  background-color: var(--ot-clr-h-1);
+  /* the notched card silhouette, cut out of the whole card */
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.ot-team-2-item .thumb {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  /* resting scrim */
+}
+.ot-team-2-item .thumb::after, .ot-team-2-item .thumb::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  transition: opacity var(--ot-cube-1) linear;
+}
+.ot-team-2-item .thumb::after {
+  height: 53%;
+  background: linear-gradient(180deg, rgba(1, 24, 80, 0) 0%, rgba(1, 24, 80, 0.72) 65.37%, rgb(1, 24, 80) 100%);
+}
+.ot-team-2-item .thumb {
+  /* the blue wash that takes over on hover */
+}
+.ot-team-2-item .thumb::before {
+  height: 68.4%;
+  background: linear-gradient(180deg, rgba(0, 76, 244, 0) 0%, rgba(0, 76, 244, 0.72) 65.37%, rgb(0, 76, 244) 100%);
+  opacity: 0;
+  z-index: 1;
+}
+.ot-team-2-item .content {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-team-2-item .content {
+    left: 20px;
+    right: 20px;
+  }
+}
+.ot-team-2-item .name {
+  font-family: var(--ot-font-2);
+  font-size: 22px;
+  line-height: 1.09;
+  color: #fff;
+  margin-bottom: 0;
+}
+.ot-team-2-item .name a {
+  color: inherit;
+}
+.ot-team-2-item .name a:hover {
+  color: var(--ot-clr-sd-1);
+}
+.ot-team-2-item .designation {
+  font-family: var(--ot-font-1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #F4F6FF;
+}
+.ot-team-2-item {
+  /* social rail: a slanted white banner tucked against the right edge */
+}
+.ot-team-2-item .social {
+  position: absolute;
+  top: 2.35%;
+  right: -2px;
+  width: 47px;
+  height: 63.4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #F4F6FF;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity var(--ot-cube-1) linear, visibility var(--ot-cube-1) linear;
+  mask-size: 100% 100%;
+  /* closing hairline under the last icon */
+}
+.ot-team-2-item .social::after {
+  content: "";
+  width: 1px;
+  height: 16px;
+  background-color: rgba(1, 23, 79, 0.16);
+  flex: none;
+}
+.ot-team-2-item .social-link {
+  font-size: 18px;
+  line-height: 22px;
+  color: #011850;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--ot-cube-1) linear;
+}
+.ot-team-2-item .social-link:hover {
+  color: var(--ot-clr-pr-1);
+}
+.ot-team-2-item .social-link {
+  /* every icon carries the hairline that sits above it */
+}
+.ot-team-2-item .social-link::before {
+  content: "";
+  width: 1px;
+  height: 16px;
+  background-color: rgba(1, 23, 79, 0.16);
+  flex: none;
+}
+.ot-team-2-item .details-btn {
+  position: absolute;
+  left: 24px;
+  bottom: 9px;
+  width: 218px;
+  max-width: calc(100% - 48px);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: #F4F6FF;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity var(--ot-cube-1) linear, visibility var(--ot-cube-1) linear;
+  mask-size: 100% 100%;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-team-2-item .details-btn {
+    left: 20px;
+    max-width: calc(100% - 40px);
+  }
+}
+.ot-team-2-item .details-btn .text {
+  font-family: var(--ot-font-2);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375;
+  color: var(--ot-clr-pr-1);
+  padding-left: 15px;
+  transition: var(--ot-cube-1);
+}
+.ot-team-2-item .details-btn .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 51px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 9px;
+  color: #fff;
+  background-color: var(--ot-clr-pr-1);
+}
+.ot-team-2-item .details-btn:hover {
+  background-color: var(--ot-clr-sd-1);
+}
+.ot-team-2-item .details-btn:hover .text {
+  color: #000;
+}
+.ot-team-2-item:hover .thumb::before {
+  opacity: 1;
+}
+.ot-team-2-item:hover .thumb::after {
+  opacity: 0;
+}
+.ot-team-2-item:hover .social {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+.ot-team-2-item:hover .content {
+  transform: translateY(-41px);
+}
+.ot-team-2-item:hover .details-btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.ot-team-2-title-x-member {
+  overflow: hidden;
+}
+.ot-team-2-title-big-posi {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  width: 100%;
+}
+.ot-team-2-title-big-elm {
+  font-size: 168px;
+  text-align: center;
+  color: var(--ot-clr-pr-1);
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-team-2-title-big-elm {
+    font-size: 140px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-team-2-title-big-elm {
+    font-size: 120px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-team-2-title-big-elm {
+    font-size: 96px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-team-2-title-big-elm {
+    font-size: 72px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-team-2-title-big-elm {
+    font-size: 44px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ot-team-2-title-big-elm {
+    font-size: 56px;
+  }
+}
+
+.ot-team-2-area {
+  height: 200vh;
+  /* under 1400 the scroll-through is off, so the runway collapses and
+     the section lays out as an ordinary band */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-team-2-area {
+    height: auto;
+  }
+}
+.ot-team-2-pin {
+  position: sticky;
+  top: 0;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-team-2-pin {
+    position: static;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-team-2-box {
+    height: auto;
+    padding: 130px 0;
+  }
+}
+
+/*
+    team-2-end
+*/
 /* 
     industry-1-start
 */
@@ -7260,6 +7612,153 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /*
     choose-1-end
+*/
+/*
+    choose-2-start
+*/
+.ot-choose-2-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #D9D9D9;
+  border-radius: 20px;
+}
+.ot-choose-2-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-choose-2-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+.ot-choose-2 {
+  /* the blue slab — its top-left corner is sliced back to the page ground */
+}
+.ot-choose-2-box {
+  padding: 117px 35px 120px 100px;
+  background-color: var(--ot-clr-pr-1);
+  clip-path: polygon(62% 0, 100% 51%, 100% 100%, 36% 100%, 0 51%, 0 0);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-choose-2-box {
+    clip-path: unset;
+    padding: 120px 20px;
+  }
+}
+.ot-choose-2-content {
+  position: relative;
+  z-index: 2;
+  max-width: 825px;
+}
+.ot-choose-2-title {
+  max-width: 560px;
+  color: #fff;
+}
+.ot-choose-2-skill-list {
+  margin-top: 40px;
+}
+.ot-choose-2-skill {
+  margin-bottom: 33px;
+}
+.ot-choose-2-skill:nth-child(1) {
+  margin-left: 4%;
+  max-width: 75%;
+}
+@media (max-width: 767px) {
+  .ot-choose-2-skill:nth-child(1) {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+.ot-choose-2-skill:nth-child(2) {
+  margin-left: 9.8%;
+  max-width: 76%;
+}
+@media (max-width: 767px) {
+  .ot-choose-2-skill:nth-child(2) {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+.ot-choose-2-skill:nth-child(3) {
+  margin-left: 15.7%;
+  max-width: 78%;
+}
+@media (max-width: 767px) {
+  .ot-choose-2-skill:nth-child(3) {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+.ot-choose-2-skill:nth-child(4) {
+  margin-left: 21%;
+}
+@media (max-width: 767px) {
+  .ot-choose-2-skill:nth-child(4) {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+.ot-choose-2-skill:last-child {
+  margin-bottom: 0;
+}
+.ot-choose-2-skill .label {
+  display: block;
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.ot-choose-2-skill .bar {
+  position: relative;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.ot-choose-2-skill .bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #fff;
+  /* the tick that caps the filled run */
+}
+.ot-choose-2-skill .bar-fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 14px;
+  background-color: #fff;
+}
+.ot-choose-2-skill {
+  /* the reading rides at the end of the fill, not the end of the track */
+}
+.ot-choose-2-skill .percent {
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+}
+.ot-choose-2-thumb {
+  clip-path: polygon(62% 0, 100% 51%, 100% 100%, 36% 100%, 0 51%, 0 0);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-choose-2-thumb {
+    clip-path: unset;
+  }
+}
+
+/*
+    choose-2-end
 */
 /*
     project-1-start

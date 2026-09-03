@@ -579,4 +579,65 @@ if ($(".ot-industry-1-tabs").length) {
 	});
 }
 
+
+// team-2-x-member — the oversized headline lifts in as the section arrives,
+// then the card row slides across it while the sticky box holds
+if ($(".ot-team-2-area").length) {
+	// only where the four-up row has room — under 1400 the scss drops the
+	// 200vh runway and the sticky pin with it
+	gsap.matchMedia().add("(min-width: 1400px)", function () {
+
+		// measured off the headline itself — the section top clears 80% of the
+		// viewport while the centred headline is still a screen away
+		gsap.from(".ot-team-2-title-big-elm", {
+			scrollTrigger: {
+				trigger: ".ot-team-2-title-big-elm",
+				start: "top 85%",
+				once: true,
+			},
+			y: 80,
+			opacity: 0,
+			duration: 1.2,
+			ease: "power3.out",
+		});
+
+		// the row travels its own width, scrubbed across the whole 200vh runway
+		gsap.fromTo(".ot-team-2-list", {
+			xPercent: 100,
+		}, {
+			xPercent: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".ot-team-2-area",
+				start: "top top",
+				end: "bottom bottom",
+				scrub: 1,
+				invalidateOnRefresh: true,
+			},
+		});
+
+		return function () {
+			gsap.set(".ot-team-2-list, .ot-team-2-title-big-elm", { clearProps: "all" });
+		};
+	});
+}
+
+// choose-2-skills — each bar runs out to the width the markup carries, the
+// reading and its end tick travelling with the fill
+if ($(".ot-choose-2-skill-list").length) {
+	gsap.utils.toArray(".ot-choose-2-skill-list").forEach(function (ot_choose2_list) {
+		gsap.from(ot_choose2_list.querySelectorAll(".bar-fill"), {
+			scrollTrigger: {
+				trigger: ot_choose2_list,
+				start: "top 85%",
+				once: true,
+			},
+			width: 0,
+			duration: 1.4,
+			stagger: .15,
+			ease: "power3.out",
+		});
+	});
+}
+
 })(jQuery);

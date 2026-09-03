@@ -268,3 +268,162 @@
 /*
     choose-1-end
 */
+
+
+/*
+    choose-2-start
+*/
+.ot-choose-2 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #D9D9D9;
+        border-radius: 20px;
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @media #{$md,$xs} {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* the blue slab — its top-left corner is sliced back to the page ground */
+    &-box {
+        padding: 117px 35px 120px 100px;
+        background-color: var(--ot-clr-pr-1);
+        clip-path: polygon(62% 0, 100% 51%, 100% 100%, 36% 100%, 0 51%, 0 0);
+
+        @media #{$xl,$lg,$md,$xs} {
+            clip-path: unset;
+            padding: 120px 20px;
+        }
+    }
+
+    &-content {
+        position: relative;
+        z-index: 2;
+        max-width: 825px;
+    }
+
+    &-title {
+        max-width: 560px;
+        color: #fff;
+    }
+
+    &-skill-list {
+        margin-top: 40px;
+    }
+
+    &-skill {
+        margin-bottom: 33px;
+
+        &:nth-child(1) {
+            margin-left: 4%;
+            max-width: 75%;
+
+            @media #{$xs} {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-left: 9.8%;
+            max-width: 76%;
+
+            @media #{$xs} {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+
+        &:nth-child(3) {
+            margin-left: 15.7%;
+            max-width: 78%;
+
+            @media #{$xs} {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+
+        &:nth-child(4) {
+            margin-left: 21%;
+
+            @media #{$xs} {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            display: block;
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .bar {
+            position: relative;
+            height: 2px;
+            background-color: rgb(255 255 255 / 20%);
+        }
+
+        .bar-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: #fff;
+
+            /* the tick that caps the filled run */
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 2px;
+                height: 14px;
+                background-color: #fff;
+            }
+        }
+
+        /* the reading rides at the end of the fill, not the end of the track */
+        .percent {
+            position: absolute;
+            right: 0;
+            bottom: 16px;
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            color: #fff;
+        }
+    }
+
+    &-thumb {
+        clip-path: polygon(62% 0, 100% 51%, 100% 100%, 36% 100%, 0 51%, 0 0);
+
+        @media #{$xl,$lg,$md,$xs} {
+            clip-path: unset;
+        }
+    }
+}
+
+
+
+/*
+    choose-2-end
+*/
