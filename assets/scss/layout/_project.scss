@@ -487,3 +487,417 @@
 /*
     project-1-end
 */
+
+
+/*
+    project-2-start
+*/
+.ot-project-2 {
+
+    &-title-wrap {
+        text-align: center;
+    }
+
+    /* the headline sits tight on the oversized word underneath it */
+    &-title {
+        font-size: 60px;
+        line-height: .8;
+
+        @media #{$xl} {
+            font-size: 52px;
+        }
+
+        @media #{$lg} {
+            font-size: 46px;
+        }
+
+        @media #{$md} {
+            font-size: 40px;
+        }
+
+        @media #{$xs} {
+            font-size: 30px;
+        }
+
+        @media #{$sm} {
+            font-size: 34px;
+        }
+    }
+
+    /* the ghost word the card slides over */
+    &-title-big {
+        display: block;
+        font-family: var(--ot-font-2);
+        font-size: 186px;
+        line-height: 1;
+        color: #D6DAE5;
+        font-weight: 500;
+        letter-spacing: -3%;
+
+        @media #{$xl} {
+            font-size: 150px;
+        }
+
+        @media #{$lg} {
+            font-size: 128px;
+        }
+
+        @media #{$md} {
+            font-size: 96px;
+        }
+
+        @media #{$xs} {
+            font-size: 52px;
+        }
+
+        @media #{$sm} {
+            font-size: 68px;
+        }
+    }
+
+
+
+    &-item {
+        position: relative;
+        z-index: 1;
+        height: 600px;
+        overflow: hidden;
+        border-radius: 20px;
+        background-color: var(--ot-clr-h-1);
+
+        @media #{$md} {
+            height: 560px;
+        }
+
+        @media #{$xs} {
+            height: auto;
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .content-card {
+            position: absolute;
+            left: 26px;
+            top: 28px;
+            width: 529px;
+
+            @media #{$lg} {
+                left: 20px;
+                top: 20px;
+                width: 470px;
+            }
+
+            @media #{$md} {
+                left: 20px;
+                top: 20px;
+                width: 440px;
+            }
+
+            @media #{$xs} {
+                position: static;
+                width: 100%;
+            }
+        }
+
+        /* the strip is notched out of the card's top-right corner, so the
+           filler carries the white up to where the tags take over */
+        .tag-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            height: 40px;
+
+            @media #{$xs} {
+                height: auto;
+                gap: 0;
+                padding: 12px 12px 0;
+                border-radius: 10px 10px 0 0;
+                background-color: #F4F6FF;
+            }
+        }
+
+        .tag-fill {
+            flex: 1;
+            min-width: 20px;
+            height: 100%;
+            border-radius: 10px 10px 0 0;
+            background-color: #F4F6FF;
+            position: relative;
+            z-index: 1;
+
+            @media #{$xs} {
+                display: none;
+            }
+
+            svg {
+                position: absolute;
+                bottom: 0;
+                left: 100%;
+                z-index: 1;
+                fill: #F4F6FF;
+
+                path {
+                    fill: #F4F6FF;
+                }
+            }
+        }
+
+        .tag-elm {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px;
+        }
+
+        .single-tag {
+            display: inline-flex;
+            align-items: center;
+            height: 32px;
+            padding: 0 16px;
+            border-radius: 6px;
+            background-color: var(--ot-clr-pr-1);
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1;
+            color: #fff;
+
+            @media #{$md,$xs} {
+                height: 28px;
+                padding: 0 12px;
+                font-size: 14px;
+            }
+        }
+
+        .content-body {
+            padding: 19px 8px 8px;
+            border-radius: 0 10px 10px 10px;
+            background-color: #F4F6FF;
+
+            @media #{$lg,$md} {
+                padding: 16px 8px 8px;
+            }
+
+            @media #{$xs} {
+                padding: 4px 8px 8px;
+                border-radius: 0 0 10px 10px;
+            }
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            margin-left: 32px;
+            border: 2px solid #fff;
+            border-radius: 16px;
+            background: linear-gradient(270deg, #135CFD 0%, #000A5E 100%);
+
+            i {
+                font-size: 52px;
+                color: #fff;
+            }
+
+            @media #{$lg,$md} {
+                width: 88px;
+                height: 88px;
+                margin-left: 24px;
+
+                i {
+                    font-size: 44px;
+                }
+            }
+
+            @media #{$xs} {
+                width: 72px;
+                height: 72px;
+                margin-left: 16px;
+                border-radius: 12px;
+
+                i {
+                    font-size: 36px;
+                }
+            }
+        }
+
+        .content-elm {
+            margin: 69px 32px 40px;
+
+            @media #{$lg,$md} {
+                margin: 40px 24px 32px;
+            }
+
+            @media #{$xs} {
+                margin: 28px 16px 24px;
+            }
+        }
+
+        .title {
+            max-width: 419px;
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1.176;
+            color: var(--ot-clr-h-1);
+            margin-bottom: 20px;
+
+            a {
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    color: var(--ot-clr-pr-1);
+                }
+            }
+
+            @media #{$lg,$md} {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+
+            @media #{$xs} {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+        }
+
+        .disc {
+            font-size: 18px;
+            line-height: 1.555;
+            color: var(--ot-clr-p-1);
+            margin-bottom: 0;
+
+            @media #{$lg,$md,$xs} {
+                font-size: 16px;
+            }
+        }
+
+        /* the brand blue wipes across the bar on hover */
+        .item-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 56px;
+            border-radius: 6px;
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1;
+            color: #fff;
+            background-color: #011850;
+            background-image: linear-gradient(var(--ot-clr-pr-1), var(--ot-clr-pr-1));
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 0% 100%;
+            transition: background-size .5s cubic-bezier(0.16, 1, 0.3, 1);
+
+            &:hover {
+                background-size: 100% 100%;
+            }
+
+            @media #{$md,$xs} {
+                height: 50px;
+            }
+        }
+    }
+
+
+    &-box {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 60px;
+
+        @media #{$xl,$lg,$md,$xs} {
+            height: auto;
+            padding-bottom: 130px;
+        }
+
+        .bg-shape-1,
+        .bg-shape-2 {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+
+            @media #{$lg} {
+                height: 70%;
+            }
+
+            @media #{$xl,$lg,$lg,md,$xs} {
+                display: none;
+            }
+        }
+
+        .bg-shape-1 {
+            left: 0;
+        }
+
+        .bg-shape-2 {
+            right: 0;
+        }
+    }
+    &-all-item {
+        margin-top: -50px;
+        position: relative;
+        z-index: 1;
+        min-height: 600px;
+
+        @media #{$xl,$lg,$md,$xs} {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 0;
+            min-height: 0;
+        }
+    }
+
+    &-item-posi {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        @media #{$xl,$lg,$md,$xs} {
+            position: static;
+        }
+    }
+
+    &-pin {
+        position: sticky;
+        top: 0;
+
+        @media #{$xl,$lg,$md,$xs} {
+            position: static;
+        }
+    }
+
+
+    /* one screen of scroll per card — the count is written on by the js */
+    &-area {
+        position: relative;
+        z-index: 1;
+        height: calc(var(--ot-project-2-count, 4) * 100vh);
+
+        @media #{$over,$xxxl,$xxl} {
+            padding-bottom: 120px;
+        }
+        /* under 1400 the scroll-through is off, so the runway collapses and
+           the cards lay out as an ordinary list */
+        @media #{$xl,$lg,$md,$xs} {
+            height: auto;
+        }
+    }
+
+}
+
+/*
+    project-2-end
+*/

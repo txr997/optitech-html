@@ -311,3 +311,497 @@
 /*
     footer-1-end
 */
+
+
+/*
+    footer-2-start
+*/
+.ot-footer-2 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-color: var(--ot-clr-h-1);
+
+        /* the wash behind the headline — black reads as nothing over the navy */
+        .bg-color {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 123%;
+            min-width: 1920px;
+            height: 620px;
+            overflow: hidden;
+            transform: translateX(-50%);
+            mix-blend-mode: screen;
+            z-index: -1;
+            pointer-events: none;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+            }
+
+            @media #{$md,$xs} {
+                height: 340px;
+            }
+        }
+    }
+
+    /* the headline runs on past both edges */
+    &-marquee {
+        /* also keeps the plugin's floated track from pushing the row below */
+        overflow: hidden;
+        padding: 100px 0 80px;
+
+        @media #{$xl,$lg} {
+            padding: 80px 0 60px;
+        }
+
+        @media #{$md,$xs} {
+            padding: 60px 0 40px;
+        }
+
+        .text {
+            display: inline-block;
+            padding-right: 80px;
+            font-family: var(--ot-font-2);
+            font-weight: 700;
+            font-size: 180px;
+            line-height: 1;
+            color: #F4F6FF;
+            text-transform: uppercase;
+            text-shadow: 13px 0 2px #073EB7;
+            margin-bottom: 0;
+
+            @media #{$xxl} {
+                font-size: 150px;
+            }
+
+            @media #{$xl} {
+                font-size: 130px;
+            }
+
+            @media #{$lg} {
+                font-size: 110px;
+            }
+
+            @media #{$md} {
+                font-size: 90px;
+                text-shadow: 8px 0 2px #073EB7;
+            }
+
+            @media #{$xs} {
+                font-size: 60px;
+                padding-right: 40px;
+                text-shadow: 6px 0 2px #073EB7;
+            }
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &-thumb {
+        width: 384px;
+        flex-shrink: 0;
+
+        @media #{$xxl} {
+            width: 340px;
+        }
+
+        @media #{$xl} {
+            width: 300px;
+        }
+
+        @media #{$lg} {
+            width: 240px;
+        }
+
+        @media #{$md,$xs} {
+            display: none;
+        }
+    }
+
+    &-right {
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+    &-widgets {
+        display: grid;
+        grid-template-columns: 360px 301px 1fr;
+        border-top: 1px solid rgb(255 255 255 / 24%);
+        padding-right: 260px;
+
+        /* the wide right gutter is a 1920 luxury — below that the newsletter
+           needs the room more than the margin does */
+        @media #{$xxl} {
+            grid-template-columns: 300px 240px 1fr;
+            padding-right: 40px;
+        }
+
+        /* under 1400 there is no width left for three columns */
+        @media #{$xl} {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 32px;
+            padding: 0 40px 0 24px;
+        }
+
+        @media #{$lg} {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 40px;
+            padding: 0 40px 0 24px;
+        }
+
+        @media #{$md} {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 40px;
+            padding: 0 40px;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+            padding: 0 20px;
+        }
+
+        /* the two columns on the right sit inside their own rules */
+        .social-widget,
+        .subscribe-widget {
+            padding: 41px 0 41px 41px;
+            border-left: 1px solid rgb(255 255 255 / 24%);
+
+            @media #{$xxl,$xl} {
+                padding-left: 32px;
+            }
+
+            @media #{$lg,$md,$xs} {
+                padding: 40px 0;
+                border-left: 0;
+            }
+        }
+
+        /* once the grid is two wide the newsletter takes a row of its own */
+        .subscribe-widget {
+            @media #{$xl,$lg,$md} {
+                grid-column: 1 / -1;
+                padding: 40px 0;
+                border-left: 0;
+                border-top: 1px solid rgb(255 255 255 / 24%);
+            }
+        }
+    }
+
+    /* page-links */
+    &-widgets .page-link {
+        .single-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 27px 28px;
+            border-bottom: 1px solid rgb(255 255 255 / 24%);
+            color: #fff;
+            transition: var(--ot-cube-1);
+
+            &:last-child {
+                border-bottom: 0;
+
+                @media #{$lg,$md,$xs} {
+                    border-bottom: 1px solid rgb(255 255 255 / 24%);
+                }
+            }
+
+            @media #{$xl,$lg,$md,$xs} {
+                padding: 20px 0;
+            }
+
+            .text {
+                /* ot-h-1 carries the dark heading colour, so the row keeps its own */
+                color: inherit;
+                font-size: 20px;
+                line-height: 1.4;
+                font-weight: 400;
+
+                @media #{$lg,$md,$xs} {
+                    font-size: 18px;
+                }
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                line-height: 1;
+                transition: var(--ot-cube-1);
+            }
+
+            &:hover {
+                color: var(--ot-clr-sd-1);
+
+                .icon {
+                    transform: translateX(6px);
+                }
+            }
+        }
+    }
+
+    /* social */
+    &-widgets .social-widget {
+        .widget-title {
+            font-family: var(--ot-font-2);
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25;
+            letter-spacing: 2px;
+            color: var(--ot-clr-sd-1);
+            margin-bottom: 28px;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+
+            a {
+                font-family: var(--ot-font-2);
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 1.4;
+                color: #fff;
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    color: var(--ot-clr-sd-1);
+                }
+
+                @media #{$lg,$md,$xs} {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    /* newsletter */
+    &-widgets .subscribe-widget {
+        max-width: 615px;
+
+        .icon {
+            width: 104px;
+            margin: 0 auto 32px;
+
+            @media #{$xs} {
+                width: 80px;
+                margin-bottom: 24px;
+            }
+        }
+
+        .title {
+            font-size: 28px;
+            line-height: 1.142;
+            color: #fff;
+            margin-bottom: 12px;
+
+            @media #{$xl,$lg,$md} {
+                font-size: 24px;
+            }
+
+            @media #{$xs} {
+                font-size: 22px;
+            }
+        }
+
+        .disc {
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            line-height: 1.555;
+            color: #fff;
+            opacity: 72%;
+            margin-bottom: 24px;
+
+            @media #{$xs} {
+                font-size: 16px;
+            }
+        }
+
+        .subscribe-form {
+            position: relative;
+            z-index: 1;
+            max-width: 574px;
+
+            input {
+                width: 100%;
+                height: 60px;
+                padding: 0 165px 0 20px;
+                border: 1px solid rgb(255 255 255 / 16%);
+                border-radius: 10px;
+                background-color: rgb(255 255 255 / 8%);
+                font-family: var(--ot-font-1);
+                font-size: 16px;
+                line-height: 1.5;
+                color: #fff;
+                outline: 0;
+
+                &::placeholder {
+                    color: #fff;
+                    opacity: 52%;
+                }
+
+                @media #{$xs} {
+                    padding-right: 140px;
+                }
+            }
+
+            .form-btn {
+                position: absolute;
+                right: 4px;
+                top: 4px;
+                bottom: 4px;
+                width: 137px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 0;
+                border-radius: 6px;
+                background: var(--ot-clr-gd-1);
+                font-size: 16px;
+                color: #fff;
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    background: var(--ot-clr-sd-1);
+                    color: var(--ot-clr-h-1);
+                }
+
+                @media #{$xs} {
+                    width: 120px;
+                }
+            }
+        }
+    }
+
+    /* the blue bar closes the footer off */
+    &-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        padding: 21px 260px 21px 25px;
+        background-color: var(--ot-clr-pr-1);
+
+        /* the three blocks stop fitting on one line under 1600, so the bar
+           is allowed to wrap the copyright onto its own row */
+        @media #{$xxl,$xl} {
+            flex-wrap: wrap;
+            gap: 24px;
+            padding: 24px 40px 24px 25px;
+        }
+
+        @media #{$lg} {
+            flex-wrap: wrap;
+            gap: 24px;
+            padding: 24px 40px;
+        }
+
+        @media #{$md} {
+            flex-wrap: wrap;
+            gap: 24px;
+            padding: 24px 40px;
+        }
+
+        @media #{$xs} {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px 20px;
+        }
+
+        .single-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            @media #{$xs} {
+                gap: 12px;
+            }
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            flex-shrink: 0;
+            border-radius: 6px;
+            background-color: #011850;
+            font-size: 32px;
+            line-height: 1;
+            color: #fff;
+
+            @media #{$xs} {
+                width: 52px;
+                height: 52px;
+                font-size: 26px;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 251px;
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            line-height: 1.555;
+            color: #fff;
+            margin-bottom: 0;
+
+            a {
+                color: #fff;
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    color: var(--ot-clr-sd-1);
+                }
+            }
+
+            @media #{$xl,$lg,$md,$xs} {
+                font-size: 16px;
+            }
+        }
+
+        .copyright {
+            max-width: 369px;
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            line-height: 1.555;
+            color: rgb(255 255 255 / 72%);
+            text-align: right;
+            margin-bottom: 0;
+
+            a {
+                color: #fff;
+            }
+
+            /* wrapped onto its own row it reads from the left like the rest */
+            @media #{$xxl,$xl,$lg,$md} {
+                font-size: 16px;
+                text-align: left;
+            }
+
+            @media #{$xs} {
+                font-size: 15px;
+                text-align: left;
+            }
+        }
+    }
+}
+
+/*
+    footer-2-end
+*/

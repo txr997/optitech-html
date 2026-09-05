@@ -81,7 +81,7 @@ CSS INDEX
 }
 
 body {
-  font-family: var(--sk-font-1);
+  font-family: var(--ot-font-1);
   font-size: 18px;
   font-weight: 400;
   -moz-osx-font-smoothing: grayscale;
@@ -1365,6 +1365,14 @@ input:focus::placeholder, textarea:focus::placeholder {
   border-radius: 50%;
   z-index: -1;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-pr-btn-2 {
+  /* the label can carry a trailing arrow */
+}
+.ot-pr-btn-2 .icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 /* 
@@ -8211,6 +8219,431 @@ input:focus::placeholder, textarea:focus::placeholder {
     project-1-end
 */
 /*
+    project-2-start
+*/
+.ot-project-2-title-wrap {
+  text-align: center;
+}
+.ot-project-2 {
+  /* the headline sits tight on the oversized word underneath it */
+}
+.ot-project-2-title {
+  font-size: 60px;
+  line-height: 0.8;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-project-2-title {
+    font-size: 52px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-project-2-title {
+    font-size: 46px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-title {
+    font-size: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-title {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ot-project-2-title {
+    font-size: 34px;
+  }
+}
+.ot-project-2 {
+  /* the ghost word the card slides over */
+}
+.ot-project-2-title-big {
+  display: block;
+  font-family: var(--ot-font-2);
+  font-size: 186px;
+  line-height: 1;
+  color: #D6DAE5;
+  font-weight: 500;
+  letter-spacing: -3%;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-project-2-title-big {
+    font-size: 150px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-project-2-title-big {
+    font-size: 128px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-title-big {
+    font-size: 96px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-title-big {
+    font-size: 52px;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ot-project-2-title-big {
+    font-size: 68px;
+  }
+}
+.ot-project-2-item {
+  position: relative;
+  z-index: 1;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: var(--ot-clr-h-1);
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-item {
+    height: 560px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-item {
+    height: auto;
+    padding: 12px;
+    border-radius: 12px;
+  }
+}
+.ot-project-2-item .bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.ot-project-2-item .content-card {
+  position: absolute;
+  left: 26px;
+  top: 28px;
+  width: 529px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-project-2-item .content-card {
+    left: 20px;
+    top: 20px;
+    width: 470px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-item .content-card {
+    left: 20px;
+    top: 20px;
+    width: 440px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-item .content-card {
+    position: static;
+    width: 100%;
+  }
+}
+.ot-project-2-item {
+  /* the strip is notched out of the card's top-right corner, so the
+     filler carries the white up to where the tags take over */
+}
+.ot-project-2-item .tag-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  height: 40px;
+}
+@media (max-width: 767px) {
+  .ot-project-2-item .tag-row {
+    height: auto;
+    gap: 0;
+    padding: 12px 12px 0;
+    border-radius: 10px 10px 0 0;
+    background-color: #F4F6FF;
+  }
+}
+.ot-project-2-item .tag-fill {
+  flex: 1;
+  min-width: 20px;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  background-color: #F4F6FF;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .ot-project-2-item .tag-fill {
+    display: none;
+  }
+}
+.ot-project-2-item .tag-fill svg {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  z-index: 1;
+  fill: #F4F6FF;
+}
+.ot-project-2-item .tag-fill svg path {
+  fill: #F4F6FF;
+}
+.ot-project-2-item .tag-elm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+.ot-project-2-item .single-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 6px;
+  background-color: var(--ot-clr-pr-1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #fff;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-item .single-tag {
+    height: 28px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+.ot-project-2-item .content-body {
+  padding: 19px 8px 8px;
+  border-radius: 0 10px 10px 10px;
+  background-color: #F4F6FF;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-item .content-body {
+    padding: 16px 8px 8px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-item .content-body {
+    padding: 4px 8px 8px;
+    border-radius: 0 0 10px 10px;
+  }
+}
+.ot-project-2-item .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin-left: 32px;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  background: linear-gradient(270deg, #135CFD 0%, #000A5E 100%);
+}
+.ot-project-2-item .icon i {
+  font-size: 52px;
+  color: #fff;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-item .icon {
+    width: 88px;
+    height: 88px;
+    margin-left: 24px;
+  }
+  .ot-project-2-item .icon i {
+    font-size: 44px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-item .icon {
+    width: 72px;
+    height: 72px;
+    margin-left: 16px;
+    border-radius: 12px;
+  }
+  .ot-project-2-item .icon i {
+    font-size: 36px;
+  }
+}
+.ot-project-2-item .content-elm {
+  margin: 69px 32px 40px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-item .content-elm {
+    margin: 40px 24px 32px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-item .content-elm {
+    margin: 28px 16px 24px;
+  }
+}
+.ot-project-2-item .title {
+  max-width: 419px;
+  font-family: var(--ot-font-2);
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.176;
+  color: var(--ot-clr-h-1);
+  margin-bottom: 20px;
+}
+.ot-project-2-item .title a {
+  transition: var(--ot-cube-1);
+}
+.ot-project-2-item .title a:hover {
+  color: var(--ot-clr-pr-1);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-project-2-item .title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-project-2-item .title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+}
+.ot-project-2-item .disc {
+  font-size: 18px;
+  line-height: 1.555;
+  color: var(--ot-clr-p-1);
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-item .disc {
+    font-size: 16px;
+  }
+}
+.ot-project-2-item {
+  /* the brand blue wipes across the bar on hover */
+}
+.ot-project-2-item .item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 6px;
+  font-family: var(--ot-font-2);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #fff;
+  background-color: #011850;
+  background-image: linear-gradient(var(--ot-clr-pr-1), var(--ot-clr-pr-1));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-project-2-item .item-btn:hover {
+  background-size: 100% 100%;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-item .item-btn {
+    height: 50px;
+  }
+}
+.ot-project-2-box {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-box {
+    height: auto;
+    padding-bottom: 130px;
+  }
+}
+.ot-project-2-box .bg-shape-1,
+.ot-project-2-box .bg-shape-2 {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-project-2-box .bg-shape-1,
+  .ot-project-2-box .bg-shape-2 {
+    height: 70%;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 992px) and (max-width: 1199px), md, (max-width: 767px) {
+  .ot-project-2-box .bg-shape-1,
+  .ot-project-2-box .bg-shape-2 {
+    display: none;
+  }
+}
+.ot-project-2-box .bg-shape-1 {
+  left: 0;
+}
+.ot-project-2-box .bg-shape-2 {
+  right: 0;
+}
+.ot-project-2-all-item {
+  margin-top: -50px;
+  position: relative;
+  z-index: 1;
+  min-height: 600px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-all-item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 0;
+    min-height: 0;
+  }
+}
+.ot-project-2-item-posi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-item-posi {
+    position: static;
+  }
+}
+.ot-project-2-pin {
+  position: sticky;
+  top: 0;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-pin {
+    position: static;
+  }
+}
+.ot-project-2 {
+  /* one screen of scroll per card — the count is written on by the js */
+}
+.ot-project-2-area {
+  position: relative;
+  z-index: 1;
+  height: calc(var(--ot-project-2-count, 4) * 100vh);
+}
+@media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-project-2-area {
+    padding-bottom: 120px;
+  }
+}
+.ot-project-2-area {
+  /* under 1400 the scroll-through is off, so the runway collapses and
+     the cards lay out as an ordinary list */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-project-2-area {
+    height: auto;
+  }
+}
+
+/*
+    project-2-end
+*/
+/*
     cta-1-start
 */
 .ot-cta-1-area {
@@ -8813,6 +9246,528 @@ input:focus::placeholder, textarea:focus::placeholder {
     contact-1-end
 */
 /*
+    contact-2-start
+*/
+.ot-contact-2-area {
+  position: relative;
+  z-index: 1;
+  padding-top: 158px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-contact-2-area {
+    padding-top: 130px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-contact-2-area {
+    padding-top: 120px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-contact-2-area {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-contact-2-area {
+    padding-top: 80px;
+  }
+}
+.ot-contact-2-area {
+  /* the photo stops short of the bottom, so the submit bar hangs
+     past it onto the page */
+}
+.ot-contact-2-area .bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 60px;
+  z-index: -1;
+  border-radius: 32px 32px 0 0;
+}
+@media (max-width: 767px) {
+  .ot-contact-2-area .bg-img {
+    bottom: 56px;
+  }
+}
+.ot-contact-2-box {
+  max-width: 670px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #F4F6FF;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-contact-2-box {
+    max-width: 100%;
+  }
+}
+.ot-contact-2-inner {
+  padding: 48px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-contact-2-inner {
+    padding: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-contact-2-inner {
+    padding: 24px;
+  }
+}
+.ot-contact-2-content {
+  /* column flow, so the chip does not sit on an inline baseline */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+@media (max-width: 767px) {
+  .ot-contact-2-content {
+    margin-bottom: 28px;
+  }
+}
+.ot-contact-2-content .title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-contact-2-content .title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-contact-2-content .title {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+}
+.ot-contact-2-content .disc {
+  color: var(--ot-clr-h-1);
+  opacity: 80%;
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .ot-contact-2-content .disc {
+    font-size: 16px;
+  }
+}
+.ot-contact-2-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+@media (max-width: 767px) {
+  .ot-contact-2-form {
+    grid-template-columns: 1fr;
+  }
+}
+.ot-contact-2-form .form-grp {
+  position: relative;
+}
+.ot-contact-2-form .form-grp input,
+.ot-contact-2-form .form-grp textarea,
+.ot-contact-2-form .form-grp select {
+  display: block;
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 1px solid rgba(3, 15, 43, 0.16);
+  border-radius: 6px;
+  background-color: #F4F6FF;
+  font-family: var(--ot-font-1);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ot-clr-h-1);
+  outline: 0;
+  transition: border-color var(--ot-cube-1);
+}
+.ot-contact-2-form .form-grp input::placeholder,
+.ot-contact-2-form .form-grp textarea::placeholder,
+.ot-contact-2-form .form-grp select::placeholder {
+  color: var(--ot-clr-h-1);
+  opacity: 64%;
+}
+.ot-contact-2-form .form-grp input:focus,
+.ot-contact-2-form .form-grp textarea:focus,
+.ot-contact-2-form .form-grp select:focus {
+  border-color: var(--ot-clr-pr-1);
+}
+.ot-contact-2-form .form-grp {
+  /* the picker keeps the native behaviour, only the arrow is ours */
+}
+.ot-contact-2-form .form-grp select {
+  appearance: none;
+  padding-right: 46px;
+  cursor: pointer;
+}
+.ot-contact-2-form .form-grp .icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--ot-clr-h-1);
+  pointer-events: none;
+}
+.ot-contact-2-form .form-grp:is(.has-textarea) {
+  grid-column: 1/-1;
+}
+.ot-contact-2-form .form-grp:is(.has-textarea) textarea {
+  height: 156px;
+  padding: 22px 20px;
+  resize: none;
+}
+@media (max-width: 767px) {
+  .ot-contact-2-form .form-grp:is(.has-textarea) textarea {
+    height: 140px;
+  }
+}
+.ot-contact-2 {
+  /* the bar sits flush in the card's bottom corners */
+}
+.ot-contact-2-box .form-btn {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 16px;
+  color: #fff;
+  /* the deep navy wipes across the brand blue from the left */
+  background-image: linear-gradient(#011850, #011850), linear-gradient(var(--ot-clr-pr-1), var(--ot-clr-pr-1));
+  background-repeat: no-repeat;
+  background-position: left center, center;
+  background-size: 0% 100%, 100% 100%;
+  transition: background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1), gap 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  /* the arrow unfolds out of the label */
+}
+.ot-contact-2-box .form-btn::after {
+  content: "\f103";
+  font-family: flaticon_optitech !important;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-contact-2-box .form-btn:hover {
+  gap: 10px;
+  background-size: 100% 100%, 100% 100%;
+}
+.ot-contact-2-box .form-btn:hover::after {
+  max-width: 20px;
+  opacity: 1;
+}
+@media (max-width: 767px) {
+  .ot-contact-2-box .form-btn {
+    height: 56px;
+    font-size: 15px;
+  }
+}
+
+/*
+    contact-2-end
+*/
+/*
+    faqs-2-start
+*/
+.ot-faqs-2-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.ot-faqs-2-area .bg-shape {
+  position: absolute;
+  right: 110px;
+  top: 45px;
+  width: 592px;
+  z-index: -1;
+  pointer-events: none;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-faqs-2-area .bg-shape {
+    right: 40px;
+    width: 460px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-faqs-2-area .bg-shape {
+    display: none;
+  }
+}
+.ot-faqs-2-wrap {
+  display: grid;
+  grid-template-columns: 699fr 604fr;
+  align-items: start;
+  gap: 97px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-faqs-2-wrap {
+    gap: 60px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-faqs-2-wrap {
+    gap: 40px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-faqs-2-wrap {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+.ot-faqs-2-title-wrap {
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .ot-faqs-2-title-wrap {
+    margin-bottom: 32px;
+  }
+}
+.ot-faqs-2-title {
+  max-width: 672px;
+}
+.ot-faqs-2 {
+  /* accordion */
+}
+.ot-faqs-2-accordion .accordion-item {
+  overflow: hidden;
+  border: 1px solid rgba(1, 24, 80, 0.12);
+  border-radius: 14px;
+  background-color: #fff;
+  margin-bottom: 6px;
+  transition: background-color var(--ot-cube-1);
+  border: 0;
+}
+.ot-faqs-2-accordion .accordion-item:last-child {
+  margin-bottom: 0;
+}
+.ot-faqs-2-accordion .accordion-item {
+  /* the open card turns into the navy panel its header floats on,
+     squared off at the top the way the design cuts it */
+}
+.ot-faqs-2-accordion .accordion-item:has(.accordion-button:not(.collapsed)) {
+  border-color: transparent;
+  border-radius: 0 0 14px 14px;
+  background-color: var(--ot-clr-h-1);
+}
+.ot-faqs-2-accordion .accordion-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 24px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ot-clr-h-1);
+  text-align: left;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-faqs-2-accordion .accordion-button {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-faqs-2-accordion .accordion-button {
+    gap: 16px;
+    padding: 16px;
+    font-size: 17px;
+  }
+}
+.ot-faqs-2-accordion .accordion-button {
+  /* bootstrap's own chevron has no place here */
+}
+.ot-faqs-2-accordion .accordion-button::after {
+  content: none;
+}
+.ot-faqs-2-accordion .accordion-button .icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--ot-clr-h-1);
+  font-size: 11px;
+  line-height: 1;
+  color: #fff;
+  transition: background-color var(--ot-cube-1);
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.32);
+}
+.ot-faqs-2-accordion .accordion-button:is(.collapsed) .flaticon-minus, .ot-faqs-2-accordion .accordion-button:not(.collapsed) .flaticon-add {
+  display: none;
+}
+.ot-faqs-2-accordion .accordion-button {
+  /* open: the lavender header sits on the navy card, its bottom
+     corners cut back so the panel shows through */
+}
+.ot-faqs-2-accordion .accordion-button:not(.collapsed) {
+  border-radius: 0 0 14px 14px;
+  background-color: #E8ECFF;
+  color: var(--ot-clr-pr-1);
+}
+.ot-faqs-2-accordion .accordion-button:not(.collapsed) .icon {
+  background-color: var(--ot-clr-pr-1);
+}
+.ot-faqs-2-accordion .accordion-body {
+  padding: 24px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-faqs-2-accordion .accordion-body {
+    padding: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-faqs-2-accordion .accordion-body {
+    padding: 16px;
+  }
+}
+.ot-faqs-2-accordion .accordion-body .disc {
+  color: #fff;
+  opacity: 80%;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-faqs-2-accordion .accordion-body .disc {
+    font-size: 16px;
+  }
+}
+.ot-faqs-2 {
+  /* media */
+}
+.ot-faqs-2-thumb {
+  position: relative;
+  z-index: 1;
+  /* the photos carry on past the container edge */
+  width: 111.6%;
+  aspect-ratio: 674/719;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-faqs-2-thumb {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-faqs-2-thumb {
+    width: 100%;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.ot-faqs-2-thumb .main-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 63.06%;
+}
+.ot-faqs-2-thumb .main-img img {
+  width: 100%;
+}
+.ot-faqs-2-thumb .img-2 {
+  position: absolute;
+  left: 49.26%;
+  top: 36.72%;
+  width: 51.93%;
+  aspect-ratio: 350/463;
+  /* the 8px frame the photo sits in, carried over the man's photo */
+  background-color: #F4F6FF;
+  /* the notch that lets the man's photo sit in front */
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  /* same silhouette again, 8px in, so the frame follows the notch */
+}
+.ot-faqs-2-thumb .img-2 .img-inner {
+  position: absolute;
+  inset: 8px;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.ot-faqs-2-thumb {
+  /* the thread running from the photo down to the chat card */
+}
+.ot-faqs-2-thumb .vector {
+  position: absolute;
+  left: 1.04%;
+  top: 66.48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 44px;
+}
+.ot-faqs-2-thumb .vector .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.12);
+}
+.ot-faqs-2-thumb .vector .line {
+  width: 1px;
+  height: 89px;
+  margin-top: 5px;
+  background-color: rgba(3, 15, 43, 0.12);
+}
+.ot-faqs-2-thumb .vector .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--ot-clr-pr-1);
+  color: #fff;
+}
+.ot-faqs-2 {
+  /* the mint / blue wash is the two blurred blobs of the design */
+}
+.ot-faqs-2-card {
+  position: absolute;
+  left: 9.64%;
+  top: 80.67%;
+  width: 233px;
+  padding: 14px 20px;
+  border-radius: 0 12px 12px 12px;
+  background-color: #fff;
+  background-image: radial-gradient(circle at 0% 0%, rgba(60, 237, 183, 0.42) 0%, rgba(60, 237, 183, 0) 58%), radial-gradient(circle at 100% 100%, rgba(19, 92, 253, 0.3) 0%, rgba(19, 92, 253, 0) 58%);
+}
+.ot-faqs-2-card .text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ot-clr-h-1);
+  text-align: center;
+  margin-bottom: 0;
+}
+.ot-faqs-2-card .text a {
+  display: block;
+  font-weight: 700;
+  color: var(--ot-clr-pr-1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-top: 6px;
+}
+
+/*
+    faqs-2-end
+*/
+/*
     partner-1-start
 */
 .ot-partner-1-area {
@@ -9320,6 +10275,235 @@ input:focus::placeholder, textarea:focus::placeholder {
     testimonial-1-end
 */
 /*
+    testimonial-2-start
+*/
+.ot-testimonial-2-area {
+  position: relative;
+  z-index: 2;
+  padding-top: 8px;
+}
+.ot-testimonial-2-box {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  aspect-ratio: 1400/536;
+  border: 6px solid #fff;
+  border-radius: 26px;
+  background: #fff;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-box {
+    aspect-ratio: auto;
+    padding: 48px 24px;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-testimonial-2-box {
+    padding: 32px 16px;
+  }
+}
+.ot-testimonial-2-box .bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.ot-testimonial-2-box {
+  /* the pair of marks the quote sits on */
+}
+.ot-testimonial-2-box .quote-shape {
+  position: absolute;
+  left: 43.57%;
+  top: 8.77%;
+  width: 12.86%;
+  color: #011850;
+  opacity: 8%;
+  pointer-events: none;
+}
+.ot-testimonial-2-box .quote-shape svg {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-box .quote-shape {
+    display: none;
+  }
+}
+.ot-testimonial-2-box {
+  /* the three frames hand their face over as the quote changes */
+}
+.ot-testimonial-2-box .active-img img,
+.ot-testimonial-2-box .next-img img,
+.ot-testimonial-2-box .prev-img img {
+  transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-testimonial-2-box .active-img:is(.is-changing) img,
+.ot-testimonial-2-box .next-img:is(.is-changing) img,
+.ot-testimonial-2-box .prev-img:is(.is-changing) img {
+  opacity: 0;
+  transform: scale(1.08);
+}
+.ot-testimonial-2-box {
+  /* the speaker in focus */
+}
+.ot-testimonial-2-box .active-img {
+  position: absolute;
+  left: 5.14%;
+  top: 16.42%;
+  width: 20.57%;
+  aspect-ratio: 288/360;
+  border-radius: 16px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-box .active-img {
+    position: static;
+    width: 200px;
+    margin: 0 auto 32px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-testimonial-2-box .active-img {
+    width: 160px;
+    margin-bottom: 24px;
+  }
+}
+.ot-testimonial-2-box {
+  /* the one coming up next, and the one just gone by, tucked behind it */
+}
+.ot-testimonial-2-box .next-img {
+  position: absolute;
+  left: 78.64%;
+  top: 16.42%;
+  width: 16.29%;
+  aspect-ratio: 228/285;
+  border-radius: 16px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-box .next-img {
+    display: none;
+  }
+}
+.ot-testimonial-2-box .prev-img {
+  position: absolute;
+  left: 75.89%;
+  top: 47.76%;
+  width: 9.64%;
+  aspect-ratio: 135/200;
+  border-radius: 16px;
+  transform: rotate(15deg);
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-box .prev-img {
+    display: none;
+  }
+}
+.ot-testimonial-2-content {
+  position: absolute;
+  left: 50%;
+  top: 26.68%;
+  width: 38.71%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-content {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
+}
+.ot-testimonial-2-item .disc {
+  font-size: 22px;
+  line-height: 1.454;
+  color: var(--ot-clr-h-1);
+  margin-bottom: 24px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-testimonial-2-item .disc {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-testimonial-2-item .disc {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-testimonial-2-item .disc {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+.ot-testimonial-2-item .name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-item .name {
+    font-size: 18px;
+  }
+}
+.ot-testimonial-2-item .designation {
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ot-clr-pr-1);
+}
+.ot-testimonial-2-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-testimonial-2-arrows {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-testimonial-2-arrows {
+    margin-top: 16px;
+  }
+}
+.ot-testimonial-2-arrows .arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid rgba(1, 24, 80, 0.2);
+  border-radius: 50%;
+  background-color: transparent;
+  color: #011850;
+  cursor: pointer;
+  transition: var(--ot-cube-1);
+  /* the same arrow, turned around for the forward button */
+}
+.ot-testimonial-2-arrows .arrow-btn:is(.next) svg {
+  transform: rotate(180deg);
+}
+.ot-testimonial-2-arrows .arrow-btn:hover {
+  border-color: transparent;
+  background-color: var(--ot-clr-pr-1);
+  color: #fff;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-testimonial-2-arrows .arrow-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/*
+    testimonial-2-end
+*/
+/*
     blog-1-start
 */
 .ot-blog-1-area {
@@ -9511,6 +10695,229 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /*
     blog-1-end
+*/
+/*
+    blog-2-start
+*/
+.ot-blog-2-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #E4E7F5;
+  /* the band starts behind the testimonial card and runs up under it */
+  margin-top: -268px;
+  padding-top: 402px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-blog-2-area {
+    margin-top: -218px;
+    padding-top: 340px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-blog-2-area {
+    margin-top: -184px;
+    padding-top: 300px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-blog-2-area {
+    margin-top: 0;
+    padding-top: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-blog-2-area {
+    padding-top: 80px;
+  }
+}
+.ot-blog-2-area .bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 52%;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+}
+.ot-blog-2-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 52px;
+}
+.ot-blog-2-top .btn-elm {
+  flex-shrink: 0;
+  margin-bottom: 24px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-blog-2-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+  .ot-blog-2-top .btn-elm {
+    margin-bottom: 0;
+  }
+}
+.ot-blog-2-title {
+  max-width: 704px;
+}
+.ot-blog-2-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-blog-2-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-blog-2-list {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.ot-blog-2-item .thumb-elm {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+.ot-blog-2-item {
+  /* the shot is cut back at the bottom-left so the tags sit in the gap */
+}
+.ot-blog-2-item .thumb {
+  aspect-ratio: 448/424;
+  border-radius: 12px;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+.ot-blog-2-item .thumb img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-blog-2-item .meta-elm {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.ot-blog-2-item .single-meta {
+  display: inline-flex;
+  align-items: center;
+  height: 33px;
+  padding: 0 13px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-blog-2-item .single-meta {
+    height: 28px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+}
+.ot-blog-2-item .single-meta:is(.has-category) {
+  background-color: rgba(19, 92, 253, 0.12);
+  color: var(--ot-clr-pr-1);
+}
+.ot-blog-2-item .single-meta:is(.has-date) {
+  background-color: rgba(1, 24, 80, 0.12);
+  color: #011850;
+}
+.ot-blog-2-item .single-meta:is(.has-author) {
+  background-color: rgba(130, 85, 244, 0.12);
+  color: #8255F4;
+}
+.ot-blog-2-item .title {
+  font-size: 24px;
+  line-height: 1.25;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(1, 24, 80, 0.2);
+  transition: 0.2s;
+  position: relative;
+  z-index: 1;
+}
+.ot-blog-2-item .title::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  left: auto;
+  right: 0;
+  bottom: -1px;
+  background-color: var(--ot-clr-pr-1);
+  transition: var(--ot-cube-1);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-blog-2-item .title {
+    font-size: 20px;
+  }
+}
+.ot-blog-2-item .title {
+  /* the trailing dots stay quiet next to the headline */
+}
+.ot-blog-2-item .title .dots {
+  color: rgba(3, 15, 43, 0.4);
+}
+.ot-blog-2-item .title:hover {
+  color: var(--ot-clr-pr-1);
+}
+.ot-blog-2-item .title:hover::after {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+.ot-blog-2-item .read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ot-font-2);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ot-clr-h-1);
+  transition: color var(--ot-cube-1);
+}
+.ot-blog-2-item .read-btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--ot-clr-pr-1);
+  transition: var(--ot-cube-1);
+}
+.ot-blog-2-item {
+  /* the card in focus takes the blue */
+}
+.ot-blog-2-item:hover .thumb img {
+  transform: scale(1.06);
+}
+.ot-blog-2-item:hover .read-btn {
+  color: var(--ot-clr-pr-1);
+}
+.ot-blog-2-item:hover .read-btn .icon {
+  background-color: var(--ot-clr-pr-1);
+  color: #fff;
+}
+
+/*
+    blog-2-end
 */
 /*
     footer-1-start
@@ -9784,6 +11191,513 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /*
     footer-1-end
+*/
+/*
+    footer-2-start
+*/
+.ot-footer-2-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--ot-clr-h-1);
+  /* the wash behind the headline — black reads as nothing over the navy */
+}
+.ot-footer-2-area .bg-color {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 123%;
+  min-width: 1920px;
+  height: 620px;
+  overflow: hidden;
+  transform: translateX(-50%);
+  mix-blend-mode: screen;
+  z-index: -1;
+  pointer-events: none;
+}
+.ot-footer-2-area .bg-color img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-area .bg-color {
+    height: 340px;
+  }
+}
+.ot-footer-2 {
+  /* the headline runs on past both edges */
+}
+.ot-footer-2-marquee {
+  /* also keeps the plugin's floated track from pushing the row below */
+  overflow: hidden;
+  padding: 100px 0 80px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-footer-2-marquee {
+    padding: 80px 0 60px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-marquee {
+    padding: 60px 0 40px;
+  }
+}
+.ot-footer-2-marquee .text {
+  display: inline-block;
+  padding-right: 80px;
+  font-family: var(--ot-font-2);
+  font-weight: 700;
+  font-size: 180px;
+  line-height: 1;
+  color: #F4F6FF;
+  text-transform: uppercase;
+  text-shadow: 13px 0 2px #073EB7;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-footer-2-marquee .text {
+    font-size: 150px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-footer-2-marquee .text {
+    font-size: 130px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-footer-2-marquee .text {
+    font-size: 110px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-footer-2-marquee .text {
+    font-size: 90px;
+    text-shadow: 8px 0 2px #073EB7;
+  }
+}
+@media (max-width: 767px) {
+  .ot-footer-2-marquee .text {
+    font-size: 60px;
+    padding-right: 40px;
+    text-shadow: 6px 0 2px #073EB7;
+  }
+}
+.ot-footer-2-wrap {
+  display: flex;
+  align-items: stretch;
+}
+.ot-footer-2-thumb {
+  width: 384px;
+  flex-shrink: 0;
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-footer-2-thumb {
+    width: 340px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-footer-2-thumb {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-footer-2-thumb {
+    width: 240px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-thumb {
+    display: none;
+  }
+}
+.ot-footer-2-right {
+  flex-grow: 1;
+  min-width: 0;
+}
+.ot-footer-2-widgets {
+  display: grid;
+  grid-template-columns: 360px 301px 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  padding-right: 260px;
+  /* the wide right gutter is a 1920 luxury — below that the newsletter
+     needs the room more than the margin does */
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-footer-2-widgets {
+    grid-template-columns: 300px 240px 1fr;
+    padding-right: 40px;
+  }
+}
+.ot-footer-2-widgets {
+  /* under 1400 there is no width left for three columns */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-footer-2-widgets {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    padding: 0 40px 0 24px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-footer-2-widgets {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    padding: 0 40px 0 24px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-footer-2-widgets {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    padding: 0 40px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-footer-2-widgets {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}
+.ot-footer-2-widgets {
+  /* the two columns on the right sit inside their own rules */
+}
+.ot-footer-2-widgets .social-widget,
+.ot-footer-2-widgets .subscribe-widget {
+  padding: 41px 0 41px 41px;
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-footer-2-widgets .social-widget,
+  .ot-footer-2-widgets .subscribe-widget {
+    padding-left: 32px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-widgets .social-widget,
+  .ot-footer-2-widgets .subscribe-widget {
+    padding: 40px 0;
+    border-left: 0;
+  }
+}
+.ot-footer-2-widgets {
+  /* once the grid is two wide the newsletter takes a row of its own */
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-footer-2-widgets .subscribe-widget {
+    grid-column: 1/-1;
+    padding: 40px 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.24);
+  }
+}
+.ot-footer-2 {
+  /* page-links */
+}
+.ot-footer-2-widgets .page-link .single-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 27px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  color: #fff;
+  transition: var(--ot-cube-1);
+}
+.ot-footer-2-widgets .page-link .single-link:last-child {
+  border-bottom: 0;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-widgets .page-link .single-link:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-widgets .page-link .single-link {
+    padding: 20px 0;
+  }
+}
+.ot-footer-2-widgets .page-link .single-link .text {
+  /* ot-h-1 carries the dark heading colour, so the row keeps its own */
+  color: inherit;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-widgets .page-link .single-link .text {
+    font-size: 18px;
+  }
+}
+.ot-footer-2-widgets .page-link .single-link .icon {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  transition: var(--ot-cube-1);
+}
+.ot-footer-2-widgets .page-link .single-link:hover {
+  color: var(--ot-clr-sd-1);
+}
+.ot-footer-2-widgets .page-link .single-link:hover .icon {
+  transform: translateX(6px);
+}
+.ot-footer-2 {
+  /* social */
+}
+.ot-footer-2-widgets .social-widget .widget-title {
+  font-family: var(--ot-font-2);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 2px;
+  color: var(--ot-clr-sd-1);
+  margin-bottom: 28px;
+}
+.ot-footer-2-widgets .social-widget .social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.ot-footer-2-widgets .social-widget .social-link a {
+  font-family: var(--ot-font-2);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #fff;
+  transition: var(--ot-cube-1);
+}
+.ot-footer-2-widgets .social-widget .social-link a:hover {
+  color: var(--ot-clr-sd-1);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-widgets .social-widget .social-link a {
+    font-size: 18px;
+  }
+}
+.ot-footer-2 {
+  /* newsletter */
+}
+.ot-footer-2-widgets .subscribe-widget {
+  max-width: 615px;
+}
+.ot-footer-2-widgets .subscribe-widget .icon {
+  width: 104px;
+  margin: 0 auto 32px;
+}
+@media (max-width: 767px) {
+  .ot-footer-2-widgets .subscribe-widget .icon {
+    width: 80px;
+    margin-bottom: 24px;
+  }
+}
+.ot-footer-2-widgets .subscribe-widget .title {
+  font-size: 28px;
+  line-height: 1.142;
+  color: #fff;
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-footer-2-widgets .subscribe-widget .title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-footer-2-widgets .subscribe-widget .title {
+    font-size: 22px;
+  }
+}
+.ot-footer-2-widgets .subscribe-widget .disc {
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  line-height: 1.555;
+  color: #fff;
+  opacity: 72%;
+  margin-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .ot-footer-2-widgets .subscribe-widget .disc {
+    font-size: 16px;
+  }
+}
+.ot-footer-2-widgets .subscribe-widget .subscribe-form {
+  position: relative;
+  z-index: 1;
+  max-width: 574px;
+}
+.ot-footer-2-widgets .subscribe-widget .subscribe-form input {
+  width: 100%;
+  height: 60px;
+  padding: 0 165px 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  font-family: var(--ot-font-1);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  outline: 0;
+}
+.ot-footer-2-widgets .subscribe-widget .subscribe-form input::placeholder {
+  color: #fff;
+  opacity: 52%;
+}
+@media (max-width: 767px) {
+  .ot-footer-2-widgets .subscribe-widget .subscribe-form input {
+    padding-right: 140px;
+  }
+}
+.ot-footer-2-widgets .subscribe-widget .subscribe-form .form-btn {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
+  width: 137px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  background: var(--ot-clr-gd-1);
+  font-size: 16px;
+  color: #fff;
+  transition: var(--ot-cube-1);
+}
+.ot-footer-2-widgets .subscribe-widget .subscribe-form .form-btn:hover {
+  background: var(--ot-clr-sd-1);
+  color: var(--ot-clr-h-1);
+}
+@media (max-width: 767px) {
+  .ot-footer-2-widgets .subscribe-widget .subscribe-form .form-btn {
+    width: 120px;
+  }
+}
+.ot-footer-2 {
+  /* the blue bar closes the footer off */
+}
+.ot-footer-2-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 21px 260px 21px 25px;
+  background-color: var(--ot-clr-pr-1);
+  /* the three blocks stop fitting on one line under 1600, so the bar
+     is allowed to wrap the copyright onto its own row */
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-footer-2-bottom {
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 40px 24px 25px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-footer-2-bottom {
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 40px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-footer-2-bottom {
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 40px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-footer-2-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+}
+.ot-footer-2-bottom .single-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+@media (max-width: 767px) {
+  .ot-footer-2-bottom .single-info {
+    gap: 12px;
+  }
+}
+.ot-footer-2-bottom .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background-color: #011850;
+  font-size: 32px;
+  line-height: 1;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .ot-footer-2-bottom .icon {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+}
+.ot-footer-2-bottom .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 251px;
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  line-height: 1.555;
+  color: #fff;
+  margin-bottom: 0;
+}
+.ot-footer-2-bottom .text a {
+  color: #fff;
+  transition: var(--ot-cube-1);
+}
+.ot-footer-2-bottom .text a:hover {
+  color: var(--ot-clr-sd-1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-footer-2-bottom .text {
+    font-size: 16px;
+  }
+}
+.ot-footer-2-bottom .copyright {
+  max-width: 369px;
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  line-height: 1.555;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: right;
+  margin-bottom: 0;
+}
+.ot-footer-2-bottom .copyright a {
+  color: #fff;
+}
+.ot-footer-2-bottom .copyright {
+  /* wrapped onto its own row it reads from the left like the rest */
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-footer-2-bottom .copyright {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .ot-footer-2-bottom .copyright {
+    font-size: 15px;
+    text-align: left;
+  }
+}
+
+/*
+    footer-2-end
 */
 /* 
     pages

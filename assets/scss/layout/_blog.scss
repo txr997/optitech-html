@@ -204,3 +204,245 @@
 /*
     blog-1-end
 */
+
+
+/*
+    blog-2-start
+*/
+.ot-blog-2 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #E4E7F5;
+
+        /* the band starts behind the testimonial card and runs up under it */
+        margin-top: -268px;
+        padding-top: 402px;
+
+        @media #{$xl} {
+            margin-top: -218px;
+            padding-top: 340px;
+        }
+
+        @media #{$lg} {
+            margin-top: -184px;
+            padding-top: 300px;
+        }
+
+        @media #{$md,$xs} {
+            margin-top: 0;
+            padding-top: 100px;
+        }
+
+        @media #{$xs} {
+            padding-top: 80px;
+        }
+
+        .bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            opacity: 52%;
+            mix-blend-mode: color-burn;
+            pointer-events: none;
+        }
+    }
+
+    &-top {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 52px;
+
+        .btn-elm {
+            flex-shrink: 0;
+            margin-bottom: 24px;
+        }
+
+        @media #{$md,$xs} {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 28px;
+            margin-bottom: 40px;
+
+            .btn-elm {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-title {
+        max-width: 704px;
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+
+        @media #{$md} {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &-item {
+        .thumb-elm {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 24px;
+        }
+
+        /* the shot is cut back at the bottom-left so the tags sit in the gap */
+        .thumb {
+            aspect-ratio: 448 / 424;
+            border-radius: 12px;
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+            mask-position: center;
+
+            img {
+                transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+
+        .meta-elm {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .single-meta {
+            display: inline-flex;
+            align-items: center;
+            height: 33px;
+            padding: 0 13px;
+            border-radius: 4px;
+            backdrop-filter: blur(8px);
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 1;
+
+            @media #{$lg,$md,$xs} {
+                height: 28px;
+                padding: 0 10px;
+                font-size: 14px;
+            }
+
+            &:is(.has-category) {
+                background-color: rgb(19 92 253 / 12%);
+                color: var(--ot-clr-pr-1);
+            }
+
+            &:is(.has-date) {
+                background-color: rgb(1 24 80 / 12%);
+                color: #011850;
+            }
+
+            &:is(.has-author) {
+                background-color: rgb(130 85 244 / 12%);
+                color: #8255F4;
+            }
+        }
+
+        .title {
+            font-size: 24px;
+            line-height: 1.25;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgb(1 24 80 / 20%);
+            transition: .2s;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                content: "";
+                width: 0%;
+                height: 1px;
+                position: absolute;
+                left: auto;
+                right: 0;
+                bottom: -1px;
+                background-color: var(--ot-clr-pr-1);
+                transition: var(--ot-cube-1);
+            }
+
+            @media #{$lg,$md,$xs} {
+                font-size: 20px;
+            }
+
+
+            /* the trailing dots stay quiet next to the headline */
+            .dots {
+                color: rgb(3 15 43 / 40%);
+            }
+
+            &:hover {
+                color: var(--ot-clr-pr-1);
+                &::after {
+                    width: 100%;
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
+
+        .read-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--ot-font-2);
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ot-clr-h-1);
+            transition: color var(--ot-cube-1);
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #fff;
+                font-size: 16px;
+                line-height: 1;
+                color: var(--ot-clr-pr-1);
+                transition: var(--ot-cube-1);
+            }
+        }
+
+        /* the card in focus takes the blue */
+        &:hover {
+            .thumb img {
+                transform: scale(1.06);
+            }
+
+
+            .read-btn {
+                color: var(--ot-clr-pr-1);
+
+                .icon {
+                    background-color: var(--ot-clr-pr-1);
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+/*
+    blog-2-end
+*/

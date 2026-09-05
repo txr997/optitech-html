@@ -356,3 +356,232 @@
 /*
     testimonial-1-end
 */
+
+
+/*
+    testimonial-2-start
+*/
+.ot-testimonial-2 {
+    &-area {
+        position: relative;
+        z-index: 2;
+        padding-top: 8px;
+    }
+
+    &-box {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        aspect-ratio: 1400 / 536;
+        border: 6px solid #fff;
+        border-radius: 26px;
+        background: #fff;
+        
+        @media #{$md,$xs} {
+            aspect-ratio: auto;
+            padding: 48px 24px;
+            border-radius: 20px;
+        }
+
+        @media #{$xs} {
+            padding: 32px 16px;
+        }
+
+        .bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        /* the pair of marks the quote sits on */
+        .quote-shape {
+            position: absolute;
+            left: 43.57%;
+            top: 8.77%;
+            width: 12.86%;
+            color: #011850;
+            opacity: 8%;
+            pointer-events: none;
+
+            svg {
+                width: 100%;
+                height: auto;
+            }
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+
+        /* the three frames hand their face over as the quote changes */
+        .active-img,
+        .next-img,
+        .prev-img {
+            img {
+                transition: opacity .35s ease, transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            &:is(.is-changing) img {
+                opacity: 0;
+                transform: scale(1.08);
+            }
+        }
+
+        /* the speaker in focus */
+        .active-img {
+            position: absolute;
+            left: 5.14%;
+            top: 16.42%;
+            width: 20.57%;
+            aspect-ratio: 288 / 360;
+            border-radius: 16px;
+
+            @media #{$md,$xs} {
+                position: static;
+                width: 200px;
+                margin: 0 auto 32px;
+            }
+
+            @media #{$xs} {
+                width: 160px;
+                margin-bottom: 24px;
+            }
+        }
+
+        /* the one coming up next, and the one just gone by, tucked behind it */
+        .next-img {
+            position: absolute;
+            left: 78.64%;
+            top: 16.42%;
+            width: 16.29%;
+            aspect-ratio: 228 / 285;
+            border-radius: 16px;
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+
+        .prev-img {
+            position: absolute;
+            left: 75.89%;
+            top: 47.76%;
+            width: 9.64%;
+            aspect-ratio: 135 / 200;
+            border-radius: 16px;
+            transform: rotate(15deg);
+
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+    }
+
+    &-content {
+        position: absolute;
+        left: 50%;
+        top: 26.68%;
+        width: 38.71%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        @media #{$md,$xs} {
+            position: static;
+            width: 100%;
+            transform: none;
+        }
+    }
+
+    &-item {
+        .disc {
+            font-size: 22px;
+            line-height: 1.454;
+            color: var(--ot-clr-h-1);
+            margin-bottom: 24px;
+
+            @media #{$xl} {
+                font-size: 20px;
+            }
+
+            @media #{$lg,$md} {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            @media #{$xs} {
+                font-size: 16px;
+                margin-bottom: 16px;
+            }
+        }
+
+        .name {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+
+            @media #{$lg,$md,$xs} {
+                font-size: 18px;
+            }
+        }
+
+        .designation {
+            display: block;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ot-clr-pr-1);
+        }
+    }
+
+    &-arrows {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 28px;
+
+        @media #{$lg,$md} {
+            margin-top: 20px;
+        }
+
+        @media #{$xs} {
+            margin-top: 16px;
+        }
+
+        .arrow-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            padding: 0;
+            border: 1px solid rgb(1 24 80 / 20%);
+            border-radius: 50%;
+            background-color: transparent;
+            color: #011850;
+            cursor: pointer;
+            transition: var(--ot-cube-1);
+
+            /* the same arrow, turned around for the forward button */
+            &:is(.next) svg {
+                transform: rotate(180deg);
+            }
+
+            &:hover {
+                border-color: transparent;
+                background-color: var(--ot-clr-pr-1);
+                color: #fff;
+            }
+
+            @media #{$lg,$md,$xs} {
+                width: 48px;
+                height: 48px;
+            }
+        }
+    }
+}
+
+/*
+    testimonial-2-end
+*/

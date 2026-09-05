@@ -438,6 +438,66 @@ var ot_project1_slider = new Swiper(".ot_project1_slider", {
 	},
 });
 
+
+// testimonial-2-slider — the quote cross-fades, and the three photos around it
+// are re-dealt to whoever is now active, next and previous
+var ot_testimonial2_imgs = [];
+
+$(".ot_testimonial2_slider .swiper-slide").each(function () {
+	ot_testimonial2_imgs.push($(this).attr("data-img"));
+});
+
+// each frame lets go of its face before it takes the new one
+// (the fade itself lives in scss/layout/_testimonial.scss)
+function ot_testimonial2_swap($frame, src) {
+	if (!$frame.length || !src) return;
+
+	var $img = $frame.find("img");
+
+	if ($img.attr("src") === src) return;
+
+	$frame.addClass("is-changing");
+
+	setTimeout(function () {
+		$img.attr("src", src);
+		$frame.removeClass("is-changing");
+	}, 350);
+}
+
+function ot_testimonial2_photos(swiper) {
+	var total = ot_testimonial2_imgs.length;
+	if (!total) return;
+
+	ot_testimonial2_swap($(".ot-testimonial-2-box .active-img"), ot_testimonial2_imgs[swiper.realIndex]);
+	ot_testimonial2_swap($(".ot-testimonial-2-box .next-img"), ot_testimonial2_imgs[(swiper.realIndex + 1) % total]);
+	ot_testimonial2_swap($(".ot-testimonial-2-box .prev-img"), ot_testimonial2_imgs[(swiper.realIndex - 1 + total) % total]);
+}
+
+var ot_testimonial2_slider = new Swiper(".ot_testimonial2_slider", {
+	/* three quotes are too few to clone for a loop, so the ends rewind */
+	rewind: true,
+	speed: 800,
+	slidesPerView: 1,
+
+	/* the stack keeps the tallest quote's height, so the arrows hold still */
+	effect: "fade",
+	fadeEffect: {
+		crossFade: true,
+	},
+
+	navigation: {
+		nextEl: ".ot_testimonial2_next",
+		prevEl: ".ot_testimonial2_prev",
+	},
+
+	on: {
+		slideChange: function () {
+			ot_testimonial2_photos(this);
+		},
+	},
+});
+
+
 // process-1-cards — the steps rise into the middle of the row one by one,
 // then the finished stack fans back out to its own columns, all on scroll
 if ($(".ot-process-1-wrap-height").length) {
@@ -637,6 +697,53 @@ if ($(".ot-choose-2-skill-list").length) {
 			stagger: .15,
 			ease: "power3.out",
 		});
+	});
+}
+
+// project-2-cards — each card swings in from the right, one after the other,
+// while the section stays pinned, the newest one landing on top of the stack
+if ($(".ot-project-2-area").length) {
+	var ot_project2_area = document.querySelector(".ot-project-2-area");
+	var ot_project2_items = gsap.utils.toArray(".ot-project-2-item-posi");
+
+	// the runway grows with the markup — one viewport of scroll per card
+	ot_project2_area.style.setProperty("--ot-project-2-count", ot_project2_items.length);
+
+	gsap.matchMedia().add("(min-width: 1400px)", function () {
+		gsap.set(ot_project2_items, {
+			xPercent: 100,
+			yPercent: 100,
+			rotate: -90,
+			zIndex: function (index) {
+				return index + 1;
+			},
+		});
+
+		var ot_project2_tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ot_project2_area,
+				start: "top 50%",
+				end: "bottom bottom",
+				scrub: 1,
+				invalidateOnRefresh: true,
+			}
+		});
+
+		// one card per scroll step, the previous one left sitting underneath
+		ot_project2_items.forEach(function (ot_project2_item, index) {
+			ot_project2_tl.to(ot_project2_item, {
+				xPercent: 0,
+				yPercent: 0,
+				rotate: 0,
+				duration: 1,
+				ease: "none",
+			}, index);
+		});
+
+		// under 1400 the cards just stack as an ordinary list
+		return function () {
+			gsap.set(ot_project2_items, { clearProps: "all" });
+		};
 	});
 }
 
