@@ -59,6 +59,7 @@ function afterPreloader() {
 
 	// the hero opens only now, so its reveal is not spent behind the curtain
 	ot_hero1_intro();
+	ot_hero2_intro();
 
 	/*
 		only-LTR-direction
@@ -384,6 +385,124 @@ var ot_hero1_slider = new Swiper(".ot_hero1_slider", {
 	},
 });
 
+// hero-2 — the opening plays once the preloader has lifted, so every piece is
+// parked out of sight the moment this script runs, behind the curtain
+var ot_hero2_shapes = gsap.utils.toArray(".ot-hero-2-bg-shape img");
+var ot_hero2_img = document.querySelector(".ot-hero-2-img img");
+var ot_hero2_line = document.querySelector(".ot-hero-2-popup-line path");
+var ot_hero2_dots = gsap.utils.toArray(".ot-hero-2-popup-line circle");
+var ot_hero2_text = document.querySelector(".ot-hero-2-popup-text");
+var ot_hero2_clip = document.querySelector(".ot-hero-2-bg-text .wa_clip_animation");
+var ot_hero2_copy = gsap.utils.toArray(".ot-hero-2-title-1, .ot-hero-2-title-2, .ot-hero-2-title-3, .ot-hero-2-disc, .ot-hero-2-content .btn-elm > a");
+var ot_hero2_length = 0;
+var ot_hero2_alphas = [];
+
+function ot_hero2_park() {
+	if (!$(".ot-hero-2-area").length) return;
+
+	if (ot_hero2_shapes.length) {
+		gsap.set(ot_hero2_shapes, { xPercent: 70, opacity: 0 });
+	}
+
+	if (ot_hero2_copy.length) {
+		gsap.set(ot_hero2_copy, { y: 40, opacity: 0 });
+	}
+
+	if (ot_hero2_img) {
+		gsap.set(ot_hero2_img, { yPercent: 14, opacity: 0 });
+	}
+
+	if (ot_hero2_line) {
+		ot_hero2_length = ot_hero2_line.getTotalLength();
+
+		gsap.set(ot_hero2_line, {
+			strokeDasharray: ot_hero2_length,
+			strokeDashoffset: -ot_hero2_length,
+		});
+	}
+
+	// each dot is put back to the opacity the markup gave it, not to 1
+	ot_hero2_dots.forEach(function (ot_hero2_dot) {
+		var ot_hero2_alpha = parseFloat(ot_hero2_dot.getAttribute("opacity"));
+
+		ot_hero2_alphas.push(isNaN(ot_hero2_alpha) ? 1 : ot_hero2_alpha);
+		gsap.set(ot_hero2_dot, { attr: { opacity: 0 } });
+	});
+
+	if (ot_hero2_text) {
+		gsap.set(ot_hero2_text, { y: 20, opacity: 0 });
+	}
+}
+
+ot_hero2_park();
+
+function ot_hero2_intro() {
+	if (!$(".ot-hero-2-area").length) return;
+
+	var ot_hero2_tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+	// the rings come in off the right edge, one behind the other
+	if (ot_hero2_shapes.length) {
+		ot_hero2_tl.to(ot_hero2_shapes, {
+			xPercent: 0,
+			opacity: 1,
+			duration: 1.3,
+			stagger: .18,
+		}, 0);
+	}
+
+	// the headline, the copy under it and the two buttons come up in order
+	if (ot_hero2_copy.length) {
+		ot_hero2_tl.to(ot_hero2_copy, {
+			y: 0,
+			opacity: 1,
+			duration: 1.1,
+			stagger: .12,
+		}, .15);
+	}
+
+	// the wordmark opens in the theme's nine-tile image reveal
+	if (ot_hero2_clip) {
+		ot_hero2_tl.call(function () {
+			waClipAnimation.play(ot_hero2_clip);
+		}, null, .3);
+	}
+
+	// the cut-out slides up into the column
+	if (ot_hero2_img) {
+		ot_hero2_tl.to(ot_hero2_img, {
+			yPercent: 0,
+			opacity: 1,
+			duration: 1.4,
+		}, .25);
+	}
+
+	// the leader line draws itself up towards the badge, the dots land on its
+	// two ends, and only then does the label fade in
+	if (ot_hero2_line) {
+		ot_hero2_tl.to(ot_hero2_line, {
+			strokeDashoffset: 0,
+			duration: 1.1,
+			ease: "power2.inOut",
+		}, .6);
+
+		ot_hero2_dots.forEach(function (ot_hero2_dot, index) {
+			ot_hero2_tl.to(ot_hero2_dot, {
+				attr: { opacity: ot_hero2_alphas[index] },
+				duration: .4,
+			}, 1.35 + index * .08);
+		});
+	}
+
+	if (ot_hero2_text) {
+		ot_hero2_tl.to(ot_hero2_text, {
+			y: 0,
+			opacity: 1,
+			duration: .8,
+		}, 1.6);
+	}
+}
+
 // services-1-slider
 var ot_services1_slider = new Swiper(".ot_services1_slider", {
 	loop: true,
@@ -478,7 +597,9 @@ var ot_testimonial2_slider = new Swiper(".ot_testimonial2_slider", {
 	rewind: true,
 	speed: 800,
 	slidesPerView: 1,
-
+    autoplay: {
+		delay: 4000,
+	},
 	/* the stack keeps the tallest quote's height, so the arrows hold still */
 	effect: "fade",
 	fadeEffect: {
@@ -745,6 +866,72 @@ if ($(".ot-project-2-area").length) {
 			gsap.set(ot_project2_items, { clearProps: "all" });
 		};
 	});
+}
+
+// core-features-2 — the photo opens from the left, the play button pops onto
+// it, the open circle draws out and the two cards follow
+if ($(".ot-core-features-2-area").length) {
+	var ot_features2_thumb = document.querySelector(".ot-core-features-2-media .thumb");
+	var ot_features2_playbtn = document.querySelector(".ot-core-features-2-media .playbtn");
+	var ot_features2_circle = document.querySelector(".ot-core-features-2-media .circle-shape");
+	var ot_features2_cards = gsap.utils.toArray(".ot-core-features-2-card");
+
+	var ot_features2_tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".ot-core-features-2-area",
+			start: "top 80%",
+			once: true,
+		},
+		defaults: { ease: "power3.out" },
+	});
+
+	if (ot_features2_thumb) {
+		gsap.set(ot_features2_thumb, { clipPath: "inset(0% 100% 0% 0%)" });
+		gsap.set(ot_features2_thumb.querySelector("img"), { scale: 1.15 });
+
+		ot_features2_tl
+			.to(ot_features2_thumb, {
+				clipPath: "inset(0% 0% 0% 0%)",
+				duration: 1.2,
+				ease: "power4.out",
+			}, 0)
+			.to(ot_features2_thumb.querySelector("img"), {
+				scale: 1,
+				duration: 1.4,
+			}, 0);
+	}
+
+	if (ot_features2_playbtn) {
+		gsap.set(ot_features2_playbtn, { scale: 0, opacity: 0 });
+
+		ot_features2_tl.to(ot_features2_playbtn, {
+			scale: 1,
+			opacity: 1,
+			duration: .8,
+			ease: "back.out(1.7)",
+		}, .5);
+	}
+
+	if (ot_features2_circle) {
+		gsap.set(ot_features2_circle, { clipPath: "inset(0% 100% 0% 0%)" });
+
+		ot_features2_tl.to(ot_features2_circle, {
+			clipPath: "inset(0% 0% 0% 0%)",
+			duration: 1,
+			ease: "power4.out",
+		}, .45);
+	}
+
+	if (ot_features2_cards.length) {
+		gsap.set(ot_features2_cards, { y: 50, opacity: 0 });
+
+		ot_features2_tl.to(ot_features2_cards, {
+			y: 0,
+			opacity: 1,
+			duration: 1,
+			stagger: .15,
+		}, .3);
+	}
 }
 
 })(jQuery);

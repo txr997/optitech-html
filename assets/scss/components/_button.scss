@@ -157,9 +157,68 @@
 
     /* the label can carry a trailing arrow */
     .icon {
+        position: relative;
+        overflow: hidden;
+        width: 16px;
+        height: 16px;
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         line-height: 1;
+        font-size: 14px;
+
+        i {
+            transition: transform .45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* the arrow that flies in from the left as the first one leaves */
+        &::after {
+            content: "\f061";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-style: normal;
+            line-height: 1;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-260%, -50%);
+            transition: transform .45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    }
+
+    &:hover {
+        color: #fff;
+
+        /* the little orb opens out into a full gradient wash */
+        &::after {
+            width: calc(100% - 10px);
+            border-radius: 100px;
+        }
+
+        .icon {
+            i {
+                transform: translateX(260%);
+            }
+
+            &::after {
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &:is(.has-v2) {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(4px);
+        transition: background-color .5s cubic-bezier(0.16, 1, 0.3, 1);
+
+        &::after {
+            display: none;
+        }
+
+        /* no orb to open out, so the glass itself lifts on hover */
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.18);
+        }
     }
 }
 

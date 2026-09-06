@@ -238,6 +238,22 @@
         padding: 40px 40px 33px 38px;
         border-radius: 16px;
         background-color: #DCE7FB;
+        transition: background-color var(--ot-cube-1), box-shadow var(--ot-cube-1);
+
+        /* the tile brightens and the whole card sits on a soft shadow */
+        &:hover {
+            background-color: #D0DFFA;
+            box-shadow: 0 24px 48px -24px rgb(13 38 101 / 28%);
+
+            .icon {
+                background: rgba(255, 255, 255, 0.75);
+                transform: scale(1.06);
+
+                img {
+                    transform: rotate(-6deg);
+                }
+            }
+        }
 
         @media #{$xl,$lg,$md,$xs} {
             padding: 32px 28px;
@@ -259,6 +275,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background var(--ot-cube-1), transform var(--ot-cube-1);
+
+            img {
+                transition: transform var(--ot-cube-1);
+            }
         }
 
         .content {
@@ -336,6 +357,11 @@
         /* the green one carries the full read more pill */
         &:is(.has-v2) {
             background-color: #D8F9CD;
+
+            &:hover {
+                background-color: #CCF5BD;
+                box-shadow: 0 24px 48px -24px rgb(47 156 59 / 32%);
+            }
 
             .read-btn {
                 margin-top: 20px;

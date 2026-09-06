@@ -595,8 +595,12 @@
         left: 52%;
         top: 68%;
         width: 87px;
-        opacity: 12%;
         pointer-events: none;
+
+        /* the faint wash sits on the image so wow can fade the wrapper */
+        img {
+            opacity: 12%;
+        }
 
         @media #{$xl,$lg,$md,$xs} {
             display: none;

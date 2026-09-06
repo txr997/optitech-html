@@ -201,6 +201,23 @@
     services-1-end
 */
 
+/* the two corner glows drift through the brand hues once the section
+   has scrolled into view */
+@keyframes ot-services-2-shape-color {
+    0%,
+    100% {
+        filter: hue-rotate(0deg) saturate(1);
+    }
+
+    33% {
+        filter: hue-rotate(65deg) saturate(1.4);
+    }
+
+    66% {
+        filter: hue-rotate(-50deg) saturate(1.3);
+    }
+}
+
 /*
     services-2-start
 */
@@ -225,8 +242,29 @@
             z-index: -1;
             pointer-events: none;
 
+            /* wow handles the slide in, so the colour drift lives on the image
+               inside — held still until wa_add_class marks the section seen */
+            img {
+                display: block;
+                width: 100%;
+                animation: ot-services-2-shape-color 5s ease-in-out infinite;
+                animation-play-state: paused;
+            }
+
             @media #{$md,$xs} {
                 display: none;
+            }
+        }
+
+        /* the second glow runs half a colour cycle behind the first */
+        &.active {
+            .bg-shape-1 img,
+            .bg-shape-2 img {
+                animation-play-state: running;
+            }
+
+            .bg-shape-2 img {
+                animation-delay: -2.5s;
             }
         }
 

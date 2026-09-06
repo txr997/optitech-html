@@ -1370,9 +1370,61 @@ input:focus::placeholder, textarea:focus::placeholder {
   /* the label can carry a trailing arrow */
 }
 .ot-pr-btn-2 .icon {
+  position: relative;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   line-height: 1;
+  font-size: 14px;
+}
+.ot-pr-btn-2 .icon i {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-pr-btn-2 .icon {
+  /* the arrow that flies in from the left as the first one leaves */
+}
+.ot-pr-btn-2 .icon::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  line-height: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-260%, -50%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-pr-btn-2:hover {
+  color: #fff;
+  /* the little orb opens out into a full gradient wash */
+}
+.ot-pr-btn-2:hover::after {
+  width: calc(100% - 10px);
+  border-radius: 100px;
+}
+.ot-pr-btn-2:hover .icon i {
+  transform: translateX(260%);
+}
+.ot-pr-btn-2:hover .icon::after {
+  transform: translate(-50%, -50%);
+}
+.ot-pr-btn-2:is(.has-v2) {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ot-pr-btn-2:is(.has-v2)::after {
+  display: none;
+}
+.ot-pr-btn-2:is(.has-v2) {
+  /* no orb to open out, so the glass itself lifts on hover */
+}
+.ot-pr-btn-2:is(.has-v2):hover {
+  background-color: rgba(255, 255, 255, 0.18);
 }
 
 /* 
@@ -3628,11 +3680,28 @@ input:focus::placeholder, textarea:focus::placeholder {
     display: none;
   }
 }
+.ot-header-2-action-link {
+  /* the resting orb is switched off here — instead a rounded pill of the
+     same gradient opens out from the left inside the button */
+}
 .ot-header-2-action-link .ot-pr-btn-2 {
   padding: 10px 20px;
+  transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .ot-header-2-action-link .ot-pr-btn-2::after {
-  display: none;
+  width: 0;
+  height: calc(100% - 8px);
+  left: 4px;
+  border-radius: 100px;
+  transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+}
+.ot-header-2-action-link .ot-pr-btn-2:hover {
+  box-shadow: 0 8px 20px -6px rgba(18, 94, 254, 0.55);
+}
+.ot-header-2-action-link .ot-pr-btn-2:hover::after {
+  width: calc(100% - 8px);
+  opacity: 1;
 }
 @media (max-width: 767px) {
   .ot-header-2-action-link .ot-pr-btn-2 {
@@ -3968,6 +4037,18 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     hero-1-end
 */
+/* the wordmark behind the hero cycles through the brand hues */
+@keyframes ot-hero-2-text-color {
+  0%, 100% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  33% {
+    filter: hue-rotate(70deg) saturate(1.35);
+  }
+  66% {
+    filter: hue-rotate(-55deg) saturate(1.25);
+  }
+}
 /* 
     hero-2-start
 */
@@ -4003,6 +4084,13 @@ input:focus::placeholder, textarea:focus::placeholder {
   width: 9%;
   mix-blend-mode: lighten;
   z-index: -2;
+  /* the colour drifts through the wordmark on a slow loop */
+  animation: ot-hero-2-text-color 4s ease-in-out infinite;
+  /* the nine-tile reveal sits on the wordmark, so the hidden source
+     image has to keep its own height for the tiles to cover */
+}
+.ot-hero-2-bg-text .wa_clip_animation_img {
+  height: auto;
 }
 .ot-hero-2-bg-line {
   width: 28%;
@@ -4673,6 +4761,19 @@ input:focus::placeholder, textarea:focus::placeholder {
   padding: 40px 40px 33px 38px;
   border-radius: 16px;
   background-color: #DCE7FB;
+  transition: background-color var(--ot-cube-1), box-shadow var(--ot-cube-1);
+  /* the tile brightens and the whole card sits on a soft shadow */
+}
+.ot-core-features-2-card:hover {
+  background-color: #D0DFFA;
+  box-shadow: 0 24px 48px -24px rgba(13, 38, 101, 0.28);
+}
+.ot-core-features-2-card:hover .icon {
+  background: rgba(255, 255, 255, 0.75);
+  transform: scale(1.06);
+}
+.ot-core-features-2-card:hover .icon img {
+  transform: rotate(-6deg);
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .ot-core-features-2-card {
@@ -4696,6 +4797,10 @@ input:focus::placeholder, textarea:focus::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background var(--ot-cube-1), transform var(--ot-cube-1);
+}
+.ot-core-features-2-card .icon img {
+  transition: transform var(--ot-cube-1);
 }
 .ot-core-features-2-card .content {
   display: flex;
@@ -4770,6 +4875,10 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .ot-core-features-2-card:is(.has-v2) {
   background-color: #D8F9CD;
+}
+.ot-core-features-2-card:is(.has-v2):hover {
+  background-color: #CCF5BD;
+  box-shadow: 0 24px 48px -24px rgba(47, 156, 59, 0.32);
 }
 .ot-core-features-2-card:is(.has-v2) .read-btn {
   margin-top: 20px;
@@ -5338,8 +5447,11 @@ input:focus::placeholder, textarea:focus::placeholder {
   left: 52%;
   top: 68%;
   width: 87px;
-  opacity: 12%;
   pointer-events: none;
+  /* the faint wash sits on the image so wow can fade the wrapper */
+}
+.ot-about-2-arrow-shape img {
+  opacity: 12%;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .ot-about-2-arrow-shape {
@@ -5586,6 +5698,19 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     services-1-end
 */
+/* the two corner glows drift through the brand hues once the section
+   has scrolled into view */
+@keyframes ot-services-2-shape-color {
+  0%, 100% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  33% {
+    filter: hue-rotate(65deg) saturate(1.4);
+  }
+  66% {
+    filter: hue-rotate(-50deg) saturate(1.3);
+  }
+}
 /*
     services-2-start
 */
@@ -5607,12 +5732,31 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: absolute;
   z-index: -1;
   pointer-events: none;
+  /* wow handles the slide in, so the colour drift lives on the image
+     inside — held still until wa_add_class marks the section seen */
+}
+.ot-services-2-area .bg-shape-1 img,
+.ot-services-2-area .bg-shape-2 img {
+  display: block;
+  width: 100%;
+  animation: ot-services-2-shape-color 5s ease-in-out infinite;
+  animation-play-state: paused;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .ot-services-2-area .bg-shape-1,
   .ot-services-2-area .bg-shape-2 {
     display: none;
   }
+}
+.ot-services-2-area {
+  /* the second glow runs half a colour cycle behind the first */
+}
+.ot-services-2-area.active .bg-shape-1 img,
+.ot-services-2-area.active .bg-shape-2 img {
+  animation-play-state: running;
+}
+.ot-services-2-area.active .bg-shape-2 img {
+  animation-delay: -2.5s;
 }
 .ot-services-2-area .bg-shape-1 {
   left: 0;
@@ -5994,8 +6138,14 @@ input:focus::placeholder, textarea:focus::placeholder {
   height: 692px;
   overflow: hidden;
   border-radius: 40px;
+  /* the nine-tile clip reveal replaces the bare image, so the wrapper
+     has to hold the frame and the source image fill it */
 }
 .ot-mission-2-video .video-img {
+  width: 100%;
+  height: 100%;
+}
+.ot-mission-2-video .video-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;

@@ -335,6 +335,22 @@
     hero-1-end
 */
 
+/* the wordmark behind the hero cycles through the brand hues */
+@keyframes ot-hero-2-text-color {
+    0%,
+    100% {
+        filter: hue-rotate(0deg) saturate(1);
+    }
+
+    33% {
+        filter: hue-rotate(70deg) saturate(1.35);
+    }
+
+    66% {
+        filter: hue-rotate(-55deg) saturate(1.25);
+    }
+}
+
 /* 
     hero-2-start
 */
@@ -374,6 +390,15 @@
             width: 9%;
             mix-blend-mode: lighten;
             z-index: -2;
+
+            /* the colour drifts through the wordmark on a slow loop */
+            animation: ot-hero-2-text-color 4s ease-in-out infinite;
+
+            /* the nine-tile reveal sits on the wordmark, so the hidden source
+               image has to keep its own height for the tiles to cover */
+            .wa_clip_animation_img {
+                height: auto;
+            }
         }
 
 

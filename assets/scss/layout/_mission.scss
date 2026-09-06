@@ -43,10 +43,17 @@
         overflow: hidden;
         border-radius: 40px;
 
+        /* the nine-tile clip reveal replaces the bare image, so the wrapper
+           has to hold the frame and the source image fill it */
         .video-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         .glow {

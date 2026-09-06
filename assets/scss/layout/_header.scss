@@ -372,11 +372,28 @@
             }
         }
 
+        /* the resting orb is switched off here — instead a rounded pill of the
+           same gradient opens out from the left inside the button */
         .ot-pr-btn-2 {
             padding: 10px 20px;
+            transition: box-shadow .5s cubic-bezier(0.16, 1, 0.3, 1);
 
             &::after {
-                display: none;
+                width: 0;
+                height: calc(100% - 8px);
+                left: 4px;
+                border-radius: 100px;
+                transition: .5s cubic-bezier(0.16, 1, 0.3, 1);
+                opacity: 0;
+            }
+
+            &:hover {
+                box-shadow: 0 8px 20px -6px rgb(18 94 254 / 55%);
+
+                &::after {
+                    width: calc(100% - 8px);
+                    opacity: 1;
+                }
             }
 
             @media #{$xs} {
