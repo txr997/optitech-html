@@ -1,0 +1,180 @@
+@use '../abstracts/variables' as *;
+
+/*
+    breadcrumb-1-start
+*/
+.ot-breadcrumb-1 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding: 274px 0 178px;
+        background-color: #001D61;
+
+        @media #{$lg,$md} {
+            padding: 210px 0 120px;
+        }
+
+        @media #{$xs} {
+            padding: 160px 0 80px;
+        }
+
+        .bg-img {
+            position: absolute;
+            inset: 0;
+            z-index: -3;
+            opacity: 20%;
+            pointer-events: none;
+        }
+
+        /* the photo fades out of the navy on its way left */
+        .main-img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 74.43%;
+            height: 100%;
+            z-index: -2;
+            mask-image: linear-gradient(to right, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 100%) 32%);
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+
+            @media #{$md,$xs} {
+                width: 100%;
+                opacity: 40%;
+            }
+        }
+
+        .img-shape {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 533px;
+            z-index: -1;
+            opacity: 76%;
+            pointer-events: none;
+
+            @media #{$lg,$md} {
+                width: 380px;
+            }
+
+            @media #{$xs} {
+                display: none;
+            }
+        }
+    }
+
+    &-content {
+        max-width: 700px;
+
+        .title {
+            font-family: var(--ot-font-2);
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 1.062;
+            color: #fff;
+            margin-bottom: 28px;
+
+            @media #{$lg,$md} {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+
+            @media #{$xs} {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+        }
+
+        /* the trail sits on a frosted chip */
+        .breadcrumb-elm {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 12px 20px;
+            border: 1px solid rgb(255 255 255 / 16%);
+            border-radius: 8px;
+            background-color: rgb(255 255 255 / 8%);
+            backdrop-filter: blur(4px);
+            font-family: var(--ot-font-1);
+            font-size: 18px;
+            line-height: 1.555;
+            color: #fff;
+
+            @media #{$xs} {
+                padding: 8px 14px;
+                font-size: 16px;
+            }
+
+            a {
+                color: #fff;
+                transition: var(--ot-cube-1);
+
+                &:hover {
+                    color: var(--ot-clr-sd-1);
+                }
+            }
+
+            .icon {
+                width: 12px;
+                margin: 0 4px;
+            }
+
+            .text {
+                opacity: 60%;
+            }
+        }
+    }
+}
+
+/*
+    breadcrumb-1-end
+*/
+
+
+/*
+    error-1-start
+*/
+.ot-error-1 {
+    &-thumb {
+        max-width: 953px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* the copy laps back over the bottom of the illustration */
+    &-content {
+        position: relative;
+        z-index: 1;
+        max-width: 430px;
+        margin: -89px auto 0;
+        text-align: center;
+
+        @media #{$lg,$md} {
+            margin-top: -60px;
+        }
+
+        @media #{$xs} {
+            margin-top: -30px;
+        }
+
+        .disc {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #011850;
+            margin-bottom: 27px;
+
+            @media #{$xs} {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+/*
+    error-1-end
+*/

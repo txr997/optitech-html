@@ -3867,6 +3867,182 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     sticky-header-css-end
 */
+/*
+    breadcrumb-1-start
+*/
+.ot-breadcrumb-1-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 274px 0 178px;
+  background-color: #001D61;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-breadcrumb-1-area {
+    padding: 210px 0 120px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-breadcrumb-1-area {
+    padding: 160px 0 80px;
+  }
+}
+.ot-breadcrumb-1-area .bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  opacity: 20%;
+  pointer-events: none;
+}
+.ot-breadcrumb-1-area {
+  /* the photo fades out of the navy on its way left */
+}
+.ot-breadcrumb-1-area .main-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 74.43%;
+  height: 100%;
+  z-index: -2;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 32%);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-breadcrumb-1-area .main-img {
+    width: 100%;
+    opacity: 40%;
+  }
+}
+.ot-breadcrumb-1-area .img-shape {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 533px;
+  z-index: -1;
+  opacity: 76%;
+  pointer-events: none;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-breadcrumb-1-area .img-shape {
+    width: 380px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-breadcrumb-1-area .img-shape {
+    display: none;
+  }
+}
+.ot-breadcrumb-1-content {
+  max-width: 700px;
+}
+.ot-breadcrumb-1-content .title {
+  font-family: var(--ot-font-2);
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.062;
+  color: #fff;
+  margin-bottom: 28px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-breadcrumb-1-content .title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-breadcrumb-1-content .title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+}
+.ot-breadcrumb-1-content {
+  /* the trail sits on a frosted chip */
+}
+.ot-breadcrumb-1-content .breadcrumb-elm {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  font-family: var(--ot-font-1);
+  font-size: 18px;
+  line-height: 1.555;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .ot-breadcrumb-1-content .breadcrumb-elm {
+    padding: 8px 14px;
+    font-size: 16px;
+  }
+}
+.ot-breadcrumb-1-content .breadcrumb-elm a {
+  color: #fff;
+  transition: var(--ot-cube-1);
+}
+.ot-breadcrumb-1-content .breadcrumb-elm a:hover {
+  color: var(--ot-clr-sd-1);
+}
+.ot-breadcrumb-1-content .breadcrumb-elm .icon {
+  width: 12px;
+  margin: 0 4px;
+}
+.ot-breadcrumb-1-content .breadcrumb-elm .text {
+  opacity: 60%;
+}
+
+/*
+    breadcrumb-1-end
+*/
+/*
+    error-1-start
+*/
+.ot-error-1-thumb {
+  max-width: 953px;
+  margin: 0 auto;
+}
+.ot-error-1-thumb img {
+  width: 100%;
+}
+.ot-error-1 {
+  /* the copy laps back over the bottom of the illustration */
+}
+.ot-error-1-content {
+  position: relative;
+  z-index: 1;
+  max-width: 430px;
+  margin: -89px auto 0;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-error-1-content {
+    margin-top: -60px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-error-1-content {
+    margin-top: -30px;
+  }
+}
+.ot-error-1-content .disc {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #011850;
+  margin-bottom: 27px;
+}
+@media (max-width: 767px) {
+  .ot-error-1-content .disc {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+/*
+    error-1-end
+*/
 /* 
     hero-1-start
 */
