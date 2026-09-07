@@ -5023,10 +5023,13 @@ input:focus::placeholder, textarea:focus::placeholder {
   }
 }
 .ot-hero-3-top-row:is(.has-v2) {
-  /* the second line holds beside the badge instead of breaking */
+  /* the second line holds beside the badge instead of breaking, and
+     passes behind the globe rather than over it */
 }
 .ot-hero-3-top-row:is(.has-v2) .ot-hero-3-title {
   white-space: nowrap;
+  position: relative;
+  z-index: -2;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .ot-hero-3-top-row:is(.has-v2) .ot-hero-3-title {
@@ -5199,7 +5202,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   bottom: 0;
   display: flex;
   align-items: flex-end;
-  gap: 8px;
   padding-left: 221px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -12461,8 +12463,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   gap: 12px;
 }
 .ot-footer-2-widgets .social-widget .social-link a {
-  font-family: var(--ot-font-2);
-  font-weight: 400;
+  font-family: var(--ot-font-1);
   font-size: 20px;
   line-height: 1.4;
   color: #fff;
@@ -12708,6 +12709,29 @@ input:focus::placeholder, textarea:focus::placeholder {
 .ot-footer-2-area .ot-footer-1-top {
   margin-top: 130px;
   padding-bottom: 70px;
+}
+
+.ot-footer-2-area:is(.has-footer-3) .ot-footer-2-bottom {
+  background-color: #34D09F;
+}
+.ot-footer-2-area:is(.has-footer-3) .ot-footer-2-bottom .icon {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: var(--ot-clr-h-1);
+}
+.ot-footer-2-area:is(.has-footer-3) .ot-footer-2-bottom .text {
+  color: var(--ot-clr-h-1);
+}
+.ot-footer-2-area:is(.has-footer-3) .ot-footer-2-bottom .text a {
+  color: var(--ot-clr-h-1);
+}
+.ot-footer-2-area:is(.has-footer-3) .ot-footer-2-bottom .text a:hover {
+  color: var(--ot-clr-pr-1);
+}
+.ot-footer-2-area:is(.has-footer-3) .ot-footer-2-bottom .copyright {
+  color: rgba(3, 15, 43, 0.8);
+}
+.ot-footer-2-area:is(.has-footer-3) .ot-footer-2-bottom .copyright a {
+  color: var(--ot-clr-h-1);
 }
 
 /*

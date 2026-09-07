@@ -568,8 +568,7 @@
             gap: 12px;
 
             a {
-                font-family: var(--ot-font-2);
-                font-weight: 400;
+                font-family: var(--ot-font-1);
                 font-size: 20px;
                 line-height: 1.4;
                 color: #fff;
@@ -818,6 +817,41 @@
         padding-bottom: 70px;
     }
 }
+.ot-footer-2-area {
+    &:is(.has-footer-3) {
+        .ot-footer-2-bottom {
+            background-color: #34D09F;
+        }
+
+        .ot-footer-2-bottom {
+            .icon {
+                background-color: rgb(255 255 255 / 40%);
+                color: var(--ot-clr-h-1);
+            }
+            .text {
+                color: var(--ot-clr-h-1);
+
+                a {
+                    color: var(--ot-clr-h-1);
+
+                    &:hover {
+                        color: var(--ot-clr-pr-1);
+                    }
+                }
+            }
+
+            .copyright {
+                color: rgb(3 15 43 / 80%);
+
+                a {
+                    color: var(--ot-clr-h-1);
+                }
+            }
+        }
+    }
+}
 /*
     footer-3-end
 */
+
+

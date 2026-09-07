@@ -1060,9 +1060,12 @@
                 padding-left: 0;
             }
 
-            /* the second line holds beside the badge instead of breaking */
+            /* the second line holds beside the badge instead of breaking, and
+               passes behind the globe rather than over it */
             .ot-hero-3-title {
                 white-space: nowrap;
+                position: relative;
+                z-index: -2;
 
                 @media #{$md,$xs} {
                     white-space: normal;
@@ -1238,7 +1241,6 @@
             bottom: 0;
             display: flex;
             align-items: flex-end;
-            gap: 8px;
             padding-left: 221px;
 
             @media #{$xl} {
