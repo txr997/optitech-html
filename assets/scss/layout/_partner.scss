@@ -150,6 +150,20 @@
     }
 }
 
+
+.ot-partner-1-area {
+    &:is(.has-v2) {
+        .ot-partner-1-top .text-elm {
+            background-color: #fff;
+        }
+        .ot-partner-1-marquee-wrap::after {
+            background: linear-gradient(90deg, rgba(244, 246, 255, 0) 0%, #ffffff 84.8%);
+        }
+        .ot-partner-1-marquee-wrap::before {
+            background: linear-gradient(270deg, rgba(244, 246, 255, 0) 0%, #ffffff 84.8%);
+        }
+    }
+}
 /*
     partner-1-end
 */

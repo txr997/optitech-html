@@ -20,13 +20,52 @@ if ("scrollRestoration" in history) {
 	windows-load-function
 */
 
-window.addEventListener('load', function(){
+// section-title-1 — the split has to happen before the preloader lifts, or the
+// lines are on screen for the length of the fade and then jump back out
+var waTitleLines = [];
+
+function waTitleSplit() {
+	if (getComputedStyle(document.body).direction === "rtl") return;
+	if (!$(".wa_title_ani_1").length) return;
+
+	gsap.registerPlugin(SplitText);
+
+	$(".wa_title_ani_1").each(function (index, el) {
+
+		// double split: the second pass wraps each line in a mask
+		var wa_title_line = new SplitText(el, {
+			type: "lines",
+			linesClass: "wa-split-line"
+		});
+		new SplitText(el, {
+			type: "lines",
+			linesClass: "wa-split-mask"
+		});
+
+		gsap.set(wa_title_line.lines, {
+			yPercent: 110,
+			opacity: 0
+		});
+
+		waTitleLines.push({
+			el: el,
+			lines: wa_title_line.lines,
+			delay: parseFloat($(el).attr('data-split-delay')) || 0
+		});
+	});
+}
+
+
+window.addEventListener("load", function(){
 
 	// drop any scroll position gsap/the browser remembered, then measure the
 	// triggers from a clean top-of-page state
 	ScrollTrigger.clearScrollMemory("manual");
 	window.scrollTo(0, 0);
 	ScrollTrigger.refresh();
+
+	// park the headline lines while the curtain is still up
+	waTitleSplit();
 
 	if (document.querySelectorAll(".ot-preloader-1").length) {
 		const loader = document.querySelector(".ot-preloader-1");
@@ -60,50 +99,29 @@ function afterPreloader() {
 	// the hero opens only now, so its reveal is not spent behind the curtain
 	ot_hero1_intro();
 	ot_hero2_intro();
+	ot_hero3_intro();
 
 	/*
 		only-LTR-direction
 	*/
 	if (getComputedStyle(document.body).direction !== "rtl") {
 
-		// section-title-1 — lines slide up from behind their own mask
-		if($(".wa_title_ani_1").length) {
-			gsap.registerPlugin(SplitText);
-
-			$(".wa_title_ani_1").each(function (index, el) {
-
-				// double split: the second pass wraps each line in a mask
-				var wa_title_line = new SplitText(el, {
-					type: "lines",
-					linesClass: "wa-split-line"
-				});
-				new SplitText(el, {
-					type: "lines",
-					linesClass: "wa-split-mask"
-				});
-
-				var wa_title_delay = parseFloat($(el).attr('data-split-delay')) || 0;
-
-				gsap.set(wa_title_line.lines, {
-					yPercent: 110,
-					opacity: 0
-				});
-
-				gsap.to(wa_title_line.lines, {
-					scrollTrigger: {
-						trigger: el,
-						start: "top 86%",
-					},
-					yPercent: 0,
-					opacity: 1,
-					duration: .9,
-					ease: "power3.out",
-					stagger: .1,
-					delay: wa_title_delay
-				});
-
+		// section-title-1 — the lines were already split and parked by
+		// waTitleSplit(), all that is left is to let them slide up
+		waTitleLines.forEach(function (wa_title_item) {
+			gsap.to(wa_title_item.lines, {
+				scrollTrigger: {
+					trigger: wa_title_item.el,
+					start: "top 86%",
+				},
+				yPercent: 0,
+				opacity: 1,
+				duration: .9,
+				ease: "power3.out",
+				stagger: .1,
+				delay: wa_title_item.delay
 			});
-		}
+		});
 
 	}
 
@@ -500,6 +518,95 @@ function ot_hero2_intro() {
 			opacity: 1,
 			duration: .8,
 		}, 1.6);
+	}
+}
+
+// hero-3 — same deal as hero-2: the opening is parked while the script runs so
+// nothing plays out behind the preloader curtain
+var ot_hero3_world = document.querySelector(".ot-hero-3-top .bg-world");
+var ot_hero3_authors = gsap.utils.toArray(".ot-hero-3-top .rating-elm .author-img-single");
+var ot_hero3_rating = document.querySelector(".ot-hero-3-top .rating-elm .text-elm");
+var ot_hero3_disc = document.querySelector(".ot-hero-3-top .right-elm .disc");
+var ot_hero3_btn = document.querySelector(".ot-hero-3-top .right-elm .btn-elm");
+var ot_hero3_company = document.querySelector(".ot-hero-3-top .company-elm");
+
+function ot_hero3_park() {
+	if (!$(".ot-hero-3-top").length) return;
+
+	// the globe keeps its own css spin, so only the wrapper is touched
+	if (ot_hero3_world) {
+		gsap.set(ot_hero3_world, { scale: .85, opacity: 0 });
+	}
+
+	if (ot_hero3_authors.length) {
+		gsap.set(ot_hero3_authors, { scale: 0, opacity: 0 });
+	}
+
+	gsap.set([ot_hero3_rating, ot_hero3_disc, ot_hero3_btn, ot_hero3_company].filter(Boolean), {
+		y: 30,
+		opacity: 0,
+	});
+}
+
+ot_hero3_park();
+
+function ot_hero3_intro() {
+	if (!$(".ot-hero-3-top").length) return;
+
+	var ot_hero3_tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+	if (ot_hero3_world) {
+		ot_hero3_tl.to(ot_hero3_world, {
+			scale: 1,
+			opacity: 1,
+			duration: 1.6,
+			ease: "power2.out",
+		}, 0);
+	}
+
+	// the four faces pop in before the rating they belong to
+	if (ot_hero3_authors.length) {
+		ot_hero3_tl.to(ot_hero3_authors, {
+			scale: 1,
+			opacity: 1,
+			duration: .7,
+			stagger: .08,
+			ease: "back.out(1.8)",
+		}, .1);
+	}
+
+	if (ot_hero3_rating) {
+		ot_hero3_tl.to(ot_hero3_rating, {
+			y: 0,
+			opacity: 1,
+			duration: .9,
+		}, .35);
+	}
+
+	// the headline lines are handled by wa_title_ani_1, so the copy on the
+	// right picks up from where they land
+	if (ot_hero3_disc) {
+		ot_hero3_tl.to(ot_hero3_disc, {
+			y: 0,
+			opacity: 1,
+			duration: .9,
+		}, .5);
+	}
+
+	if (ot_hero3_btn) {
+		ot_hero3_tl.to(ot_hero3_btn, {
+			y: 0,
+			opacity: 1,
+			duration: .9,
+		}, .62);
+	}
+
+	if (ot_hero3_company) {
+		ot_hero3_tl.to(ot_hero3_company, {
+			y: 0,
+			opacity: 1,
+			duration: .9,
+		}, .74);
 	}
 }
 

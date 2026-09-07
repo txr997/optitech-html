@@ -100,6 +100,7 @@
             inset: 0;
             z-index: 0;
             overflow: hidden;
+            background-color: var(--ot-clr-h-1);
 
             /* resting scrim */
             &::after,
@@ -282,6 +283,12 @@
 
             .thumb::after {
                 opacity: 0;
+            }
+
+            .thumb {
+                img {
+                    mix-blend-mode: luminosity;
+                }
             }
 
             .social {

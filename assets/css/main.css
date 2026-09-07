@@ -3717,6 +3717,128 @@ input:focus::placeholder, textarea:focus::placeholder {
 /* 
     header-2-end
 */
+/*
+    header-3-start
+*/
+.ot-header-3-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+.ot-header-3-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  /* the bar is only a wash laid over the hero */
+}
+.ot-header-3-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(3, 15, 43, 0.18);
+  backdrop-filter: blur(4px);
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-header-3-wrap {
+    padding: 12px 24px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-header-3-wrap {
+    gap: 16px;
+    padding: 12px 16px;
+  }
+}
+.ot-header-3-logo {
+  flex-shrink: 0;
+}
+.ot-header-3-logo img {
+  width: 174px;
+}
+@media (max-width: 767px) {
+  .ot-header-3-logo img {
+    width: 140px;
+  }
+}
+.ot-header-3 {
+  /* the menu holds the middle of the bar; under the full canvas it centres
+     in what is left instead, so it never runs into the search field */
+}
+.ot-header-3-menu {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-header-3-menu {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+  }
+}
+.ot-header-3-menu .lt-main-navigation .navbar-nav {
+  /* the row closes up before it can reach the search field */
+}
+@media only screen and (min-width: 1600px) and (max-width: 1799px) {
+  .ot-header-3-menu .lt-main-navigation .navbar-nav {
+    gap: 50px;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-header-3-menu .lt-main-navigation .navbar-nav {
+    gap: 40px;
+  }
+}
+.ot-header-3-menu .lt-main-navigation .navbar-nav li a {
+  padding: 22px 0;
+}
+.ot-header-3-menu .lt-main-navigation .navbar-nav li:is(.dropdown) > a {
+  padding-right: 10px;
+}
+.ot-header-3-action-link {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+@media (max-width: 767px) {
+  .ot-header-3-action-link {
+    gap: 16px;
+  }
+}
+.ot-header-3-action-link .ot-pr-btn-1 {
+  padding: 9px 23px;
+}
+@media (max-width: 767px) {
+  .ot-header-3-action-link .ot-pr-btn-1 {
+    display: none;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .ot-header-3-action-link .ot-pr-btn-1 {
+    display: inline-flex;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-header-3-action-link .ot-search-btn-1,
+  .ot-header-3-action-link .ot-cart-btn-1 {
+    display: none;
+  }
+}
+.ot-header-3-action-link .ot-offcanvas-btn-1 {
+  color: #fff;
+}
+
+/*
+    header-3-end
+*/
 /* 
     sticky-header-css-start
 */
@@ -4246,6 +4368,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   background: linear-gradient(180deg, #135CFD 0%, #0B3797 100%);
   border: 1px solid rgba(255, 255, 255, 0.6);
   padding: 8px 18px;
+  font-weight: 500;
 }
 .ot-hero-2-title-2 .cd-headline .box-shape {
   width: 10px;
@@ -4326,6 +4449,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   max-width: 600px;
   margin-bottom: 32px;
   opacity: 80%;
+  font-weight: 300;
 }
 .ot-hero-2-right {
   flex: 0 0 auto;
@@ -4366,7 +4490,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .ot-hero-2-marquee {
   position: absolute;
-  bottom: 0.8%;
+  bottom: 1.9%;
   left: 50%;
   transform: translateX(-50%);
   max-width: 850px;
@@ -4544,6 +4668,534 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /* 
     hero-2-end
+*/
+/* the globe behind the top row turns on its own, without stopping */
+@keyframes ot-hero-3-world-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*
+    hero-3-start
+*/
+.ot-hero-3-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 218px;
+  background-color: var(--ot-clr-h-1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-3-area {
+    padding-top: 190px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-hero-3-area {
+    padding-top: 170px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-hero-3-area {
+    padding-top: 140px;
+  }
+}
+.ot-hero-3-area {
+  /* the four washes the hero is built on */
+}
+.ot-hero-3-area .ot-hero-3-bg-img,
+.ot-hero-3-area .bg-color,
+.ot-hero-3-area .bg-color-2,
+.ot-hero-3-area .bg-dot-shape {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+.ot-hero-3-area {
+  /* the circuit shot only lends its light to the navy underneath */
+}
+.ot-hero-3-area .ot-hero-3-bg-img {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 758px;
+  z-index: -4;
+  opacity: 72%;
+  mix-blend-mode: luminosity;
+}
+.ot-hero-3-area {
+  /* both washes are flattened glows — screen drops their black */
+}
+.ot-hero-3-area .bg-color {
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -3;
+  opacity: 0.8;
+}
+.ot-hero-3-area {
+  /* the corner glow only lifts the bottom right of the band */
+}
+.ot-hero-3-area .bg-color-2 {
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+.ot-hero-3-area .bg-dot-shape {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.ot-hero-3-top {
+  position: relative;
+  z-index: 1;
+  padding: 0 32px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-top {
+    padding: 0;
+  }
+}
+.ot-hero-3-top {
+  /* the globe sits behind the headline, its dots lit over the navy */
+}
+.ot-hero-3-top .bg-world {
+  position: absolute;
+  left: 36.86%;
+  top: -98px;
+  width: 26.29%;
+  max-width: 368px;
+  border-radius: 50%;
+  background-color: #011850;
+  z-index: -1;
+  pointer-events: none;
+}
+.ot-hero-3-top .bg-world img {
+  width: 100%;
+  mix-blend-mode: luminosity;
+  animation: ot-hero-3-world-spin 40s linear infinite;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-top .bg-world {
+    top: -60px;
+    opacity: 60%;
+  }
+}
+.ot-hero-3-top-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-top-row {
+    flex-direction: column;
+    gap: 28px;
+  }
+}
+.ot-hero-3-top-row .left-elm {
+  padding-top: 6px;
+}
+.ot-hero-3-top-row {
+  /* the column narrows with the row, so the globe keeps clear of it */
+}
+.ot-hero-3-top-row .right-elm {
+  width: 32.9%;
+  max-width: 439px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-top-row .right-elm {
+    width: 100%;
+  }
+}
+.ot-hero-3-top-row .right-elm .disc {
+  color: #fff;
+  opacity: 80%;
+  margin-bottom: 32px;
+}
+@media (max-width: 767px) {
+  .ot-hero-3-top-row .right-elm .disc {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+.ot-hero-3-top-row {
+  /* the second line of the headline, with the badge beside it */
+}
+.ot-hero-3-top-row:is(.has-v2) {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 52px;
+  margin-top: -3px;
+  padding-left: 73px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-3-top-row:is(.has-v2) {
+    gap: 40px;
+    padding-left: 50px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-top-row:is(.has-v2) {
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 12px;
+    padding-left: 0;
+  }
+}
+.ot-hero-3-top-row:is(.has-v2) {
+  /* the second line holds beside the badge instead of breaking */
+}
+.ot-hero-3-top-row:is(.has-v2) .ot-hero-3-title {
+  white-space: nowrap;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-top-row:is(.has-v2) .ot-hero-3-title {
+    white-space: normal;
+  }
+}
+.ot-hero-3-title {
+  font-family: var(--ot-font-2);
+  font-weight: 500;
+  font-size: 160px;
+  line-height: 1.025;
+  letter-spacing: -2px;
+  color: #fff;
+  margin-bottom: 0;
+}
+.ot-hero-3-title span {
+  color: var(--ot-clr-pr-1);
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .ot-hero-3-title {
+    font-size: 130px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-3-title {
+    font-size: 110px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-3-title {
+    font-size: 90px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-hero-3-title {
+    font-size: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-hero-3-title {
+    font-size: 44px;
+    letter-spacing: -1px;
+  }
+}
+.ot-hero-3 {
+  /* the rating strip above the headline */
+}
+.ot-hero-3-top .rating-elm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+.ot-hero-3-top .rating-elm .author-img {
+  display: flex;
+  align-items: center;
+}
+.ot-hero-3-top .rating-elm .author-img-single {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+}
+.ot-hero-3-top .rating-elm .author-img-single:not(:first-child) {
+  margin-left: -14px;
+}
+.ot-hero-3-top .rating-elm .text-elm {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-size: 16px;
+  color: #fff;
+}
+.ot-hero-3-top .rating-elm .text-elm .icon {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 13px;
+  color: #FAC12E;
+}
+.ot-hero-3-top .rating-elm .text-elm .text {
+  flex-basis: 100%;
+}
+.ot-hero-3 {
+  /* top rated company badge */
+}
+.ot-hero-3-top .company-elm {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.ot-hero-3-top .company-elm .vector {
+  width: 38px;
+}
+@media (max-width: 767px) {
+  .ot-hero-3-top .company-elm .vector {
+    width: 28px;
+  }
+}
+.ot-hero-3-top .company-elm .content {
+  margin: 0 -10px;
+  text-align: center;
+}
+.ot-hero-3-top .company-elm .text {
+  font-family: var(--ot-font-2);
+  font-size: 16px;
+  line-height: 1.375;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.ot-hero-3-top .company-elm .logo-elm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ot-hero-3-top .company-elm .logo-elm svg {
+  width: 250px;
+  height: auto;
+}
+@media (max-width: 767px) {
+  .ot-hero-3-top .company-elm .logo-elm svg {
+    width: 200px;
+  }
+}
+.ot-hero-3 {
+  /* the photo band and the two cards that hang off its bottom edge */
+}
+.ot-hero-3-bottom {
+  position: relative;
+  z-index: 1;
+  margin-top: 60px;
+  padding: 0 32px 68px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-3-bottom {
+    padding-bottom: 56px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-bottom {
+    margin-top: 40px;
+    padding: 0 16px;
+  }
+}
+.ot-hero-3-bottom .video-elm {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 1856/796;
+  border-radius: 20px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-bottom .video-elm {
+    aspect-ratio: 16/10;
+  }
+}
+.ot-hero-3-bottom .video-elm .shape {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 18.48%;
+  height: auto;
+  opacity: 30%;
+  pointer-events: none;
+}
+.ot-hero-3-bottom .card-wrap {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding-left: 221px;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-3-bottom .card-wrap {
+    padding-left: 120px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-3-bottom .card-wrap {
+    padding-left: 60px;
+  }
+}
+.ot-hero-3-bottom .card-wrap {
+  /* on a narrow screen the pair drops below the photo */
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-bottom .card-wrap {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin-top: -60px;
+    padding-left: 0;
+  }
+}
+.ot-hero-3-card {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 463px;
+  height: 386px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 43px 44px 44px;
+  background-color: var(--ot-clr-sd-1);
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ot-hero-3-card {
+    width: 400px;
+    height: 340px;
+    padding: 32px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-3-card {
+    width: 340px;
+    height: 300px;
+    padding: 28px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-card {
+    width: 100%;
+    height: auto;
+    padding: 32px 24px;
+  }
+}
+.ot-hero-3-card .watermark {
+  position: absolute;
+  left: 20.5%;
+  top: 43px;
+  width: 273px;
+  pointer-events: none;
+}
+.ot-hero-3-card .title {
+  font-size: 64px;
+  line-height: 1.125;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px) {
+  .ot-hero-3-card .title {
+    font-size: 52px;
+  }
+}
+@media (max-width: 767px) {
+  .ot-hero-3-card .title {
+    font-size: 40px;
+  }
+}
+.ot-hero-3-card .text {
+  font-size: 28px;
+  line-height: 1.285;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-3-card .text {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-card .text {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
+.ot-hero-3-form {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 33px 44px;
+  background-color: #011850;
+  position: relative;
+  z-index: 1;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ot-hero-3-form {
+    padding: 28px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-form {
+    flex-wrap: wrap;
+    padding: 24px 20px;
+  }
+}
+.ot-hero-3-form .form-grp {
+  flex: 1;
+  min-width: 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-form .form-grp {
+    flex: 1 1 100%;
+  }
+}
+.ot-hero-3-form .form-grp label {
+  display: block;
+  font-family: var(--ot-font-2);
+  font-size: 18px;
+  line-height: 1.555;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.ot-hero-3-form .form-grp label span {
+  color: var(--ot-clr-sd-1);
+}
+.ot-hero-3-form .form-grp input {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background-color: #011850;
+  font-family: var(--ot-font-2);
+  font-size: 16px;
+  line-height: 1.75;
+  color: #fff;
+  outline: 0;
+  transition: border-color var(--ot-cube-1);
+  font-weight: 300;
+}
+.ot-hero-3-form .form-grp input::placeholder {
+  color: #fff;
+  opacity: 52%;
+}
+.ot-hero-3-form .form-grp input:focus {
+  border-color: var(--ot-clr-pr-1);
+}
+.ot-hero-3-form .ot-pr-btn-1 {
+  flex-shrink: 0;
+  padding: 13px 28px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
+  .ot-hero-3-form .ot-pr-btn-1 {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/*
+    hero-3-end
 */
 /* 
     core-features-1-start
@@ -4879,19 +5531,6 @@ input:focus::placeholder, textarea:focus::placeholder {
 .ot-core-features-2-card:is(.has-v2):hover {
   background-color: #CCF5BD;
   box-shadow: 0 24px 48px -24px rgba(47, 156, 59, 0.32);
-}
-.ot-core-features-2-card:is(.has-v2) .read-btn {
-  margin-top: 20px;
-  border-color: transparent;
-  background-color: #3DB54A;
-  color: #fff;
-}
-.ot-core-features-2-card:is(.has-v2) .read-btn .text {
-  max-width: none;
-  opacity: 1;
-}
-.ot-core-features-2-card:is(.has-v2) .read-btn:hover {
-  background-color: #2F9C3B;
 }
 
 /* 
@@ -5718,7 +6357,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  background-color: #030F2B;
+  background-color: #011850;
   border-radius: 40px;
 }
 .ot-services-2-area .bg-img {
@@ -6580,6 +7219,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  background-color: var(--ot-clr-h-1);
   /* resting scrim */
 }
 .ot-team-2-item .thumb::after, .ot-team-2-item .thumb::before {
@@ -6749,6 +7389,9 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .ot-team-2-item:hover .thumb::after {
   opacity: 0;
+}
+.ot-team-2-item:hover .thumb img {
+  mix-blend-mode: luminosity;
 }
 .ot-team-2-item:hover .social {
   opacity: 1;
@@ -7768,6 +8411,10 @@ input:focus::placeholder, textarea:focus::placeholder {
   border-color: var(--ot-clr-pr-1);
 }
 
+.ot-choose-1-area:is(.has-v2) {
+  background-color: #F4F6FF;
+}
+
 /*
     choose-1-end
 */
@@ -7778,7 +8425,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  background-color: #D9D9D9;
+  background: linear-gradient(180deg, #E5EAFF 0%, #F4F6FF 100%);
   border-radius: 20px;
 }
 .ot-choose-2-wrap {
@@ -8365,6 +9012,10 @@ input:focus::placeholder, textarea:focus::placeholder {
   }
 }
 
+.ot-project-1-area:is(.has-v2) {
+  padding-bottom: 100px;
+}
+
 /*
     project-1-end
 */
@@ -8777,7 +9428,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 @media (min-width: 1800px), only screen and (min-width: 1600px) and (max-width: 1799px), only screen and (min-width: 1400px) and (max-width: 1599px) {
   .ot-project-2-area {
-    padding-bottom: 120px;
+    padding-bottom: 100px;
   }
 }
 .ot-project-2-area {
@@ -9861,18 +10512,30 @@ input:focus::placeholder, textarea:focus::placeholder {
   flex-direction: column;
   align-items: center;
   width: 44px;
+  /* a frosted disc with the solid pip sitting in the middle of it */
 }
 .ot-faqs-2-thumb .vector .dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+}
+.ot-faqs-2-thumb .vector .dot::before {
+  content: "";
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.12);
 }
 .ot-faqs-2-thumb .vector .line {
   width: 1px;
   height: 89px;
-  margin-top: 5px;
+  margin-top: -5px;
   background-color: rgba(3, 15, 43, 0.12);
 }
 .ot-faqs-2-thumb .vector .icon {
@@ -9884,6 +10547,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   border-radius: 50%;
   background-color: var(--ot-clr-pr-1);
   color: #fff;
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.25);
 }
 .ot-faqs-2 {
   /* the mint / blue wash is the two blurred blobs of the design */
@@ -9897,6 +10561,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   border-radius: 0 12px 12px 12px;
   background-color: #fff;
   background-image: radial-gradient(circle at 0% 0%, rgba(60, 237, 183, 0.42) 0%, rgba(60, 237, 183, 0) 58%), radial-gradient(circle at 100% 100%, rgba(19, 92, 253, 0.3) 0%, rgba(19, 92, 253, 0) 58%);
+  filter: drop-shadow(8px 8px 24px rgba(2, 21, 65, 0.12));
 }
 .ot-faqs-2-card .text {
   font-size: 16px;
@@ -10061,6 +10726,16 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 .ot-partner-1-marquee .single-logo:hover img {
   filter: brightness(0) saturate(100%) invert(47%) sepia(42%) saturate(2059%) hue-rotate(202deg) brightness(78%) contrast(177%);
+}
+
+.ot-partner-1-area:is(.has-v2) .ot-partner-1-top .text-elm {
+  background-color: #fff;
+}
+.ot-partner-1-area:is(.has-v2) .ot-partner-1-marquee-wrap::after {
+  background: linear-gradient(90deg, rgba(244, 246, 255, 0) 0%, #ffffff 84.8%);
+}
+.ot-partner-1-area:is(.has-v2) .ot-partner-1-marquee-wrap::before {
+  background: linear-gradient(270deg, rgba(244, 246, 255, 0) 0%, #ffffff 84.8%);
 }
 
 /*
@@ -10885,7 +11560,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   position: absolute;
   inset: 0;
   z-index: -1;
-  opacity: 52%;
   mix-blend-mode: color-burn;
   pointer-events: none;
 }
@@ -11617,6 +12291,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   line-height: 1.4;
   color: #fff;
   transition: var(--ot-cube-1);
+  font-weight: 300;
 }
 .ot-footer-2-widgets .social-widget .social-link a:hover {
   color: var(--ot-clr-sd-1);
@@ -11709,7 +12384,9 @@ input:focus::placeholder, textarea:focus::placeholder {
   justify-content: center;
   border: 0;
   border-radius: 6px;
-  background: var(--ot-clr-gd-1);
+  background: url(.png), linear-gradient(180deg, #004CF4 0%, #407BFF 100%);
+  background-blend-mode: plus-lighter, normal;
+  box-shadow: inset 0px 1px 10px 2px rgba(210, 234, 255, 0.6), inset 0px 1px 4px 2px #D2EAFF;
   font-size: 16px;
   color: #fff;
   transition: var(--ot-cube-1);
@@ -11848,6 +12525,17 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 /*
     footer-2-end
+*/
+/*
+    footer-3-start
+*/
+.ot-footer-2-area .ot-footer-1-top {
+  margin-top: 130px;
+  padding-bottom: 70px;
+}
+
+/*
+    footer-3-end
 */
 /* 
     pages

@@ -265,6 +265,12 @@
     }
 }
 
+
+.ot-choose-1-area {
+    &:is(.has-v2) {
+        background-color: #F4F6FF;
+    }
+}
 /*
     choose-1-end
 */
@@ -278,7 +284,7 @@
         position: relative;
         z-index: 1;
         overflow: hidden;
-        background-color: #D9D9D9;
+        background: linear-gradient(180deg, #E5EAFF 0%, #F4F6FF 100%);
         border-radius: 20px;
     }
 

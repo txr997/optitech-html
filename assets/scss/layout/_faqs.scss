@@ -239,18 +239,31 @@
             align-items: center;
             width: 44px;
 
+            /* a frosted disc with the solid pip sitting in the middle of it */
             .dot {
-                width: 8px;
-                height: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 18px;
+                height: 18px;
                 border-radius: 50%;
-                background-color: #fff;
-                box-shadow: 0 0 0 5px rgb(255 255 255 / 12%);
+                background-color: rgb(255 255 255 / 12%);
+                backdrop-filter: blur(4px);
+                box-shadow: 4px 4px 12px rgb(0 0 0 / 25%);
+
+                &::before {
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                }
             }
 
             .line {
                 width: 1px;
                 height: 89px;
-                margin-top: 5px;
+                margin-top: -5px;
                 background-color: rgb(3 15 43 / 12%);
             }
 
@@ -263,6 +276,7 @@
                 border-radius: 50%;
                 background-color: var(--ot-clr-pr-1);
                 color: #fff;
+                box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.25);
             }
         }
     }
@@ -278,7 +292,7 @@
         background-color: #fff;
         background-image: radial-gradient(circle at 0% 0%, rgb(60 237 183 / 42%) 0%, rgb(60 237 183 / 0%) 58%),
             radial-gradient(circle at 100% 100%, rgb(19 92 253 / 30%) 0%, rgb(19 92 253 / 0%) 58%);
-
+            filter: drop-shadow(8px 8px 24px rgba(2, 21, 65, 0.12));
         .text {
             font-size: 16px;
             line-height: 1.5;

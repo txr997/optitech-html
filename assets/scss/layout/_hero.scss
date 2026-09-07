@@ -554,6 +554,7 @@
                 background: linear-gradient(180deg, #135CFD 0%, #0B3797 100%);
                 border: 1px solid rgba(255, 255, 255, 0.6);
                 padding: 8px 18px;
+                font-weight: 500;
 
                 .box-shape {
                     width: 10px;
@@ -649,6 +650,8 @@
         max-width: 600px;
         margin-bottom: 32px;
         opacity: 80%;
+
+        font-weight: 300;
     }
 
     &-right {
@@ -690,7 +693,7 @@
     
     &-marquee {
         position: absolute;
-        bottom: 0.8%;
+        bottom: 1.9%;
         left: 50%;
         transform: translateX(-50%);
         max-width: 850px;
@@ -887,4 +890,523 @@
 
 /* 
     hero-2-end
+*/
+
+/* the globe behind the top row turns on its own, without stopping */
+@keyframes ot-hero-3-world-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+    hero-3-start
+*/
+.ot-hero-3 {
+    &-area {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        padding-top: 218px;
+        background-color: var(--ot-clr-h-1);
+
+        @media #{$xl} {
+            padding-top: 190px;
+        }
+
+        @media #{$lg,$md} {
+            padding-top: 170px;
+        }
+
+        @media #{$xs} {
+            padding-top: 140px;
+        }
+
+        /* the four washes the hero is built on */
+        .ot-hero-3-bg-img,
+        .bg-color,
+        .bg-color-2,
+        .bg-dot-shape {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* the circuit shot only lends its light to the navy underneath */
+        .ot-hero-3-bg-img {
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 758px;
+            z-index: -4;
+            opacity: 72%;
+            mix-blend-mode: luminosity;
+        }
+
+        /* both washes are flattened glows — screen drops their black */
+        .bg-color {
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: -3;
+            opacity: .8;
+        }
+
+        /* the corner glow only lifts the bottom right of the band */
+        .bg-color-2 {
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+        }
+
+        .bg-dot-shape {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    &-top {
+        position: relative;
+        z-index: 1;
+        padding: 0 32px;
+
+        @media #{$lg,$md,$xs} {
+            padding: 0;
+        }
+
+        /* the globe sits behind the headline, its dots lit over the navy */
+        .bg-world {
+            position: absolute;
+            left: 36.86%;
+            top: -98px;
+            width: 26.29%;
+            max-width: 368px;
+            border-radius: 50%;
+            background-color: #011850;
+            z-index: -1;
+            pointer-events: none;
+
+            img {
+                width: 100%;
+                mix-blend-mode: luminosity;
+                animation: ot-hero-3-world-spin 40s linear infinite;
+            }
+
+            @media #{$md,$xs} {
+                top: -60px;
+                opacity: 60%;
+            }
+        }
+    }
+
+    &-top-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+
+        @media #{$lg,$md,$xs} {
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .left-elm {
+            padding-top: 6px;
+        }
+
+        /* the column narrows with the row, so the globe keeps clear of it */
+        .right-elm {
+            width: 32.9%;
+            max-width: 439px;
+
+            @media #{$lg,$md,$xs} {
+                width: 100%;
+            }
+
+            .disc {
+                color: #fff;
+                opacity: 80%;
+                margin-bottom: 32px;
+
+                @media #{$xs} {
+                    font-size: 16px;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+
+        /* the second line of the headline, with the badge beside it */
+        &:is(.has-v2) {
+            align-items: center;
+            justify-content: flex-start;
+            gap: 52px;
+            margin-top: -3px;
+            padding-left: 73px;
+
+            @media #{$xl} {
+                gap: 40px;
+                padding-left: 50px;
+            }
+
+            @media #{$lg,$md,$xs} {
+                align-items: flex-start;
+                gap: 24px;
+                margin-top: 12px;
+                padding-left: 0;
+            }
+
+            /* the second line holds beside the badge instead of breaking */
+            .ot-hero-3-title {
+                white-space: nowrap;
+
+                @media #{$md,$xs} {
+                    white-space: normal;
+                }
+            }
+        }
+    }
+
+    &-title {
+        font-family: var(--ot-font-2);
+        font-weight: 500;
+        font-size: 160px;
+        line-height: 1.025;
+        letter-spacing: -2px;
+        color: #fff;
+        margin-bottom: 0;
+
+        span {
+            color: var(--ot-clr-pr-1);
+        }
+
+        @media #{$xxl} {
+            font-size: 130px;
+        }
+
+        @media #{$xl} {
+            font-size: 110px;
+        }
+
+        @media #{$lg} {
+            font-size: 90px;
+        }
+
+        @media #{$md} {
+            font-size: 70px;
+        }
+
+        @media #{$xs} {
+            font-size: 44px;
+            letter-spacing: -1px;
+        }
+    }
+
+    /* the rating strip above the headline */
+    &-top .rating-elm {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 7px;
+
+        .author-img {
+            display: flex;
+            align-items: center;
+
+            &-single {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 2px solid rgb(255 255 255 / 24%);
+
+                &:not(:first-child) {
+                    margin-left: -14px;
+                }
+            }
+        }
+
+        .text-elm {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px 8px;
+            font-size: 16px;
+            color: #fff;
+
+            .icon {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                font-size: 13px;
+                color: #FAC12E;
+            }
+
+            .text {
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    /* top rated company badge */
+    &-top .company-elm {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+        .vector {
+            width: 38px;
+
+            @media #{$xs} {
+                width: 28px;
+            }
+        }
+
+        .content {
+            margin: 0 -10px;
+            text-align: center;
+        }
+
+        .text {
+            font-family: var(--ot-font-2);
+            font-size: 16px;
+            line-height: 1.375;
+            color: #fff;
+            margin-bottom: 14px;
+        }
+
+        .logo-elm {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 250px;
+                height: auto;
+
+                @media #{$xs} {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    /* the photo band and the two cards that hang off its bottom edge */
+    &-bottom {
+        position: relative;
+        z-index: 1;
+        margin-top: 60px;
+        padding: 0 32px 68px;
+
+        @media #{$lg} {
+            padding-bottom: 56px;
+        }
+
+        @media #{$md,$xs} {
+            margin-top: 40px;
+            padding: 0 16px;
+        }
+
+        .video-elm {
+            position: relative;
+            z-index: 1;
+            aspect-ratio: 1856 / 796;
+            border-radius: 20px;
+
+            @media #{$md,$xs} {
+                aspect-ratio: 16 / 10;
+            }
+
+            .shape {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 18.48%;
+                height: auto;
+                opacity: 30%;
+                pointer-events: none;
+            }
+        }
+
+        .card-wrap {
+            position: absolute;
+            left: 32px;
+            right: 32px;
+            bottom: 0;
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            padding-left: 221px;
+
+            @media #{$xl} {
+                padding-left: 120px;
+            }
+
+            @media #{$lg} {
+                padding-left: 60px;
+            }
+
+            /* on a narrow screen the pair drops below the photo */
+            @media #{$md,$xs} {
+                position: static;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+                margin-top: -60px;
+                padding-left: 0;
+            }
+        }
+    }
+
+    &-card {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        width: 463px;
+        height: 386px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 43px 44px 44px;
+        background-color: var(--ot-clr-sd-1);
+
+        @media #{$xl} {
+            width: 400px;
+            height: 340px;
+            padding: 32px;
+        }
+
+        @media #{$lg} {
+            width: 340px;
+            height: 300px;
+            padding: 28px;
+        }
+
+        @media #{$md,$xs} {
+            width: 100%;
+            height: auto;
+            padding: 32px 24px;
+        }
+
+        .watermark {
+            position: absolute;
+            left: 20.5%;
+            top: 43px;
+            width: 273px;
+            pointer-events: none;
+        }
+
+        .title {
+            font-size: 64px;
+            line-height: 1.125;
+
+            @media #{$lg,$md} {
+                font-size: 52px;
+            }
+
+            @media #{$xs} {
+                font-size: 40px;
+            }
+        }
+
+        .text {
+            font-size: 28px;
+            line-height: 1.285;
+            margin-bottom: 0;
+
+            @media #{$xl,$lg} {
+                font-size: 24px;
+            }
+
+            @media #{$md,$xs} {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &-form {
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+        padding: 33px 44px;
+        background-color: #011850;
+        position: relative;
+        z-index: 1;
+
+        @media #{$xl,$lg} {
+            padding: 28px;
+        }
+
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+            padding: 24px 20px;
+        }
+
+        .form-grp {
+            flex: 1;
+            min-width: 0;
+
+            @media #{$md,$xs} {
+                flex: 1 1 100%;
+            }
+
+            label {
+                display: block;
+                font-family: var(--ot-font-2);
+                font-size: 18px;
+                line-height: 1.555;
+                color: #fff;
+                margin-bottom: 4px;
+
+                span {
+                    color: var(--ot-clr-sd-1);
+                }
+            }
+
+            input {
+                width: 100%;
+                height: 56px;
+                padding: 0 20px;
+                border: 1px solid rgb(255 255 255 / 16%);
+                border-radius: 10px;
+                background-color: #011850;
+                font-family: var(--ot-font-2);
+                font-size: 16px;
+                line-height: 1.75;
+                color: #fff;
+                outline: 0;
+                transition: border-color var(--ot-cube-1);
+                font-weight: 300;
+
+                &::placeholder {
+                    color: #fff;
+                    opacity: 52%;
+                }
+
+                &:focus {
+                    border-color: var(--ot-clr-pr-1);
+                }
+            }
+        }
+
+        .ot-pr-btn-1 {
+            flex-shrink: 0;
+            padding: 13px 28px;
+
+            @media #{$md,$xs} {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+/*
+    hero-3-end
 */

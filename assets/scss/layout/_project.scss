@@ -484,6 +484,12 @@
     }
 }
 
+
+.ot-project-1-area {
+    &:is(.has-v2) {
+        padding-bottom: 100px;
+    }
+}
 /*
     project-1-end
 */
@@ -887,7 +893,7 @@
         height: calc(var(--ot-project-2-count, 4) * 100vh);
 
         @media #{$over,$xxxl,$xxl} {
-            padding-bottom: 120px;
+            padding-bottom: 100px;
         }
         /* under 1400 the scroll-through is off, so the runway collapses and
            the cards lay out as an ordinary list */
